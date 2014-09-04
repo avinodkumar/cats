@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<region_info_list>
+    <image_path></image_path>
+    <image_compare_region>
+        <filepath>current_ic_region.jpg</filepath>
+        <Height>28</Height>
+        <name>today</name>
+        <Width>74</Width>
+        <X>46</X>
+        <XTolerance>10</XTolerance>
+        <Y>213</Y>
+        <YTolerance>10</YTolerance>
+        <red_tolerance>60</red_tolerance>
+        <green_tolerance>40</green_tolerance>
+        <blue_tolerance>40</blue_tolerance>
+        <match_percentage>100.0</match_percentage>
+    </image_compare_region>
+</region_info_list>

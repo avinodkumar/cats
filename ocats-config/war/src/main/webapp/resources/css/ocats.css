@@ -1,0 +1,115 @@
+/**
+ * Copyright 2014 Comcast Cable Communications Management, LLC
+ *
+ * This file is part of CATS.
+ *
+ * CATS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * CATS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.settopListTable .ui-datatable th div.ui-dt-c, .ui-datatable .ui-datatable-data td div.ui-dt-c, .ui-datatable .ui-datatable-data-empty td div.ui-dt-c, .ui-datatable tfoot td div.ui-dt-c {
+	padding : 3px 5px !important;
+	overflow: visible !important;
+}
+
+.settopListTable .ui-editable-column {
+    padding: 0 10px 0 0 !important;
+}
+
+
+.ui-panelgrid td{
+	vertical-align: top;
+}
+
+.controlPanel tr, .controlPanel td {
+    border: none !important; 
+    background : none;
+    overflow: visible !important;
+}
+
+.normal {
+    background : #D8FFCE !important;
+}
+
+.warn{
+    background : #F3FFAA !important; 
+}
+
+.fatal{
+    background : #FFB4AA !important;
+}
+
+.historyDlgClass .ui-tabs-nav  .ui-helper-reset .ui-helper-clearfix .ui-widget-header .ui-corner-all{
+	width:30% !important;
+}
+
+.historyDlgClass .ui-tabs-left > .ui-tabs-panels{
+	width:70% !important;
+}
+
+.historyDlgClass .ui-tabs-left  .ui-tabs-nav {
+	height:100% !important;
+}
+
+.ui-tabs .ui-tabs-nav{
+	height: 100% !important;
+}
+
+.tabbedMenu .ui-menuitem {
+    background-image: url("/CATS/images/details-tabs.png") !important;
+    
+}
+
+.ui-menubar {
+    border-top: medium none !important;
+    border-right: medium none !important;
+    border-left: medium none !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.ui-menu .ui-menu-list .ui-menuitem {
+    width: 150px !important;
+}
+
+.ui-menubar .ui-menuitem-link{
+	font-weight: bold !important;
+    padding: 0.4em 0.3em !important;
+    width: 100% !important;
+}
+
+.ui-menu .ui-menuitem-text{
+	float: left;
+    font-weight: bold;
+}
+
+.jqplot-axis{
+	color:black;
+}
+
+.ui-growl {
+	right:15% !important;
+	top:4% !important;
+	word-wrap:break-word;
+}
+
+.alertColor{
+	background-color: moccasin !important;
+}
+
+.highlighttColor{
+	color: brown !important;
+}
+
+.tabbedMenu {
+    width: 417px !important;
+}

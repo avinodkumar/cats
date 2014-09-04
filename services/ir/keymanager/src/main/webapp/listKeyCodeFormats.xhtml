@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	<ui:define name="content">
+		<ul class="basictab">
+			<li class="a"><a href="home.jsf">Home</a></li>
+			<li class="a"><a href="listRemotes.jsf">Remotes</a></li>
+			<li class="a"><a id="kcf" href="listKeyCodeFormats.jsf">Formats</a></li>
+			<li class="a"><a href="listKeys.jsf">Keys</a></li>
+			<li class="a"><a href="listLayouts.jsf">Layouts</a></li>
+			<li class="a"><a href="listRedRats.xhtml">Manage IrNetBox</a></li>
+			<li class="a"><a id="redrathubs" href="listRedRatHubs.xhtml">Manage RedratHubs</a></li>
+		</ul>
+		<h3>KeyCode Formats</h3>
+		<h:messages style="color:red;margin:8px;" />
+		<h:form>
+			<h:panelGrid columns="6">
+				<h:outputText value="Select Format" />
+				<h:outputText value="Format" />
+				<h:outputText value="Description" />
+				<h:column /><h:column /><h:column />
+				<h:selectOneMenu binding="#{KeyManager.selectKeyCodeFormat}"
+					onchange="submit()" styleClass="common-dropdown"
+					value="#{KeyManager.selectedFormat}">
+				</h:selectOneMenu>
+				<h:inputText value="#{KeyManager.selectedFormatName}"
+					label="formatName" />
+				<h:inputText value="#{KeyManager.selectedFormatDesc}"
+					label="formatDescription" style=" width : 255px;" />
+				<h:commandButton value="Delete"
+					onclick="if (!confirm('Are you sure you want to delete this format?')) return false"
+					action="#{KeyManager.deleteFormat}" style=" width : 50px;"/>
+				<h:commandButton value="Update"
+					actionListener="#{KeyManager.updateFormat}" style=" width : 53px;"/>
+				<h:commandButton value="Add" action="#{KeyManager.addFormat}" style=" width : 37px;"/>
+			</h:panelGrid>
+			<h:dataTable rendered="#{!empty(KeyManager.kcfList)}"
+				value="#{KeyManager.kcfList}" styleClass="dataTable" var="kcf">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="ID" align="left" />
+					</f:facet>
+					<h:outputText value="#{kcf.keyCodeFormatId}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Key Code Format" />
+					</f:facet>
+					<h:outputText value="#{kcf.keyCodeFormatName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Description" />
+					</f:facet>
+					<h:outputText value="#{kcf.keyCodeFormatDescription}" />
+				</h:column>
+			</h:dataTable>
+			<p><h:commandButton value="Refresh"
+				action="#{KeyManager.refreshPage}" /> <h:commandButton
+				value="Go Back" action="home.jsf" /></p>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+

@@ -1,0 +1,864 @@
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206,21207
+[Java] [ HttpDataRetriever ]  [ WARN ] Caught IOException, [ http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206,21207 ] retryCount = 1, retryPeriod = 10000
+[Java] [ HttpDataRetriever ]  [ WARN ] Retrying HTTP download [ http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206,21207 ]
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206,21207
+[Java] [ HttpDataRetriever ]  [ WARN ] Caught IOException, [ http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206,21207 ] retryCount = 0, retryPeriod = 10000
+[Java] [ HttpDataRetriever ]  [ ERROR ] After 4retry exhausted, failing downaload of [ http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206,21207 ]
+[Java] [DataToken] Retry Attempt: 1 / -1
+[Java] com.comcast.impl.linkcommand.InvalidLinkException: Unable to invoke link: ixcslink://sharedvideo.tvworks.com/WBA/proxy_1
+[Java] 	at com/comcast/impl/linkcommand/LinkController.invoke(Ljava/lang/String;Lcom/comcast/impl/linkcommand/LinkCommand;IIZ)Lcom/comcast/impl/linkcommand/LinkCommandReturn;(SourceFile:92)
+[Java] 	at com/comcast/impl/linkcommand/LinkController.invoke(Ljava/lang/String;Lcom/comcast/impl/linkcommand/LinkCommand;IIZ)Lcom/comcast/impl/linkcommand/LinkCommandReturn;(SourceFile:90)
+[Java] 	at com/comcast/impl/linkcommand/LinkController.invoke(Ljava/lang/String;Lcom/comcast/impl/linkcommand/LinkCommand;)Lcom/comcast/impl/linkcommand/LinkCommandReturn;(SourceFile:45)
+[Java] 	at org/cablelabs/oc/wba/impl/media/commandhandler/sharedvideolistener/ServiceContextListenerProxy.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(SourceFile:43)
+[Java] 	at org/cablelabs/oc/wba/impl/media/commandhandler/sharedvideolistener/SharedVideoListenerProxy.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(SourceFile:29)
+[Java] 	at ns.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:192)
+[Java] 	at no.a(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:374)
+[Java] 	at xz.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:603)
+[Java] 	at fp.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:559)
+[Java] 	at xq.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:1152)
+[Java] 	at com/vidiom/impl/service/javatv/selection/ServiceContextImpl$9.run()V(bytecode:88)
+[Java] 	at com/vidiom/impl/manager/application/WorkerTask.run()V(bytecode:12)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext$2.run()V(bytecode:18)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext$1.run()Ljava/lang/Object;(bytecode:2)
+[Java] 	at java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;(AccessController.java:289)
+[Java] 	at java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;(AccessController.java:263)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext.runAsContextSamePriority(Ljava/lang/Runnable;)V(bytecode:45)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext.runAsContext(Ljava/lang/Runnable;)V(bytecode:10)
+[Java] 	at com/vidiom/impl/manager/application/ContextTask.run()V(bytecode:4)
+[Java] 	at com/vidiom/impl/manager/application/DemandExecQueue$DemandTask.run()V(bytecode:9)
+[Java] 	at com/vidiom/impl/manager/application/WorkerTask.run()V(bytecode:12)
+[Java] 	at com/vidiom/impl/manager/application/ThreadPool$1.run()V(bytecode:1)
+[Java] 	at java/lang/Thread.outer()V(Thread.java:393)
+[Java] Caused by: org.ocapx.registry.LinkTimeOutException: Timeout of slink on port[20001], null
+[Java] 	at org/ocapx/registry/LinkHandler.a(B[B)[B(SourceFile:111)
+[Java] 	at org/ocapx/registry/LinkCommunicator.sendInvokeSyncLink(B[B)[B(SourceFile:86)
+[Java] 	at org/ocapx/registry/RemoteSynchronousLink.invokeLink([B)[B(SourceFile:449)
+[Java] 	at com/comcast/impl/linkcommand/LinkController.invoke(Ljava/lang/String;Lcom/comcast/impl/linkcommand/LinkCommand;IIZ)Lcom/comcast/impl/linkcommand/LinkCommandReturn;(SourceFile:86)
+[Java] 	at com/comcast/impl/linkcommand/LinkController.invoke(Ljava/lang/String;Lcom/comcast/impl/linkcommand/LinkCommand;IIZ)Lcom/comcast/impl/linkcommand/LinkCommandReturn;(SourceFile:90)
+[Java] 	at com/comcast/impl/linkcommand/LinkController.invoke(Ljava/lang/String;Lcom/comcast/impl/linkcommand/LinkCommand;)Lcom/comcast/impl/linkcommand/LinkCommandReturn;(SourceFile:45)
+[Java] 	at org/cablelabs/oc/wba/impl/media/commandhandler/sharedvideolistener/ServiceContextListenerProxy.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(SourceFile:43)
+[Java] 	at org/cablelabs/oc/wba/impl/media/commandhandler/sharedvideolistener/SharedVideoListenerProxy.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(SourceFile:29)
+[Java] 	at ns.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:192)
+[Java] 	at no.a(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:374)
+[Java] 	at xz.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:603)
+[Java] 	at fp.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:559)
+[Java] 	at xq.receiveServiceContextEvent(Ljavax/tv/service/selection/ServiceContextEvent;)V(Buckeye:1152)
+[Java] 	at com/vidiom/impl/service/javatv/selection/ServiceContextImpl$9.run()V(bytecode:88)
+[Java] 	at com/vidiom/impl/manager/application/WorkerTask.run()V(bytecode:12)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext$2.run()V(bytecode:18)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext$1.run()Ljava/lang/Object;(bytecode:2)
+[Java] 	at java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;(AccessController.java:289)
+[Java] 	at java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;(AccessController.java:263)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext.runAsContextSamePriority(Ljava/lang/Runnable;)V(bytecode:45)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext.runAsContext(Ljava/lang/Runnable;)V(bytecode:10)
+[Java] 	at com/vidiom/impl/manager/application/ContextTask.run()V(bytecode:4)
+[Java] 	at com/vidiom/impl/manager/application/DemandExecQueue$DemandTask.run()V(bytecode:9)
+[Java] 	at com/vidiom/impl/manager/application/WorkerTask.run()V(bytecode:12)
+[Java] 	at com/vidiom/impl/manager/application/ThreadPool$1.run()V(bytecode:1)
+[Java] 	at java/lang/Thread.outer()V(Thread.java:393)
+[Java] 
+[Java] 772755021 [ CMAC ][ DataRegDataPrv ] [ DEBUG ] LocDldr::run()
+[Java] 772755023 [ CMAC ][ DataRegDataPrv ] [ DEBUG ] LocDldr::run() - source type=1, URL=http://bscm.comcast.net:8080/fds/filesearch.do?namespace=TVP&filename=/locationsxml&controllerid=*&id=%PLANT_ID%
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://bscm.comcast.net:8080/fds/filesearch.do?namespace=TVP&filename=/locationsxml&controllerid=1966&id=102
+[Java] [ HttpDataRetriever ]  [ WARN ] Caught IOException, [ http://bscm.comcast.net:8080/fds/filesearch.do?namespace=TVP&filename=/locationsxml&controllerid=1966&id=102 ] retryCount = 2, retryPeriod = 5000
+[Java] [ HttpDataRetriever ]  [ WARN ] Retrying HTTP download [ http://bscm.comcast.net:8080/fds/filesearch.do?namespace=TVP&filename=/locationsxml&controllerid=1966&id=102 ]
+[Java] 772758281 [[4294667.296000] Linux version 2.6.24-1.2.49.1_full-highmem (root@sauscupscmn04.corp.sa.net) (gcc version 3.4.4) #2 PREEMPT Mon Apr 25 13:46:56 EDT 2011
+[4294667.296000] 
+[4294667.296000] LINUX started...
+[4294667.296000] Bootloader Family = 0x3836
+[4294667.296000] Platform: 8600/Vz Class B - CRONUS, DVR_CAPABLE
+[4294667.296000] memory scan node memory@0, reg size 12, data: 10000000 20000000 fc00000 
+[4294667.296000] memory scan node memory@1, reg size 12, data: 1fc00000 7fc0000 400000 
+[4294667.296000] memory scan node memory@2, reg size 12, data: 60000000 60000000 10000000 
+[4294667.296000] memory scan node memory@3, reg size 12, data: 9040000 9040000 30000 
+[4294667.296000] memory scan node memory@4, reg size 12, data: 2fc00000 2fc00000 400000 
+[4294667.296000] MIPS PLL Register:0xd0213  M=2  N=13  P=0
+[4294667.296000] MIPS Clock Freq=702000 kHz
+[4294667.296000] Set ndelay fast_ratio parameters: k 46016 s 17 r 131071
+[4294667.296000] CPU revision is: 01019378 (MIPS 24K)
+[4294667.296000] pcie:asic_pcie_init:asic_pcie_init called.
+[4294667.296000] pcie:asic_pcie_init: PLL NOT LOCKED.
+[4294667.296000] Determined physical RAM map:
+[4294667.296000]  memory: 00040000 @ 10000000 (reserved)
+[4294667.296000]  memory: 0fbc0000 @ 10040000 (usable)
+[4294667.296000]  memory: 00400000 @ 1fc00000 (reserved)
+[4294667.296000]  memory: 10000000 @ 60000000 (usable)
+[4294667.296000]  memory: 00030000 @ 09040000 (reserved)
+[4294667.296000]  memory: 00400000 @ 2fc00000 (usable)
+[4294667.296000] Wasting 2099200 bytes for tracking 65600 unused pages
+[4294667.296000] Initial ramdisk at: 0x90d00000 (26266624 bytes)
+[4294667.296000] persistent memory: start=0x2f000000  end=0x2f01ffff
+[4294667.296000] ZONE_KERNEL is supported.
+[4294667.296000] Zone PFN ranges:
+[4294667.296000]   Kernel       9040 ->    20000
+[4294667.296000]   Normal      20000 ->    20000
+[4294667.296000]   HighMem     20000 ->    70000
+[4294667.296000] Movable zone start PFN for each node
+[4294667.296000] early_node_map[4] active PFN ranges
+[4294667.296000]     0:     9040 ->     9070
+[4294667.296000]     0:    10000 ->    20000
+[4294667.296000]     0:    2fc00 ->    30000
+[4294667.296000]     0:    60000 ->    70000
+[4294667.296000] clearing from 0x60000000 to 0x70000000
+[4294667.296000] clearing from 0x2fc00000 to 0x30000000
+[4294667.296000] Reserve resource ST231aImage at 0x24000000 (2097152 bytes)
+[4294667.296000] Reserve resource ST231aMonitor at 0x24200000 (8192 bytes)
+[4294667.296000] Reserve resource MediaMemory2 at 0x24202000 (31449088 bytes)
+[4294667.296000] Reserve resource ST231bImage at 0x60000000 (2097152 bytes)
+[4294667.296000] Reserve resource ST231bMonitor at 0x60200000 (8192 bytes)
+[4294667.296000] Reserve resource MediaMemory1 at 0x60202000 (31449088 bytes)
+[4294667.296000] Reserve resource Docsis at 0x27500000 (7340032 bytes)
+[4294667.296000] Reserve resource GraphicsHeap at 0x64000000 (14680064 bytes)
+[4294667.296000] Reserve resource GraphicsHeapExt at 0x64e00000 (26214400 bytes)
+[4294667.296000] Reserve resource MulticomSHM at 0x26000000 (131072 bytes)
+[4294667.296000] Reserve resource DiagPersistentMemory at 0x2f000000 (131072 bytes)
+[4294667.296000] Reserve resource NP_Reset_Vector at 0x27c00000 (4096 bytes)
+[4294667.296000] Reserve resource NP_Image at 0x27020000 (327680 bytes)
+[4294667.296000] Reserve resource DSP_Image_Buff at 0x20549000 (1048576 bytes)
+[4294667.296000] Reserve resource ADSC_CPU_PCM_Buff at 0x20649000 (40960 bytes)
+[4294667.296000] Reserve resource ADSC_AUX_Buff at 0x20653000 (131072 bytes)
+[4294667.296000] Reserve resource ADSC_Main_Buff at 0x20673000 (131072 bytes)
+[4294667.296000] Reserve resource AVMEMPartition0 at 0x62000000 (12582912 bytes)
+[4294667.296000] Reserve resource BMM_Buffer at 0x22611000 (5943296 bytes)
+[4294667.296000] Reserve resource DisplayBins0 at 0x62c00000 (4096 bytes)
+[4294667.296000] Reserve resource DisplayBins1 at 0x62c01000 (4096 bytes)
+[4294667.296000] Reserve resource ITFS at 0x22bbc000 (2514944 bytes)
+[4294667.296000] Reserve resource AvfsDmaMem at 0x22e22000 (15335424 bytes)
+[4294667.296000] Reserve resource AvfsDmaMemExt at 0x27f09000 (28901376 bytes)
+[4294667.296000] Reserve resource AvfsFileSys at 0x29a99000 (4096 bytes)
+[4294667.296000] Reserve resource HNDmaMem at 0x29a9a000 (786432 bytes)
+[4294667.296000] Reserve resource HNDmaMemExt at 0x29b5a000 (3145728 bytes)
+[4294667.296000] Reserve resource SmartCardInfo at 0x62c02000 (10240 bytes)
+[4294667.296000] Total Platform driver memory allocation: 0x0b1e1800
+[4294667.296000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 128849
+[4294667.296000] Kernel command line: rw dhash_entries=1024 ihash_entries=1024 ip=::::zeus:eth0: nokgdb console=ttyUSB0,115200 hwid=0x056B model=0x21C2 version=0x000C chipver=0xFFFFBEEF devno=0x42584B44444A56 boardno=0x3D71080C512B3BA068 oui=0x0002DE rfmac=0xE448C7A881F4 ethmac=0xE448C7A881F5 devicetree=0x97F084F8 pmemaddr=0x9F000000 pmemlen=0x00010000 rd_start=0x90D00000 rd_size=0x0190CC00
+[4294667.296000] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[4294667.296000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[4294667.296000] Synthesized clear page handler (25 instructions).
+[4294667.296000] Synthesized copy page handler (44 instructions).
+[4294667.296000] Synthesized TLB refill handler (20 instructions).
+[4294667.296000] Synthesized TLB load handler fastpath (32 instructions).
+[4294667.296000] Synthesized TLB store handler fastpath (32 instructions).
+[4294667.296000] Synthesized TLB modify handler fastpath (31 instructions).
+[4294667.296000] Cache parity protection disabled
+[4294667.296000] PID hash table entries: 1024 (order: 10, 4096 bytes)
+[4294667.296000] MIPS PLL Register:0xd0213  M=2  N=13  P=0
+[4294667.296000] MIPS Clock Freq=702000 kHz
+[4294667.296000] CPU frequency 702.00 MHz
+[4294667.296000] Console: colour dummy device 80x25
+[4294667.296000] console [ttystub0] enabled
+[4294667.296000] Dentry cache hash table entries: 1024 (order: 0, 4096 bytes)
+[4294667.296000] Inode-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[4294667.514000] Memory: 305632k/257792k available (3258k kernel code, 344688k reserved, 966k data, 204k init, 181228k highmem)
+[4294667.514000] SLUB: Genslabs=6, HWalign=32, Order=0-1, MinObjects=4, CPUs=1, Nodes=1
+[4294667.533000] Mount-cache hash table entries: 512
+[4294667.535000] net_namespace: 64 bytes
+[4294667.537000] NET: Registered protocol family 16
+[4294667.552000] SCSI subsystem initialized
+[4294667.554000] usbcore: registered new interface driver usbfs
+[4294667.554000] usbcore: registered new interface driver hub
+[4294667.555000] usbcore: registered new device driver usb
+[4294667.559000] Time: powertv-counter clocksource has been installed.
+[4294667.563000] NET: Registered protocol family 2
+[4294667.573000] IP route cache hash table entries: 2048 (order: 1, 8192 bytes)
+[4294667.574000] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[4294667.574000] TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+[4294667.574000] TCP: Hash tables configured (established 8192 bind 8192)
+[4294667.574000] TCP reno registered
+[4294667.577000] checking if image is initramfs... it is
+[4294667.991000] Freeing initrd memory: 25651k freed
+[4294667.991000] kbldr: init - Bootloader Version = 0205
+[4294667.991000] PMEM DiagPersistentMemory resource at 2f000000
+[4294667.991000] 
+[4294667.991000] PMEM: This is a power-on reboot
+[4294667.991000] pcie:pcie_Init:pcie_Init called.
+[4294667.998000] highmem bounce pool size: 64 pages
+[4294667.998000] JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[4294667.999000] fuse init (API version 7.9)
+[4294668.003000] io scheduler noop registered (default)
+[4294668.003000] LTT : ltt-heartbeat init
+[4294668.135000] RAMDISK driver initialized: 16 RAM disks of 32768K size 1024 blocksize
+[4294668.148000] loop: module loaded
+[4294668.148000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/net/usb/rtl8150.c: rtl8150 based usb-ethernet driver v0.6.2 (2004/08/27)
+[4294668.149000] usbcore: registered new interface driver rtl8150
+[4294668.151000] Driver 'sd' needs updating - please use bus_type methods
+[4294668.155000] powertv-ehci powertv-ehci.0: POWERTV EHCI
+[4294668.157000] powertv-ehci powertv-ehci.0: new USB bus registered, assigned bus number 1
+[4294668.157000] powertv-ehci powertv-ehci.0: irq 90, io mem 0x0921fe00
+[4294668.163000] powertv-ehci powertv-ehci.0: USB 0.0 started, EHCI 1.00, driver 10 Dec 2004
+[4294668.167000] usb usb1: configuration #1 chosen from 1 choice
+[4294668.169000] hub 1-0:1.0: USB hub found
+[4294668.169000] hub 1-0:1.0: 2 ports detected
+[4294668.274000] powertv-ohci powertv-ohci.0: POWERTV OHCI
+[4294668.276000] powertv-ohci powertv-ohci.0: new USB bus registered, assigned bus number 2
+[4294668.276000] powertv-ohci powertv-ohci.0: irq 91, io mem 0x0921fc00
+[4294668.334000] usb usb2: configuration #1 chosen from 1 choice
+[4294668.336000] hub 2-0:1.0: USB hub found
+[4294668.336000] hub 2-0:1.0: 2 ports detected
+[4294668.477000] usb 1-1: new high speed USB device using powertv-ehci and address 2
+[4294668.594000] usb 1-1: configuration #1 chosen from 1 choice
+[4294668.596000] hub 1-1:1.0: USB hub found
+[4294668.596000] hub 1-1:1.0: 4 ports detected
+[4294668.878000] usb 1-1.1: new full speed USB device using powertv-ehci and address 3
+[4294668.968000] usb 1-1.1: configuration #1 chosen from 1 choice
+[4294669.151000] usb 1-1.2: new full speed USB device using powertv-ehci and address 4
+[4294669.241000] usb 1-1.2: configuration #1 chosen from 1 choice
+[4294669.425000] usb 1-1.3: new full speed USB device using powertv-ehci and address 5
+[4294669.530000] usb 1-1.3: configuration #1 chosen from 1 choice
+[4294669.533000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/net/usb/rtl8150.c: Assigned random MAC address: c2:6d:b6:a8:81:f4
+[4294669.536000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/net/usb/rtl8150.c: eth0: rtl8150 is detected
+[4294669.541000] usbcore: registered new interface driver usbserial
+[4294669.541000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/usb/serial/usb-serial.c: USB Serial Driver core
+[4294669.543000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/usb/serial/usb-serial.c: USB Serial support registered for cp2101
+[4294669.544000] cp2101 1-1.1:1.0: cp2101 converter detected
+[4294669.618000] usb 1-1.1: reset full speed USB device using powertv-ehci and address 3
+[4294669.707000] usb 1-1.1: cp2101 converter now attached to ttyUSB0
+[4294669.709000] console [ttyUSB0] enabled
+[4294669.710000] cp2101 1-1.2:1.0: cp2101 converter detected
+[4294669.783000] usb 1-1.2: reset full speed USB device using powertv-ehci and address 4
+[4294669.872000] usb 1-1.2: cp2101 converter now attached to ttyUSB1
+[4294669.872000] usbcore: registered new interface driver cp2101
+[4294669.872000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/usb/serial/cp2101.c: Silicon Labs CP2101/CP2102 RS232 serial adaptor driver v0.07
+[4294669.874000] hotplug_stub: Hotplug Stub TTY Driver
+[4294669.876000] usbcore: registered new interface driver hiddev
+[4294669.877000] usbcore: registered new interface driver usbhid
+[4294669.877000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/hid/usbhid/hid-core.c: v2.6:USB HID core driver
+[4294669.877000] oprofile: using mips/24K performance monitoring.
+[4294669.878000] ip_tables: (C) 2000-2006 Netfilter Core Team
+[4294669.878000] arp_tables: (C) 2002 David S. Miller
+[4294669.878000] TCP cubic registered
+[4294669.878000] NET: Registered protocol family 1
+[4294669.878000] NET: Registered protocol family 10
+[4294669.879000] lo: Disabled Privacy Extensions
+[4294669.881000] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[4294669.886000] NET: Registered protocol family 17
+[4294669.886000] RPC: Registered udp transport module.
+[4294669.886000] RPC: Registered tcp transport module.
+[4294670.390000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/net/usb/rtl8150.c: eth0: allmulti set
+[4294670.390000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/net/usb/rtl8150.c: eth0: allmulti set
+[4294670.391000] ADDRCONF(NETDEV_UP): eth0: link is not ready
+[4294670.391000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/net/usb/rtl8150.c: eth0: allmulti set
+[4294671.392000] IP-Config: Incomplete network configuration information.
+[4294671.392000] /local_data/SCM/builds/thixn/NGP_Kernel_2624_FULL_HIGH_MEM_Build/linux/drivers/net/usb/rtl8150.c: eth0: allmulti set
+[4294671.397000] Freeing unused kernel memory: 204k freed
+[4294671.398000] Algorithmics/MIPS FPU Emulator v1.5
+Mounting /proc filesystem
+Mounting /dev filesystem
+Mounting /sys and starting mdev
+Installing platform driver
+-----Start Sciatl Platform Kernel Driver -----
+Installing platform driver
+Making platform device file
+Checking for root filesystem placement
+Try flash root...Setting failure modes on flash partitions
+Unable to find device with name BootSet
+Unable to find device with name UpdateSet
+Unable to find device with name AppData
+Unable to find device with name SysData
+rd_store missing or not a decimal number; not using flash for root filesystem
+Try disk root...Installing IDE driver
+-----Installing ide Driver...
+-----DVR Box: Loading DVR Modules
+Checking on partitions
+Warning: extended partition does not start at a cylinder boundary.
+DOS and Linux will interpret the contents differently.
+Have base partitions
+Copying root filesystem to /dev/hda2
+Creating loopback device for /dev/hda
+Warning: extended partition does not start at a cylinder boundary.
+DOS and Linux will interpret the contents differently.
+     Sector offset: 524288
+     Byte offset:   268435456
+Linking to /dev/loop0
+Mounting CRAMFS image
+Using root filesystem on disk
+Root filesystem now mounted, proceeding...
+Adjusting /etc/mtab...moving filesystems to new root...Switching to new root
+Setting up /proc, /sys, /dev, and /proc/bus/usb
+mount: mounting proc on /proc failed: Device or resource busy
+Root filesystem type is "cramfs"
+Setting up /var hierarchy
+Start udev and mount /dev/pts
+udevd[393]: main: will daemonize
+udevd[394]: main: initialize max_childs to 256
+udevd[394]: main: initialize max_childs_running to 16
+Hostname is powertv
+Setting system configurables
+Configure /dev/shm and /tmp
+Enable logging
+killall: syslogd: no process killed
+/opt/sciatl/image_brand_text copied to /proc/panic_note
+Executing initscripts
+Executing /etc/rcS.d/00init
+Executing /etc/rcS.d/10telnet
+Telnet not authorized
+Executing /etc/rcS.d/14sciatlinit.sh
+Channel Bonding is DISABLED
+Channel Bonding is DISABLED 
+provider=
+memsize=524288
+-----Start WDT -----
+-----Start STAPI Kernel Drivers-----
+Programming ST231a with VideoLX1_Cronus.bin
+ST231a in RESET
+Programming ST231b with VideoLX2_Cronus.bin
+ST231b in RESET
+Loading STAPI modules
+[4294687.244000] Load module fdma [252] by insmod (pid 595)
+Done loading STAPI modules
+Module                  Size  Used by    Tainted: PF 
+zeus_stapi 674232 0 - Live 0x9e800000 (PF)
+platform 201776 2 zeus_stapi,ided, Live 0x9f9c0000 (P)
+ided 264096 1 - Live 0x9fa80000 (F)
+-----Start Proprietary Drivers -----
+-----Start Sciatl Kernel Driver -----
+[4294688.360000] abe:abe_SubInit: HSI_CONFIG = 0x80004000 instead of zero!!
+-----Loading Entropy Module
+-----NOT Loading PCIe Ethernet Module
+Create device nodes for sciatl drivers
+-----Start  the NP Image Loading---------
+Loading /lib/modules/2.6.14/sciatl/npimage.bin
+NP firmware download and reset completed successfully
+-----Finish the NP Image Loading---------
+Waiting for mcomDrv (ST231s) to complete initialization
+Waiting for mcomDrv (ST231s) to complete initialization
+Waiting for mcomDrv (ST231s) to complete initialization
+Waiting for mcomDrv (ST231s) to complete initialization
+Executing /etc/rcS.d/15syspart
+Executing /etc/rcS.d/160netsnmp.sh
+Executing /etc/rcS.d/16diag.sh
+Executing /etc/rcS.d/17setipa
+Warning: No IP address set; skipping IP configuration
+Executing /etc/rcS.d/20firebus.sh
+----- FIREBUS kernel drivers -----
+8642 model box
+------ Box supports 1394! Loading 1394 drivers------
+----- Create VividLogic Device Node -----
+----- vl1394Driver node is created -----
+Executing /etc/rcS.d/23netmod
+DHCT is MoCA capable
+load /lib/modules/2.6.24/net/ipt_podf.ko
+load /lib/modules/2.6.24/net/podn.ko
+ModelType =  0x0000000E
+avnet is found.
+load /lib/modules/2.6.24/net/kvni.ko
+ServiceProvider=Comcast Ver=1 Mode=2
+DHCT is kvni capable
+Found Homenetworking device eth1
+DHCT is a home networking device
+Launch clinkd 
+Executing /etc/rcS.d/24tcpretries
+Setting /proc/sys/net/ipv4/tcp_syn_retries to 3 (45s time-out)
+Executing /etc/rcS.d/25mocacss-init.sh
+Executing /etc/rcS.d/34oobft.sh
+-----Load Out-of-Band Filter and Translation Module (oobpktfilt.ko-----
+-----Load COMSS Platform Module (comssplat.ko-----
+Executing /etc/rcS.d/35docss.sh
+Channel Bonding is DISABLED
+Create device nodes for DOCSIS Subsystem
+Create UPROC directory for DOCSIS Subsystem
+Starting DOCSIS Subsystem
+Obtaining DOCSIS Binary...
+FOUND DOCSIS BINARY in local file system
+mount: mounting /dev/sda1 on /tmp/usbstick failed: No such file or directory
+umount: cannot umount /tmp/usbstick: Invalid argument
+mount: mounting /dev/sda1 on /tmp/usbstick failed: No such file or directory
+umount: cannot umount /tmp/usbstick: Invalid argument
+USING DOCSIS BINARY in local file system
+DHCT is MoCA capable
+Warning: CMCI device does not exist
+Warning: eCM will run without a CMCI port
+Channel Bonding is DISABLED 
+SUPPORTED_TUNERS: 4 
+Detected family: 86
+MoCA support is -m
+Launch DOCSS with download enabled for 8kg5/RNG200/8kg6
+DOCSS: initialization complete.
+Executing /etc/rcS.d/36modchk.sh
+===Check For Kernel BOOT Up PROBLEMS:=========================
+======Any Errors:=============================================
+==============================================================
+======Any DLL Symbols NOT FOUND:==============================
+==============================================================
+======Any Warnings:===========================================
+==============================================================
+family=86
+ide0 is found.
+avnet is found.
+platform is found.
+============================================================================================
+======Num of InsMods Targeted: 14 ===========================================================
+======Num of Live Kernel Mods: 14 ===========================================================
+!!!ALL Kernel Modules INSTALLED OK!!!======================================================
+============================================================================================
+Executing /etc/rcS.d/37netprocs
+mkdir: cannot create directory '/dev/shm': File exists
+Launching DLSS - code image storage = /dev/hda1 (HDD)
+Executing /etc/rcS.d/40fuse.sh
+run DLSS using raw device /dev/hda1 (has 524287 blocks)
+00:00:32: /bin/health_monitor [1237]: === health monitor process launched... ===
+STARTUP_WAIT=60
+CHECK_SLEEP=300
+HealthMonLogLevel=1
+00:00:32: /bin/health_monitor [1250]: main: Successfully registered with DiagProc.
+Launching OCAP -- ./bin/ocap.elf
+Initializing diagnostics.
+phal_main: Enter
+phal_main: Platform init
+phal_main: Calling pk_Main
+pk_main: Attribute init
+pk_main: Lock init
+pk_main: Setup startup context
+00:00:34.784, PTV boot delta 00:00:00.000, Log delta 00:00:00.000  Starting PowerTV OS
+pk_main: Misc init
+pk_main: Create resource pools
+pk_main: Memory Manager init 1
+memTotal:358156 KB, commitLimit:329500 KB, heapSize:275234 KB
+pk_main: Timer init
+pk_main: Timer queue init
+pk_main: System thread init
+SystemProc: Mutex init
+SystemProc: Memory Manager init 2
+pk_main: Done
+SystemProc: Sys_init
+the mount name global var is : /tmp/uprocthe root list is: /about to call fuse main with mount point as: /tmp/uproc
+snmpd_RegisterMibs() Entry
+[4294705.878000] ACCESS 00000002
+[4294705.878000] Open Read/Write
+    Info> BLIT: Mapping successfull: 3f0b4000 from 9440000 to 9441000
+
+STBLIT: stblit_SoftInit called
+    Info> Device 'Blitter' initialised
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+libdavss.so can not be opened!
+libdavss.so: cannot open shared object file: No such file or directory
+Warning: extended partition does not start at a cylinder boundary.
+DOS and Linux will interpret the contents differently.
+fsm-preserve: Have base partitions
+fsm-preserve: Unknown partition table.  No need to preserve data
+Warning: extended partition does not start at a cylinder boundary.
+DOS and Linux will interpret the contents differently.
+/dev/hda6: recovering journal
+00:00:43.506, PTV boot delta 00:00:08.722, Log delta 00:00:08.722, 'Sys. Init' thread delta 00:00:00.000  >>>
+>>> hncmn_MbSystemInit(198) registered for (kDt_Fsm | kEt_FsmFileSystemOn) event...
+
+/dev/hda6: Clearing orphaned inode 30 (uid=0, gid=0, mode=0100005, size=999924)
+/dev/hda6: Superblock last mount time is in the future.  FIXED.
+/dev/hda6: clean, 6173/131072 files, 18832/262143 blocks
+00:00:44.453, PTV boot delta 00:00:09.669, Log delta 00:00:00.947, 'Sys. Init' thread delta 00:00:00.000  >>>
+>>> hncmn_MbSystemInit(229) received kEt_FsmFileSystemOn event x=0x48613200(/mnt/fsm0) bFsm0IsReady==true... break!
+
+/dev/hda7: recovering journal
+/dev/hda7: Superblock last mount time is in the future.  FIXED.
+/dev/hda7: clean, 66/131072 files, 8600/262143 blocks
+[dtcpip]Keystore Initialized
+Entering podc_ctrl_SetUpnpIf: sPodc_Ctrl_Priv.upnpIf = 0x45347c, ifname eth1
+00:00:49.663, PTV boot delta 00:00:14.879, Log delta 00:00:05.210, 'Sys. Init' thread delta 00:00:00.000  sys_Init Done
+UTIL: Initializing environment
+UTIL: Loaded environment module.  Setting environment pointers
+Warning: no pid found for process telnetd
+UTIL: Loading environment variables via SNFS
+<envInitSnfs> ERROR: While reading file <snfs://mpeenv.ini>
+getFlagFileValue("usbStorageEnabled") returns 0xffffffff
+mpeos_isUsbFlagEnabled() isUsbMounted = 00
+getFlagFileValue("CDCAfeatureFlags") returns 0xffffffff
+UTIL: Added VMOPT.45=-Xnoverify!
+-------------------Axiom Version Info----------------------------------
+>>>> AXIOM Image OHT Version        :    OHT1.7.5.1103
+>>>> AXIOM Middleware Version       :    Axiom-Geo-1.75.27.1
+>>>> Hardware ModelID               :    SARN200N
+-----------------------------------------------------------------------
+Initializing production logs
+Initializing production logs from env!
+port_RegisterLogs: Setting MPE_JAVA to info
+Done initializing production logs!
+getFlagFileValue("usbStorageEnabled") returns 0xffffffff
+mpeos_isUsbFlagEnabled() isUsbMounted = 00
+BOOTPERF: tXX : SI Profile2 Tables acquired!
+<envSetTimeZone> 'TZ' value:GMT
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] OCAP Java code invoked
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vendor = Esmertec AG
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] OCAP.terminal.profile.set = profile=257;version=1.0.0|profile=1;version=1.0.3|profile=2;version=1.0.3
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.Graphics2D.setStroke.BasicStroke.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.event.MouseEvent.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] os.name = MPE Version 0.6 on PowerTV - 8.14.35.1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.dll.prefix = 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.dvr = 1.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.system.setup.appid = 3B:100
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.hardware.host_id = 0-380-204-137-737
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vm.specification.vendor = Sun Microsystems Inc
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.hn.update = I02
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.event.KeyEvent.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.profile = OCAP 1.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.hardware.createdate = 04-19-2012
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] com.jbed.coredumpfor = ocap.elf
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.system.highdef = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.fp.update = I02
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.asbo.dir = /lib
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] user.name = 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.compiler = FastDAC
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] sun.net.inetaddr.ttl = 180
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.tzdata.class = java.util.TimeZoneDataSimple
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.hn = 3.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.version = 1.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] havi.specification.vendor = DVB
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] microedition.platform = j2me
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] com.comcast.tru2wayLeasedDevice = TRUE
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] user.language = en
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] awt.event.focusmanagerenabled = false
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.thread.timeslice = 3
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.Frame.setUndecorated.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.version = Java ME PBP 1.1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] microedition.configuration = CLDC-1.1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] file.encoding.pkg = com.sun.cldc.i18n
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] file.separator = /
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.specification.name = Java ME Foundation API Specification
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.thread.flags = 3
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.class.version = 48.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.mem.trace.oom = 1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] havi.specification.name = MHP
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.home = /romfs/evm
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.task.priority.timer = 8
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] os.version = 8.14.35.1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] File.rootdir = /
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] com.jbed.RR.interval = 2000
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] path.separator = :
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.memory.total = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vm.version = 20120411-212710
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.hardware.serialnum = SABXKDDJV
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.hardware.version_id = 0 0 0 12
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.cablecard.identifier = 0-080-336-860-186
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.eb.version.micro = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.fp = 1.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] sun.net.inetaddr.negative.ttl = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.software.vendor_id = Cisco
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] havi.implementation.version = Axiom-Geo-1.75.27.1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] awt.toolkit = com.vidiom.impl.awt.MPEToolkit
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.eb.version.major = 1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.dvr.update = I03:1027:1057:1062:1098:1183:1258:1275:1279:1321:1325:
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] user.home = 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.Frame.setSize.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.event.MouseEvent.supportLevel = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.profile.enhanced_broadcast = YES
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.specification.vendor = Sun Microsystems Inc
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] microedition.locale = en-US
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.system.digital_only = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.library.path = 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vendor.url = http://www.esmertec.com/
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.ds.update = I01:1149:
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.eb.version.minor = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vm.vendor = Esmertec AG
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.hardware.model_id = SARN200N
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.profile.interactive_broadcast = YES
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] havi.implementation.vendor = Vidiom Systems Inc
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.class.path = /romfs/apps:/romfs/ptvapps:/romfs/usr:/romfs/oemapps:/romfs/qa/xlet
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.software.model_id = Axiom
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.Frame.setTitle.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.version.update = :1011:1032:1040:1060:1075:1092:1098:1102:1113:1114:1115:1116:1122:1125:1126:1147:1148:1151:1152:1155:1166:1176:1177:1185:1216:1226:1244:1248:1303:1316:1326:1471:1485:
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vm.specification.name = Java Virtual Machine Specification
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] dvb.persistent.root = /itfs/usr
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] dvb.returnchannel.timeout = 10000
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.mem.dump.file = /mnt/fsm0/heap.dump
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vm.specification.version = 1.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.Frame.setLocation.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.io.tmpdir = 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.memory.video = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] havi.implementation.name = OCAP HAVi
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] microedition.encoding = ISO8859_1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] os.arch = mips
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.version.micro = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.api.option.ds = 1.0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.Component.setCursor.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.ext.dirs = /romfs/evm/lib/ext
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.Frame.setResizable.isRestricted = true
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] user.dir = 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.ib.version.micro = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] line.separator = 
+[Java] 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.version.major = 1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.vm.name = Jbed Advanced CDC
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.hardware.vendor_id = 0002DE
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.ib.version.major = 1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.compiler.buffsize = 4M
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] user.region = US
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] file.encoding = ISO8859_1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.version.minor = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] havi.specification.version = 1.0.3
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.hardware.version = 1.2
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.compiler.noBufferRecycle = false
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.awt.event.KeyEvent.supportMask = 7
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] mhp.ib.version.minor = 0
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] File.basedir = /Installed/
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.task.priority.iteration = 7
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] java.specification.version = 1.1
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.romresources = /romfs/sys/ocap-rez.jar
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.dll.subdir = lib
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] ocap.software.version = OHT1.7.5.1103
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.mem.slowchurn.limit.start = 5M
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.dll.suffix = .ptv
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] jbed.task.priority.native = 6
+[Java] Value is /itfs/dshsprefs
+<envSetTimeZone> 'TZ' value:GMT
+<envSetTimeZone> 'TZ' value:GMT
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] [DVRSTART] Helper thread loadRecords starting... 
+[Java] 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] [DVRSTART] Helper thread loadRecord finished for 0 recordings 
+[Java] 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] [DVRSTART] restoreRecordings starting... 
+[Java] 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] [DVRSTART] restoreRecording m_recdbLoaded set to true... 
+[Java] 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] [DVRSTART] restoreRecordings finished 
+[Java] 
+[Java] SysInfoEvent[4000000,1/1/96 12:00 AM] [DVRSTART] Helper thread ended
+[Java] 
+[Java] DownloadManager being instantiated
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] [DVRSTART] checkForOrphanedRecordings() called... 
+[Java] 
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] POD instantiated with isReady=true
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] POD.updateGFCache() called (POD instantiated with isReady=true), updated 9 features (1={},5={},6={},10={},112={},13={0,102},14={},16={},8={122,122,122})
+<envSetTimeZone> 'TZ' value:GMT
+<envSetTimeZone> 'TZ' value:GMT
+[Java] BOOTPERF: t07 : OCAP Implementation Initialized!
+[Java] 
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] [DVRSTART] checkForOrphanedRecordings() ended... 
+[Java] 
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] bootProcess() initiated...
+00:01:08.101, PTV boot delta 00:00:33.317, Log delta 00:00:18.438, 'TblMgr Main' thread delta 00:00:00.000  
+ocm_tbl_WriteTableWithRdd(2103) CDS RDD (versionNum=0x7, numSections=1) bAllRddSectionsAcquired==true... calling ocm_tbl_SwitchTable()...
+
+00:01:08.105, PTV boot delta 00:00:33.321, Log delta 00:00:00.004, 'TblMgr Main' thread delta 00:00:00.000  
+ocm_tbl_WriteTableWithRdd(2103) MMS RDD (versionNum=0x7, numSections=1) bAllRddSectionsAcquired==true... calling ocm_tbl_SwitchTable()...
+
+00:01:08.111, PTV boot delta 00:00:33.327, Log delta 00:00:00.006, 'TblMgr Main' thread delta 00:00:00.000  >>>>>
+##### (kDt_Tbl | kEt_TblSIDataLoaded): OOB SI activationTime: 0607.1958.01 ##### <<<<<vct_id: 0x66, scte65ProfileId: 2, tomId: 2(TomScte65)...
+
+00:01:08.112, PTV boot delta 00:00:33.328, Log delta 00:00:00.001, 'TblMgr Main' thread delta 00:00:00.000    Virtual sects 6 Defined sects 2 Services: Normal 494 Hidden 61 Total 555
+
+00:01:08.125, PTV boot delta 00:00:33.341, Log delta 00:00:00.013, 'Tvp Manager' thread delta 00:00:00.000  SI Data Loaded
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] XAIT sections received: 1 (version 10) (hash -665544191)
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] XAIT received
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] XAIT parsed
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] This stack has authentication capability for OCAP applications.
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] POD.updateGFCache() called (POD_EVENT_GENERIC_FEATURE_UPDATE), updated 9 features (1={},5={254,212},6={2},10={},112={},13={0,102},14={},16={},8={122,122,122})
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] POD.updateGFCache() called (POD_EVENT_GENERIC_FEATURE_UPDATE), updated 9 features (1={},5={254,212},6={2},10={},112={},13={0,102},14={},16={},8={122,122,122})
+[Java] BOOTPERF: t11 : XAIT Received!
+BOOTPERF: t10 : Host IP Assigned!
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Considering IMA: ID=3a703c,PRI=250,LAUNCH=7,VER=52,CTRL=1,VIS=3,NAMES=[ENG:Buckeye-2.0.4-Prod-Zipped]
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Considering IMA: ID=3a6002,PRI=250,LAUNCH=4,VER=52,CTRL=1,VIS=3,NAMES=[eng:MAC-O-2.0.4-Prod-Zipped]
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Considering IMA: ID=3a6000,PRI=255,LAUNCH=1,VER=52,CTRL=1,VIS=3,NAMES=[ENG:CMAC-2.0.4-Prod-Zipped]
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] MonitorApp id:3a6000, ver:52 found in service 0x20004
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Waiting for MonApp launch...
+[Java] SysInfoEvent[4000000,3a6000,6/8/12 2:23 PM] AppContext.load() called for (id:3a6000 v:52, initFile = /itfs/app/10/com/cox/cma/client/Startup.class)
+<envSetTimeZone> 'TZ' value:EST,-18000000,2,8,-1,7200000,10,1,-1,7200000,3600000
+[Java] SysInfoEvent[4000000,3a6000,6/8/12 2:23 PM] MonitorApp: running from storage AppEntry(id=3a6000,priority=255,launchOrder=1,version=52,names=[ENG:CMAC-2.0.4-Prod-Zipped],ctlCode=1,bound=true,service=20004,visibility=3,storagePriority=150
+[Java] ,classname=com.cox.[Java] cma.client.Startup,baseDir=/,classPath=["osl"],params=[],registered_apis=[],transport_protocols=[IC[http://bapps.e2ecdn.comcast.net/barc/apps/PROD/2_0_4/Zipped/VPM/cmac/cma-barcelona-signed-1.505.2-signed-comcast-obfuscated.zip]],profil
+[Java] es=[257:1.0.0]prefe[Java] tch=null,dii=null,icon=null,icon_flags=0,,MonApp)
+[Java] SysInfoEvent[4000000,3a6000,6/8/12 2:23 PM] MonitorApp: loading initial class com.cox.cma.client.Startup (id:3a6000 v:52)...
+[Java] SysInfoEvent[4000000,3a6000,6/8/12 2:23 PM] MonitorApp: loaded initial class com.cox.cma.client.Startup
+[Java] BOOTPERF: t12 : TVP : CMAC Constructor
+[Java] SysInfoEvent[4000000,3a6000,6/8/12 2:23 PM] Signalling MonApp CONFIGURING...
+[Java] BOOTPERF: t13a : MonApp CONFIGURING...
+[Java] BOOTPERF: t12 : MonApp Launched!
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Waiting for MonApp to be configured...
+[Java] [ CMAC ][ powermodehandler ][ INFO ] LastPowerMode preserved at Low Power -- set to Low Power
+[Java] [deviceIDUpdater] new networkType[Cisco]
+[Java] [ CMAC ] [ deviceIdRetriever ] [ INFO ] ocap://0xACDD resolves to service name:1966 number:1966
+[Java] [deviceIDUpdater] new controllerId[1966]
+[Java] [deviceIDUpdater] new plantId[102]
+[Java] [deviceIDUpdater] new channelMapId[102]
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://bscm.comcast.net:8080/fds/filesearch.do?namespace=TVP&filename=/locationsxml&controllerid=1966&id=102
+[Java] cma-start: Loading Tru2Log configuration from: com/cox/cma/client/data/tru2log.properties
+[Java] cma-start: Applying Tru2Log configuration
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpURLConnection.HTTP_OK on url=http://bscm.comcast.net:8080/fds/filesearch.do?namespace=TVP&filename=/locationsxml&controllerid=1966&id=102
+[Java] [DataToken] getData on location:http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/sl_Xnr_1gkTSIKcmvCxXHEU9Q==.props
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/sl_Xnr_1gkTSIKcmvCxXHEU9Q==.props
+[Java] [DataToken] getData on location:http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/services_E8_yxEdXQlmYOKMydcqhyQ==.xml
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/services_E8_yxEdXQlmYOKMydcqhyQ==.xml
+[Java] [DataToken] getData on location:http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/lb_ZXSMuyYyRdytgZESjqKY0w==.xml
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/lb_ZXSMuyYyRdytgZESjqKY0w==.xml
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpURLConnection.HTTP_OK on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/sl_Xnr_1gkTSIKcmvCxXHEU9Q==.props
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpURLConnection.HTTP_OK on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/services_E8_yxEdXQlmYOKMydcqhyQ==.xml
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpURLConnection.HTTP_OK on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/lb_ZXSMuyYyRdytgZESjqKY0w==.xml
+[Java] 1317   [ CMAC ][ authorizationmonitor ] [ INFO ] disconnect.eid.cisco.value=2 is now available
+[Java] 1324   [ CMAC ][ authorizationmanager ] [ INFO ] Query caHandler.getResourceAuthorization(2)
+[Java] 1354   [ CMAC ][ authorizationmanager ] [ INFO ] Long EID format:4294967298, targetid:4294967298
+[Java] 1359   [ CMAC ][ authorizationmanager ] [ INFO ] caAuthorization of 2 is authorized
+[Java] 1370   [ CMAC ][ authorizationmonitor ] [ INFO ] dvr.eid.cisco.value=27 is now available
+[Java] 1374   [ CMAC ][ authorizationmanager ] [ INFO ] Query caHandler.getResourceAuthorization(27)
+[Java] 1426   [ CMAC ][ authorizationmanager ] [ INFO ] Long EID format:4294967323, targetid:4294967323
+[Java] 1428   [ CMAC ][ authorizationmanager ] [ INFO ] caAuthorization of 27 is authorized
+[Java] 1444   [ CMAC ][ authorizationmonitor ] [ INFO ] hd.eid.cisco.value=26 is now available
+[Java] 1449   [ CMAC ][ authorizationmonitor ] [ INFO ] START setMocaState to false
+[Java] 1452   [ CMAC ][ authorizationmanager ] [ INFO ] Query caHandler.getResourceAuthorization(26)
+[Java] 1473   [ CMAC ][ authorizationmanager ] [ INFO ] Long EID format:4294967322, targetid:4294967322
+[Java] 1476   [ CMAC ][ authorizationmanager ] [ INFO ] caAuthorization of 26 is authorized
+[Java] 1480   [ CMAC ][ authorizationmonitor ] [ INFO ] mdvr.eid.cisco.value=28 is now available
+[Java] 1483   [ CMAC ][ authorizationmanager ] [ INFO ] Query caHandler.getResourceAuthorization(28)
+[Java] 1502   [ CMAC ][ authorizationmanager ] [ INFO ] Long EID format:4294967324, targetid:4294967324
+[Java] 1504   [ CMAC ][ authorizationmanager ] [ INFO ] caAuthorization of 28 is authorized
+[Java] OslVersion.getInstance()
+[Java] CaServerDataSource[PINConfig]: exception: trying to open persistent file: Opening /itfs/usr/3a/6000/PINConfig in mode 1
+[Java] CaServerDataSource[PINConfig]: exception: trying to open hdd file: Opening /itfs/app/10/PINConfig in mode 1
+[Java] CaServerDataSource[PCConfig]: exception: trying to open persistent file: Opening /itfs/usr/3a/6000/PCConfig in mode 1
+[Java] CaServerDataSource[PCConfig]: exception: trying to open hdd file: Opening /itfs/app/10/PCConfig in mode 1
+[Java] 1894   [ CMAC ][ authorizationmonitor ] [ INFO ] found MOCA interface at OID=1.3.6.1.2.1.2.2.1.3.3
+[Java] 1935   [ CMAC ][ authorizationmonitor ] [ INFO ] setMocaState() - MIB set - 1.3.6.1.4.1.31621.1.1.1.1.1.1.3
+[Java] 1958   [ CMAC ][ authorizationmonitor ] [ INFO ] START setMocaState to true
+[Java] 2422   [ CMAC ][ authorizationmonitor ] [ INFO ] found MOCA interface at OID=1.3.6.1.2.1.2.2.1.3.3
+[Java] 2452   [ CMAC ][ authorizationmonitor ] [ INFO ] setMocaState() - MIB set - 1.3.6.1.4.1.31621.1.1.1.1.1.1.3
+[Java] cma-start: registering interest in Tru2Log configuration
+[Java] [RegisteredApi] api ver unchanged name:osl scdf:osl/osl.scdf storagePriority:255 version:CMAC2.0.4_1205_1.505.2_20120503-1217
+[Java] 3918   [ CMAC ][ LBManager ] [ INFO ] added DownloadObserver to /lb.xml.
+[Java] 3940   [ CMAC ][ LBManager ] [ INFO ] notifyDownloadedData called for /lb.xml.
+[Java] 3996   [ CMAC ][ LBManager ] [ INFO ] lb.xml downloaded, added LinkListener for HostManager requests
+[Java] 4008   [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165426233
+[Java] 4011   [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] 4015   [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] [DataToken] getData on location:http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/services_E8_yxEdXQlmYOKMydcqhyQ==.xml
+[Java] VOD: Starting
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/services_E8_yxEdXQlmYOKMydcqhyQ==.xml
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpURLConnection.HTTP_OK on url=http://bfds.e2ecdn.comcast.net:80/barc/fds/1966/TVP/services_E8_yxEdXQlmYOKMydcqhyQ==.xml
+[Java] javax.tv.locator.InvalidLocatorException: Locator (ocap://f=0x23957f40.m=0x10) was not an OCAP Service
+[Java] 	at com/vidiom/impl/manager/service/SIManagerImpl.getService(Ljavax/tv/locator/Locator;)Ljavax/tv/service/Service;(bytecode:51)
+[Java] 	at com/vidiom/impl/manager/service/DVRSIManagerImpl.getService(Ljavax/tv/locator/Locator;)Ljavax/tv/service/Service;(bytecode:36)
+[Java] 	at com/vidiom/impl/davic/net/tuning/NetworkInterfaceImpl.tune(Lorg/davic/net/Locator;Lorg/davic/resources/ResourceProxy;)V(bytecode:189)
+[Java] 	at org/davic/net/tuning/NetworkInterfaceController.tune(Lorg/davic/net/Locator;)V(bytecode:22)
+[Java] 	at org/ocapx/impl/autodiscovery/AbstractDiscoveryTunePerformer.tuneLocator(Lorg/davic/net/tuning/NetworkInterfaceController;Lorg/davic/net/Locator;)Z(SourceFile:119)
+[Java] 	at org/ocapx/impl/autodiscovery/AutodiscoverySessionThread.run()V(SourceFile:511)
+[Java] 	at java/lang/Thread.outer()V(Thread.java:395)
+00:01:27.024, PTV boot delta 00:00:52.240, Log delta 00:00:18.899, 'TblMgr Main' thread delta 00:00:00.000  
+ocm_tbl_WriteTableWithRdd(2103) VCM RDD (versionNum=0x13, numSections=6) bAllRddSectionsAcquired==true... calling ocm_tbl_SwitchTable()...
+
+00:01:27.046, PTV boot delta 00:00:52.262, Log delta 00:00:00.022, 'TblMgr Main' thread delta 00:00:00.000  
+ocm_tbl_WriteTableWithRdd(2103) DCM RDD (versionNum=0x13, numSections=2) bAllRddSectionsAcquired==true... calling ocm_tbl_SwitchTable()...
+
+[Java] BOOTPERF: t13 : TVP : OcapSystem.monitorConfiguredSignal()
+[Java] SysInfoEvent[4000000,3a6000,6/8/12 2:23 PM] Signalling MonApp CONFIGURED.
+[Java] BOOTPERF: t13b : MonApp CONFIGURED.
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] MonApp launch succeeded
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] MonitorApp(3a6000): STARTED
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Boot Process Complete.
+[Java] SysInfoEvent[4000000,3b7010,6/8/12 2:23 PM] AppContext.load() called for (id:3b7010 v:0, initFile = /romfs/oemapps/VolumeDisplay/com/sciatl/xlet/VolumeDisplay/VolDisplayXlet.class)
+[Java] SysInfoEvent[4000000,3a703c,6/8/12 2:23 PM] AppContext.load() called for (id:3a703c v:52, initFile = /itfs/app/12/XletEASMain.class)
+[Java] SysInfoEvent[4000000,3a6002,6/8/12 2:23 PM] AppContext.load() called for (id:3a6002 v:52, initFile = /itfs/app/11/com/tvworks/tva/client/standalone/StandaloneEntry.class)
+[Java]  VolDisplayXlet initXlet entered
+[Java]  VolDisplayXlet startXlet entered
+00:01:28.038, PTV boot delta 00:00:53.254, Log delta 00:00:00.992, 'TblMgr Main' thread delta 00:00:00.000  
+ocm_tbl_WriteTableWithRdd(2103) SNS RDD (versionNum=0x13, numSections=6) bAllRddSectionsAcquired==true... calling ocm_tbl_SwitchTable()...
+
+[Java] VolDisplayEngine constructer b4 new OemAppsExt() bsimmode =  false
+[Java] VolDisplayEngine after new OemAppsExt() 
+[Java]  VolDisplayEngine setupParameter delayUI 3000
+[Java]  VolDisplayEngine setupParameter iMaxCounter= 0
+[Java] 7677   [ CMAC ][ LBManager ] [ INFO ] getting serverType:scm and excluding:null
+BOOTPERF: tXX : SI NTT Table acquired!
+[Java] 7711   [ CMAC ][ LBManager ] [ INFO ] LoadServerGroup is choosing from 1 server instances, capacity 100
+[Java] BOOTPERF:t<14> Navigator Start Initialization
+[Java] 7751   [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165429948
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Update to System SI table - Flushing SICache beginning!
+[Java] 7814   [ CMAC ][ authorizationmanager ] [ INFO ] CAAuthorizationEvent for eid 28:  authorized
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] Update to System SI table - Flushing SICache is complete!
+[Java] 7877   [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] SysInfoEvent[4000000,6/8/12 2:23 PM] SIDatabaseImpl: Update to System SI table - Notify ServiceDetailsChangeListeners
+[Java] 7933   [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] [DataToken] getData on location:http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206
+[Java] [ CMAC ] [ deviceIdRetriever ] [ INFO ] ocap://0xACDD resolves to service name:1966 number:1966
+[Java] 8104   [ CMAC ][ authorizationmanager ] [ INFO ] CAAuthorizationEvent for eid 26:  authorized
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpURLConnection.HTTP_OK on url=http://10.252.133.140:8080/scm/ODCconfig/ServiceGroup?system=1966&QAMNameList=21201,21202,21203,21204,21205,21206
+[Java] BUCKEYE:Applying Tru2Log default configuration.
+[Java] enable.reflector=false
+00:01:32: /bin/health_monitor [1250]: starting health monitor (performed every 300 seconds)...
+00:01:32: /bin/health_monitor [1250]: Following 6 process(es) are being monitored
+00:01:32: /bin/health_monitor [1250]: snmpd; Restart; 3
+00:01:32: /bin/health_monitor [1250]: bbhm; Restart; 3
+00:01:32: /bin/health_monitor [1250]: dlss; Restart; 3
+00:01:32: /bin/health_monitor [1250]: dhcpc; NoAction; 3
+00:01:32: /bin/health_monitor [1250]: podc; NoAction; 0
+00:01:32: /bin/health_monitor [1250]: comc; Reboot; 0
+00:01:32: /bin/health_monitor [1250]: building health monitor information...
+00:01:33: /bin/health_monitor [1250]: WARNING: No instance of "bbhm" found
+[Java] Buckeye S/W Ver: 2.0.4-1205-r4_30581.4
+[Java] Buckeye Upgrade - Aspen data store does not exist
+[Java] [deviceIDUpdater] new plantId[0]
+[Java] 16196  [ CMAC ][ authorizationmanager ] [ INFO ] CAAuthorizationEvent for eid 27:  authorized
+[Java] 16272  [ CMAC ][ authorizationmanager ] [ INFO ] CAAuthorizationEvent for eid 2:  authorized
+[Java] 20874  [ Buckeye ][ ImageRepository ] [ WARN ] Invalid poster art image file cache configuration.
+[Java] 20899  [ Buckeye ][ ImageRepository ] [ WARN ] Invalid poster art display buffer configuration.
+[Java] 20962  [ Buckeye ][ ImageRepository ] [ WARN ] Invalid poster art image file cache configuration. Use the default setting: 120
+[Java] 20986  [ Buckeye ][ ImageRepository ] [ WARN ] Invalid poster art display buffer configuration. Use the default setting: 20
+[Java] BOOTPERF:t<15> Navigator Initialization Complete
+[Java] BUCKEYE:Registering (Buckeye) with Tru2Log as a consumer.
+[Java] 31233  [ CMAC ][ khmanager ] [ DEBUG ] Handler added from PID 96
+[Java] [ CMAC ][ splashscreen ][ WARN ] componentResized
+[Java] ErrorEvent[24000000,3a6002,6/8/12 2:24 PM] java.lang.NullPointerException: null
+[Java] java.lang.NullPointerException
+[Java] 	at com/tvworks/tva/client/standalone/StandaloneEntry.report(Lorg/havi/ui/event/HScreenConfigurationEvent;)V(StandaloneEntry.java:492)
+[Java] 	at org/havi/ui/e.run()V(bytecode:26)
+[Java] 	at com/vidiom/impl/manager/application/WorkerTask.run()V(bytecode:12)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext$2.run()V(bytecode:18)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext$1.run()Ljava/lang/Object;(bytecode:2)
+[Java] 	at java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;(AccessController.java:289)
+[Java] 	at java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;(AccessController.java:263)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext.runAsContextSamePriority(Ljava/lang/Runnable;)V(bytecode:45)
+[Java] 	at com/vidiom/impl/manager/application/AbstractCallerContext.runAsContext(Ljava/lang/Runnable;)V(bytecode:10)
+[Java] 	at com/vidiom/impl/manager/application/ContextTask.run()V(bytecode:4)
+[Java] 	at com/vidiom/impl/manager/application/DemandExecQueue$DemandTask.run()V(bytecode:9)
+[Java] 	at com/vidiom/impl/manager/application/WorkerTask.run()V(bytecode:12)
+[Java] 	at com/vidiom/impl/manager/application/ThreadPool$1.run()V(bytecode:1)
+[Java] 	at java/lang/Thread.outer()V(Thread.java:393)
+[Java] 
+[Java] 45889  [ CMAC ][ LBManager ] [ INFO ] getting serverType:amr and excluding:null
+[Java] 45892  [ CMAC ][ LBManager ] [ INFO ] LoadServerGroup is choosing from 1 server instances, capacity 100
+[Java] 45895  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165468129
+[Java] 45897  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] 45900  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] 45908  [ CMAC ][ LBManager ] [ INFO ] getting serverType:settopmonitor and excluding:null
+[Java] 45912  [ CMAC ][ LBManager ] [ INFO ] LoadServerGroup is choosing from 1 server instances, capacity 100
+[Java] 45916  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165468149
+[Java] 45919  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] 45923  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] 45963  [ CMAC ][ LBManager ] [ INFO ] getting serverType:amr and excluding:null
+[Java] 45973  [ CMAC ][ LBManager ] [ INFO ] LoadServerGroup is choosing from 1 server instances, capacity 100
+[Java] 45977  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165468210
+[Java] 45982  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] 45993  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] BOOT:t<16> Navigator Default Channel Map Data Retrieved
+[Java] 50996  [ CMAC ][ LBManager ] [ INFO ] getting serverType:navigation.epg and excluding:
+[Java] 51061  [ CMAC ][ LBManager ] [ INFO ] LoadServerGroup is choosing from 1 server instances, capacity 100
+[Java] 51069  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165473299
+[Java] 51073  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] 51199  [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] BOOT:t<18a> Navigator ready to tune to initial channel.
+[Java] 23065  [ Buckeye ][ Configuration ] [ ERROR ] updateContentVersion -  Received unknown tag : 69
+[Java] BOOTPERF:t<18> Navigator startXlet Processing Complete
+[Java] 36012  [ Buckeye ][ Configuration ] [ ERROR ] updateContentVersion -  Received unknown tag : 69
+[Java] 50637  [ Buckeye ][ Media ] [ ERROR ] [TvPlayer] getMediaAccessControl unable to obtain reference to serviceMediaHandler
+[Java] SysInfoEvent[4000000,6/8/12 2:25 PM] POD.updateGFCache() called (POD_EVENT_GENERIC_FEATURE_UPDATE), updated 9 features (1={3,1},5={254,212},6={2},10={},112={},13={0,102},14={},16={},8={122,122,122})
+[Java] SysInfoEvent[4000000,6/8/12 2:25 PM] POD.updateGFCache() called (POD_EVENT_GENERIC_FEATURE_UPDATE), updated 9 features (1={3,1},5={254,212},6={2},10={},112={},13={0,102},14={},16={},8={122,122,122})
+[Java] BOOTPERF:t<18c> Navigator fully initialized, All screens ready.
+[Java] 179635 [ CMAC ][ LBManager ] [ INFO ] getting serverType:navigation.epg and excluding:
+[Java] 179645 [ CMAC ][ LBManager ] [ INFO ] LoadServerGroup is choosing from 1 server instances, capacity 100
+[Java] 179659 [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165601893
+[Java] 179663 [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] 179668 [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] 153785 [ Buckeye ][ Media ] [ ERROR ] [TvPlayer] getMediaAccessControl unable to obtain reference to serviceMediaHandler
+[Java] Buckeye Upgrade - finished, but isAspenJVR3 flag is not set
+[Java] 154363 [ Buckeye ][ Media ] [ ERROR ] [TvPlayer] getMediaAccessControl unable to obtain reference to serviceMediaHandler
+[Java] 205216 [ CMAC ][ LBManager ] [ INFO ] getting serverType:scm and excluding:null
+[Java] 205221 [ CMAC ][ LBManager ] [ INFO ] LoadServerGroup is choosing from 1 server instances, capacity 100
+[Java] 205227 [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating currentTime=1339165627459
+[Java] 205230 [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired evaluating expirationTime=1339165808000
+[Java] 205234 [ CMAC ][ LBManager ] [ INFO ] GLBR.isExpired=false
+[Java] [DataToken] getData on location:http://10.252.133.140:8080/scm/ODCconfig/ConfigRequest?type=vodXml&system=1966&QAMNameList=21201,21202,21203,21204,21205,21206
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpDataRetriever.retrieveData() on url=http://10.252.133.140:8080/scm/ODCconfig/ConfigRequest?type=vodXml&system=1966&QAMNameList=21201,21202,21203,21204,21205,21206
+[Java] [ HttpDataRetriever ]  [ INFO ] HttpURLConnection.HTTP_OK on url=http://10.252.133.140:8080/scm/ODCconfig/ConfigRequest?type=vodXml&system=1966&QAMNameList=21201,21202,21203,21204,21205,21206
+[Java] VOD: Configuration Updated

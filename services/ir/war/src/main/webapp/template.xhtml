@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:shiro="http://shiro.apache.org/tags"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="refresh" />
+	<title><ui:insert name="title">IR Service</ui:insert></title>
+	<h:outputStylesheet library="css" name="ir.css" />
+	<script type="text/javascript">  
+	var interval;
+    function start() {
+ 
+    	interval = self.setInterval(function() {
+    		var element = document.getElementById('redratWarn');
+    		if(element.style.display == 'none') {
+    	          element.style.display = 'block';
+    	        }
+        }, 8000);  
+    }  
+    
+    function stop() {
+    	interval = self.clearInterval(interval); 
+    	var element = document.getElementById('redratWarn');
+    	element.style.display = 'none';
+    }  
+    </script>
+</h:head>
+
+<h:body>
+	<h:panelGroup id="page" layout="block">
+		<h:panelGroup id="header" layout="block">
+			<h1 style="color: royalblue;" >IR Service</h1>
+			<h2 style="color: red;" >Please note all activity using this application will logged
+				and the IP recorded.</h2>
+		</h:panelGroup>
+
+		<h:panelGroup id="menu" layout="block">
+			<h:form>
+				<p:menubar styleClass="tabbedMenu">
+					<p:menuitem value="IrNetBox" url="/irNetBox.xhtml" ajax="false" />
+					<p:menuitem value="GC100" action="/TODO.xhtml" ajax="false" />
+				</p:menubar>
+			</h:form>
+		</h:panelGroup>
+
+		<h:panelGroup id="container" layout="block">
+			<p:messages id="messages" autoUpdate="true" />
+			<p:ajaxStatus onstart="statusDialog.show();"
+				onsuccess="statusDialog.hide();" />
+
+			<p:dialog modal="true" widgetVar="statusDialog" draggable="false"
+				closable="false" style="text-align:center"
+				onHide="stop()">
+				<p:graphicImage value="/images/ajax-loader.gif" />
+			</p:dialog>
+			
+			<p:dialog modal="true" widgetVar="diagnoseStatusDialog" draggable="false"
+				closable="false" onShow="start()" style="text-align:center"
+				onHide="stop()">
+				<p:graphicImage value="/images/ajax-loader.gif" />
+				<h:outputText id="redratWarn"
+					value="Seems like the redrat device is not connected properly or is not whitelisted in the redratHub."
+					style="display: none" />
+			</p:dialog>
+
+
+			<h:panelGroup id="content" layout="block">
+				<ui:insert name="body">Main Content</ui:insert>
+			</h:panelGroup>
+		</h:panelGroup>
+
+		<h:panelGroup id="footer" layout="block">
+
+			<div id="footerBanner" align="right">
+				<p></p>
+			</div>
+			<br />
+		</h:panelGroup>
+	</h:panelGroup>
+</h:body>
+</html>

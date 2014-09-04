@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<list xmlns:ns2="http://cats.comcast.com">
+	<item xsi:type="settopReservationDesc" serialNumber=""
+		remoteType="SA" rackId="4dc910a7-36a6-4419-b45f-1bfab90e901f" model="Explorer 2200"
+		manufacturer="SA" hostMacAddress="00:19:47:25:AC:A8"
+		environmentId="35c5b8c2-481b-4287-88ef-da84d6d1284a" componentType="Settop.SA.Explorer 2200"
+		name="Settop.00:19:47:25:AC:A8" id="6b83d56c-251d-42cd-a56f-c36bdeff94c8"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<extraProperties>
+			<item value="Settop" name="Tag" />
+			<item value="03" name="Plant" />
+			<item value="Rack" name="Owner" />
+			<item value="Legacy" name="Controller" />
+		</extraProperties>
+		<hardwareConnections>
+			<hardwareConnection port="13">
+				<hardwareDevice port="0" maxPort="16" host="192.168.160.202:23"
+					componentType="WTI1600" name="WTI-1600:192.168.160.202:23" id="b1438dd7-2d45-46c6-883c-e4a99840d742">
+					<location zone="4" row="4" rack="9" lab="usa"
+						id="07862aaa-f37e-4963-b34a-b1068a81ffd1" />
+					<hardwareType>POWER</hardwareType>
+				</hardwareDevice>
+			</hardwareConnection>
+			<hardwareConnection port="1">
+				<hardwareDevice port="0" maxPort="1" host="192.168.160.202"
+					componentType="Axis" name="Axis:192.168.160.202" id="be67668c-9b45-435b-8fa6-2193ddafe44b">
+					<location zone="4" row="4" rack="9" lab="usa"
+						id="07862aaa-f37e-4963-b34a-b1068a81ffd1" />
+					<hardwareType>VIDEOSERVER</hardwareType>
+				</hardwareDevice>
+			</hardwareConnection>
+			<hardwareConnection port="3">
+				<hardwareDevice port="0" maxPort="6" host="192.168.160.202"
+					componentType="GC100" name="GC-100:192.168.160.202" id="9db69221-e6df-443e-8e9f-ca23badd743d">
+					<location zone="4" row="4" rack="9" lab="usa"
+						id="07862aaa-f37e-4963-b34a-b1068a81ffd1" />
+					<hardwareType>IR</hardwareType>
+				</hardwareDevice>
+			</hardwareConnection>
+		</hardwareConnections>
+		<powerPath>wti1600://192.168.160.202:23/?outlet=13</powerPath>
+		<remotePath>gc100://192.168.160.202/?port=3</remotePath>
+		<videoPath>axis://192.168.160.202/?camera=1</videoPath>
+		<reservations>
+			<reservation status="Reserved" startDate="2012-02-29T00:00:00-05:00"
+				endDate="2013-01-31T23:59:00-05:00" name="CATS Development Rack"
+				id="37aaf8ec-6fa8-4288-8b61-e6b3a0b54d02">
+				<environment name="04-04-R09 (Dev rack)" id="4dc910a7-36a6-4419-b45f-1bfab90e901f" />
+				<reservationOwner username="cfrede001" lastName="Frederick"
+					firstName="Chad" active="true" id="7b80569a-1cd3-11e0-9c0f-001b2140dd10" />
+			</reservation>
+		</reservations>
+		<rack name="04-04-R09" id="4dc910a7-36a6-4419-b45f-1bfab90e901f" />
+	</item>
+</list>

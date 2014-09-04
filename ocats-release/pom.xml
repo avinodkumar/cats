@@ -1,0 +1,142 @@
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.comcast.cats</groupId>
+	<artifactId>ocats-release</artifactId>
+	<packaging>pom</packaging>
+	<name>OCATS Distribution</name>
+
+	<description>OCATS assembly project</description>
+
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>superpom-ocats</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+
+	<scm>
+		<developerConnection>scm:git:https://cats-dev3.cable.comcast.com:8443/git/OCATS.git</developerConnection>
+		<url>https://cats-dev3.cable.comcast.com:8443/git/OCATS.git</url>
+   		<connection>scm:git:https://cats-dev3.cable.comcast.com:8443/git/OCATS.git</connection>
+  	</scm>
+	
+	<properties>
+		<cats.wagon.version>1.0-beta-7</cats.wagon.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>ocats-master-ear</artifactId>
+			<version>${project.version}</version>
+			<type>ear</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>ocats-ui</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>video-recorder-service</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>catsvision</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>ocats-stability</artifactId>
+			<classifier>test-jar</classifier>
+			<version>${project.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.15</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>${cats.wagon.version}</version>
+			</extension>
+		</extensions>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/assemble/jboss-assembly.xml</descriptor>
+					</descriptors>
+					<filters>
+						<filter>src/assemble/filter.properties</filter>
+					</filters>
+				</configuration>
+				<executions>
+					<execution>
+						<id>assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- append to the packaging phase. -->
+						<goals>
+							<goal>assembly</goal> <!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<version>1.0-beta-3</version>
+				<executions>
+					<execution>
+						<id>upload-release</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<configuration>
+							<serverId>localhost</serverId>
+							<fromDir>${project.build.directory}</fromDir>
+							<includes>*.zip</includes>
+							<url>scp://localhost/</url>
+							<toDir>/var/www/html/releases</toDir>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>Error Occurred</title>
+		<h:outputStylesheet name="css/jsfcrud.css" />
+	</h:head>
+	<h:body>
+		<h1 class="title ui-widget-header ui-corner-all">Error Occurred</h1>
+		<div class="entry" style="line-height: 200%">
+			<h:outputText
+				value="An error has occurred. Please raise an intake queue ticket " />
+			<h:outputLink value="https://intake.cable.comcast.com">here</h:outputLink>
+		</div>
+		<h2 class="title ui-widget-header ui-corner-all">Error Details:</h2>
+		<p />
+		<textarea rows="30" cols="150">  
+           <h:outputText spellcheck="false"
+			value="#{errorBean.stackTrace}" />
+	    </textarea>
+	</h:body>
+
+</html>
+
+

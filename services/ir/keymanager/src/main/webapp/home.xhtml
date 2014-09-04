@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	<ui:define name="content">
+		<h:panelGroup id="menu" layout="block">
+			<!-- Tabbed Menu  -->
+			<ul class="basictab">
+				<li class="a"><a id="hm" href="home.jsf">Home</a></li>
+				<li class="a"><a href="listRemotes.jsf">Remotes</a></li>
+				<li class="a"><a href="listKeyCodeFormats.jsf">Formats</a></li>
+				<li class="a"><a href="listKeys.jsf">Keys</a></li>
+				<li class="a"><a href="listLayouts.jsf">Layouts</a></li>
+				<li class="a"><a href="listRedRats.xhtml">Manage IrNetBox</a></li>	
+				<li class="a"><a id="redrathubs" href="listRedRatHubs.xhtml">Manage RedratHubs</a></li>
+			</ul>
+		</h:panelGroup>
+		<h:form>
+
+			<!-- Remote Types -->
+			<h3>Remote Types</h3>
+			<h:panelGrid columns="3">
+				<h:outputText value="Select Remote" />
+				<h:outputText value="Remote Type" />
+				<h:outputText value="Description" />
+				<h:selectOneMenu binding="#{KeyManager.selectRemoteType}"
+					onchange="submit()" styleClass="common-dropdown"
+					value="#{KeyManager.selectRemote}" var="remote">
+				</h:selectOneMenu>
+				<h:inputText value="#{KeyManager.selectedRemoteName}"
+					label="remoteName" />
+				<h:inputText value="#{KeyManager.selectedRemoteDesc}"
+					label="remoteDescription" style=" width : 255px;" />
+			</h:panelGrid>
+			<h:commandButton value="Delete"
+				onclick="if (!confirm('Are you sure you want to delete this remote? \nThis will delete all keys and layouts associated with this remote.')) return false"
+				action="#{KeyManager.deleteRemote}" />
+			<h:commandButton value="Update"
+				actionListener="#{KeyManager.updateRemote}" />
+			<h:commandButton value="Add" action="#{KeyManager.addRemote}" />
+			<h:commandButton value="View All Remotes" action="listRemotes.jsf" />
+
+			<!-- Key Code Formats -->
+
+			<h3>Key Code Format Types</h3>
+			<h:panelGrid columns="3">
+				<h:outputText value="Select Format" />
+				<h:outputText value="Format" />
+				<h:outputText value="Description" />
+				<h:selectOneMenu binding="#{KeyManager.selectKeyCodeFormat}"
+					onchange="submit()" styleClass="common-dropdown"
+					value="#{KeyManager.selectedFormat}">
+				</h:selectOneMenu>
+				<h:inputText value="#{KeyManager.selectedFormatName}"
+					label="formatName" />
+				<h:inputText value="#{KeyManager.selectedFormatDesc}"
+					label="formatDescription" style=" width : 255px;" />
+			</h:panelGrid>
+			<h:commandButton value="Delete"
+				onclick="if (!confirm('Are you sure you want to delete this format?')) return false"
+				action="#{KeyManager.deleteFormat}" />
+			<h:commandButton value="Update"
+				actionListener="#{KeyManager.updateFormat}" />
+			<h:commandButton value="Add" action="#{KeyManager.addFormat}" />
+			<h:commandButton value="View All Formats"
+				action="listKeyCodeFormats.jsf" />
+
+			<!-- Key Codes -->
+			<h3>Key Codes</h3>
+			<h:panelGrid columns="2">
+				<h:outputText value="Select Key" />
+				<h:outputText value="Enter Code" />
+				<h:selectOneMenu id="key" value="#{KeyManager.key}"
+					onchange="submit()">
+					<f:selectItems value="#{KeyManager.keys}" />
+				</h:selectOneMenu>
+				<h:inputText value="#{KeyManager.keyCode}" style=" width : 634px;" />
+			</h:panelGrid>
+			<h:commandButton value="Delete"
+				onclick="if (!confirm('Are you sure you want to delete this key?')) return false"
+				action="#{KeyManager.deleteKey}" />
+			<h:commandButton value="Update"
+				actionListener="#{KeyManager.updateKey}" />
+			<h:commandButton value="Add" action="#{KeyManager.addKey}" />
+			<h:commandButton value="View All Key Codes"
+				action="keys?faces-redirect=true" />
+
+			<!--  Key Layouts -->
+			<h3>Key Layouts</h3>
+			<h:panelGrid columns="5">
+				<h:outputText value="Panel" />
+				<h:outputText value="Row" />
+				<h:outputText value="Column" />
+				<h:outputText value="Forecolor" />
+				<h:outputText value="Backcolor" />
+				<h:inputText value="#{KeyManager.layoutPanel}" style=" width : 40px;"/>
+				<h:inputText value="#{KeyManager.layoutRow}" style=" width : 32px;"/>
+				<h:inputText value="#{KeyManager.layoutColumn}" style=" width : 52px;"/>
+				<h:inputText value="#{KeyManager.layoutForeColor}" style=" width : 62px;"/>
+				<h:inputText value="#{KeyManager.layoutBackColor}" style=" width : 68px;"/>
+			</h:panelGrid>
+			<h:commandButton value="Delete"
+				onclick="if (!confirm('Are you sure you want to delete this Layout?')) return false"
+				action="#{KeyManager.deleteLayout}" />
+			<h:commandButton value="Update"
+				actionListener="#{KeyManager.updateLayout}" />
+			<h:commandButton value="Add" action="#{KeyManager.addLayout}" />
+				<h:commandButton value="View All Key Layouts" action="listLayouts.jsf" />
+
+			<p><h:commandButton value="Refresh"
+				action="#{KeyManager.refreshPage}" /></p>
+			<h:messages style="color:red;margin:8px;" />
+		</h:form>
+	</ui:define>
+</ui:composition>

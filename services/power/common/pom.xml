@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>power-common</artifactId>
+	<packaging>jar</packaging>
+	<name>CATS Power Service Common</name>
+
+	<description>
+		CATS Power Service Common.
+	</description>
+
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>power-parent</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>2.3.5.Final</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxb-provider</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>webservice-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>snmp-common</artifactId>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>snmp-client</artifactId>
+			<type>jar</type>
+			<exclusions>
+				<exclusion>
+					<groupId>com.comcast.cats</groupId>
+					<artifactId>cats-domain-impl</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-easymock</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-testng</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources><!-- <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+			<artifactId>maven-surefire-plugin</artifactId> <configuration> <excludes> 
+			<exclude>**/NetBooter_NP_1601D_PowerDeviceTest.java</exclude> <exclude>**/PowerServiceTest.java</exclude> 
+			</excludes> </configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+			<artifactId>maven-failsafe-plugin</artifactId> <configuration> <excludes> 
+			<exclude>**/NetBooterPowerDeviceIT.java</exclude> </excludes> </configuration> 
+			</plugin> </plugins> -->
+	</build>
+</project>

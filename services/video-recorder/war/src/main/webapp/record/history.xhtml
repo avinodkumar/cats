@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<ui:composition template="/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="Recording History"></h:outputText>
+	</ui:define>
+	<ui:define name="body">
+		<h:form id="form" styleClass="jsfcrud_list_form">
+			<h:panelGroup id="panelGroup">
+				<p:dataTable id="tbl" var="recording"
+					value="#{recordingController.recordingHistory}" paginator="true"
+					rows="10">
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Id" />
+						</f:facet>
+						<h:outputText value="#{recording.id}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Mac Address" />
+						</f:facet>
+						<h:outputText value="#{recording.stbMacAddress}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Video Server IP" />
+						</f:facet>
+						<h:outputText value="#{recording.videoServerIp}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Port" />
+						</f:facet>
+						<h:outputText value="#{recording.videoServerPort}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Status" />
+						</f:facet>
+						<h:outputText value="#{recording.recordingStatus}" />
+					</p:column>
+
+					<p:column sortBy="#{recording.createdDate}">
+						<f:facet name="header">
+							<h:outputText value="Created Date" />
+						</f:facet>
+						<h:outputText value="#{recording.createdTime}" />
+					</p:column>
+
+					<p:column sortBy="#{recording.lastUpdatedDate}">
+						<f:facet name="header">
+							<h:outputText value="Last Updated Date" />
+						</f:facet>
+						<h:outputText value="#{recording.lastUpdatedTime}" />
+					</p:column>
+
+					<p:column>
+						<p:graphicImage id="recordingImg" value="/images/processing.gif"
+							style="border:none"
+							rendered="#{recording.recordingStatus.state  == 'INITIALIZING' or recording.recordingStatus.state  == 'BUFFERING' or recording.recordingStatus.state  == 'RECORDING'}" />
+						<p:graphicImage id="errorImg" value="/images/error.png"
+							style="border:none"
+							rendered="#{recording.recordingStatus.state  == 'FORCE_CLOSE' or recording.recordingStatus.state  == 'UNKNOWN' or recording.recordingStatus.state  == 'ERROR'}" />
+						<p:tooltip for="errorImg"
+							value="The recording session was closed unexpectedly. Playback may not work. Recording State is #{recording.recordingStatus.state}" />
+						<p:commandLink global="false" style="border:none"
+							oncomplete="mediaPlayer.show()" update=":mediaPlayerView"
+							ajax="true"
+							actionListener="#{recordingController.playMedia(recording)}">
+							<p:graphicImage id="playRecordingImg" value="/images/play.png"
+								style="border:none"
+								rendered="#{recording.recordingStatus.state  == 'STOPPED'}" />
+							<p:tooltip for="playRecordingImg" value="Play" />
+							<p:tooltip for="recordingImg" value="Recording in progress" />
+						</p:commandLink>
+					</p:column>
+					<p:column>
+						<p:commandLink global="false" style="border:none" ajax="false"
+							actionListener="#{recordingController.delete(recording)}">
+							<p:graphicImage id="deleteRecordingImg"
+								value="/images/delete.png" style="border:none" />
+							<p:tooltip for="deleteRecordingImg" value="Delete" />
+						</p:commandLink>
+					</p:column>
+				</p:dataTable>
+			</h:panelGroup>
+		</h:form>
+
+		<div id="mediaContainer">
+			<h:panelGroup id="mediaPlayerView" layout="block">
+				<ui:include src="media-player.xhtml" />
+			</h:panelGroup>
+		</div>
+
+	</ui:define>
+</ui:composition>
+
+</html>

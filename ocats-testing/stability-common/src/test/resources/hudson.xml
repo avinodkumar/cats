@@ -1,0 +1,68 @@
+<hudson>
+	<assignedLabel />
+	<mode>NORMAL</mode>
+	<nodeDescription>the master Jenkins node</nodeDescription>
+	<nodeName />
+	<numExecutors>4</numExecutors>
+	<job>
+		<name>cats-dev2 stability project</name>
+		<url>http://10.252.253.18:8080/jenkins/job/cats-dev2%20stability%20project/
+		</url>
+		<color>aborted</color>
+	</job>
+	<job>
+		<name>CATSTEST</name>
+		<url>http://10.252.253.18:8080/jenkins/job/CATSTEST/</url>
+		<color>yellow</color>
+	</job>
+	<job>
+		<name>MBeanTest</name>
+		<url>http://10.252.253.18:8080/jenkins/job/MBeanTest/</url>
+		<color>red</color>
+	</job>
+	<job>
+		<name>Minu's job</name>
+		<url>http://10.252.253.18:8080/jenkins/job/Minu's%20job/</url>
+		<color>grey</color>
+	</job>
+	<job>
+		<name>Monitor Threads</name>
+		<url>http://10.252.253.18:8080/jenkins/job/Monitor%20Threads/</url>
+		<color>grey</color>
+	</job>
+	<job>
+		<name>Stability-JMS-POC</name>
+		<url>http://10.252.253.18:8080/jenkins/job/Stability-JMS-POC/</url>
+		<color>aborted</color>
+	</job>
+	<job>
+		<name>SUBIN-Trace-Reboot-Dev-Test</name>
+		<url>http://10.252.253.18:8080/jenkins/job/SUBIN-Trace-Reboot-Dev-Test/
+		</url>
+		<color>blue</color>
+	</job>
+	<job>
+		<name>test Job</name>
+		<url>http://10.252.253.18:8080/jenkins/job/test%20Job/</url>
+		<color>grey</color>
+	</job>
+	<job>
+		<name>tracetestrb</name>
+		<url>http://10.252.253.18:8080/jenkins/job/tracetestrb/</url>
+		<color>blue</color>
+	</job>
+	<overallLoad />
+	<primaryView>
+		<name>All</name>
+		<url>http://10.252.253.18:8080/jenkins/</url>
+	</primaryView>
+	<quietingDown>false</quietingDown>
+	<slaveAgentPort>0</slaveAgentPort>
+	<unlabeledLoad />
+	<useCrumbs>false</useCrumbs>
+	<useSecurity>false</useSecurity>
+	<view>
+		<name>All</name>
+		<url>http://10.252.253.18:8080/jenkins/</url>
+	</view>
+</hudson>

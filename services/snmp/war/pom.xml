@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>snmp-service</artifactId>
+	<description>The Web project: Used primarily to deploy TRAP handler.</description>
+	<packaging>war</packaging>
+	<name>CATS SNMP Service WAR</name>
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>snmp-parent</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+	<dependencies>
+	  	<dependency>
+            		<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>snmp-common</artifactId>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+</project>

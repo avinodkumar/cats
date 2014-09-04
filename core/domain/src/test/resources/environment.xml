@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    OCATS : Automation Test Framework for the Cable Industry
+    Copyright (C) 2013  Comcast Corporation Ltd.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<environment name="Cats Env 1" id="ab6a9bad-d318-4b65-b8bc-48a720c16e80"
+	xmlns:ns2="http://cats.comcast.com">
+	<servers>
+		<server port="8080" host="3.3.3.4" name="OCR server -1"
+			id="84af5df7-93e8-4ae7-a308-bac76c562dea" />
+		<server port="8080" host="3.3.3.4" name="OCR server -1"
+			id="84af5df7-93e8-4ae7-a308-bac76c562dea" />
+		<server port="8080" host="192.168.160.201" name="Jboss Dev -1"
+			id="1c4a9a2a-6141-49de-a585-7f9370406d94">
+			<services>
+				<service serviceType="SETTOP"
+					path="http://192.168.160.201:8080/settop-service/SettopService?wsdl"
+					name="SettopService" id="" />
+				<service serviceType="POWER"
+					path="http://192.168.160.201:8080/power-service/PowerService?WSDL"
+					name="PowerService" id="" />
+				<service serviceType="AUDIO"
+					path="http://192.168.160.201:8080/audio-monitor-service/AudioMonitorService?wsdl"
+					name="AudioMonitorService" id="" />
+				<service servziceType="IR"
+					path="http://192.168.160.201:8080/ir-service/IRService?WSDL" name="IRService"
+					id="" />
+			</services>
+		</server>
+		<server port="8080" host="192.168.160.202" name="Jboss Stag-1"
+			id="5bf318a2-d4de-4c5d-9b97-e601062b9a1f">
+			<services>
+				<service serviceType="SETTOP"
+					path="http://192.168.160.202:8080/settop-service/SettopService?wsdl"
+					name="SettopService" id="" />
+				<service serviceType="SNMP"
+					path="http://192.168.160.202:8080/snmp-service/SnmpCoreService?wsdl"
+					name="SnmpCoreService" id="" />
+				<service serviceType="POWER"
+					path="http://192.168.160.202:8080/power-service/PowerService?WSDL"
+					name="PowerService" id="" />
+				<service serviceType="IR"
+					path="http://192.168.160.202:8080/ir-service/IRService?WSDL" name="IRService"
+					id="" />
+			</services>
+		</server>
+	</servers>
+</environment>

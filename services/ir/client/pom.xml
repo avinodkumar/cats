@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ir-client</artifactId>
+	<packaging>jar</packaging>
+	<name>CATS IR Service Client</name>
+
+	<description>
+		CATS IR Service Client.
+	</description>
+
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>ir-parent</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>ir-common</artifactId>
+			<exclusions>
+			    <exclusion>
+			        <groupId>org.slf4j</groupId>
+			        <artifactId>slf4j-api</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>org.slf4j</groupId>
+			        <artifactId>slf4j-log4j12</artifactId>
+			    </exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+      		<scope>provided</scope>
+		</dependency>
+		<dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxb-provider</artifactId>
+      		<scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>integration-tests</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>**/IRServiceEndpointTest.java</include>
+								<include>**/*RemoteProviderServiceImplTest.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/*IRServiceEndpointTest.java</exclude>
+						<exclude>**/*RemoteProviderServiceImplTest.java</exclude>
+						<exclude>**/*RemoteProviderServiceImplDelayTest.java</exclude>
+                                                <exclude>**/*IRNetBoxProStressTest.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/*RemoteProviderConcurrencyIT.java</exclude>
+						<exclude>**/*RemoteRestEasyIT.java</exclude> 
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

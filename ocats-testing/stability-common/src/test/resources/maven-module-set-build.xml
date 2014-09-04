@@ -1,0 +1,41 @@
+<mavenModuleSetBuild>
+	<action>
+		<parameter>
+			<name>CATS_HOME</name>
+			<value>/var/www/html/stability/subin</value>
+		</parameter>
+	</action>
+	<action>
+		<cause>
+			<shortDescription>Started by user anonymous</shortDescription>
+			<userName>anonymous</userName>
+		</cause>
+	</action>
+	<action />
+	<action />
+	<building>false</building>
+	<duration>37662</duration>
+	<estimatedDuration>351612</estimatedDuration>
+	<fullDisplayName>Stability-JMS-POC #11</fullDisplayName>
+	<id>2012-09-21_13-50-28</id>
+	<keepLog>false</keepLog>
+	<number>11</number>
+	<result>ABORTED</result>
+	<timestamp>1348249828223</timestamp>
+	<url>http://10.252.253.18:8080/jenkins/job/Stability-JMS-POC/11/</url>
+	<builtOn />
+	<changeSet>
+		<kind>svn</kind>
+		<revision>
+			<module>https://evc.io.comcast.net/cats/branches/stability-jms-jenkins/cats-stability-jms/cats-stability-jms-test-client
+			</module>
+			<revision>7277</revision>
+		</revision>
+	</changeSet>
+	<culprit>
+		<absoluteUrl>http://10.252.253.18:8080/jenkins/user/ssugun00c
+		</absoluteUrl>
+		<fullName>ssugun00c</fullName>
+	</culprit>
+	<mavenVersionUsed>3.0.3</mavenVersionUsed>
+</mavenModuleSetBuild>

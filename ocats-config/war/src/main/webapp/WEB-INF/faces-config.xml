@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	
+	<managed-bean>
+    	<managed-bean-name>settopReservationDesc</managed-bean-name>
+    	<managed-bean-class>com.comcast.cats.domain.SettopReservationDesc</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+    	<managed-bean-name>slot</managed-bean-name>
+    	<managed-bean-class>com.comcast.cats.local.domain.Slot</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+        <application>
+            <locale-config>
+                <default-locale>en</default-locale>
+            </locale-config>
+            <resource-bundle>
+                <base-name>/Bundle</base-name>
+                <var>bundle</var>
+            </resource-bundle>
+        </application>
+
+	<converter>
+		<converter-for-class>java.lang.Enum</converter-for-class>
+		<converter-class>javax.faces.convert.EnumConverter</converter-class>
+	</converter>
+	<factory>
+	 	<exception-handler-factory>
+	 		com.comcast.cats.config.utility.CustomExceptionHandlerFactory
+	 	</exception-handler-factory>
+	</factory>
+</faces-config>

@@ -1,0 +1,129 @@
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ocats-stability</artifactId>
+	<name>OCATS Stability Client</name>
+	<description>OCATS Stability Client</description>
+
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>ocats-project</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+	<!--	<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>stability-client</artifactId>
+			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>cats-settop-impl</artifactId>
+					<groupId>com.comcast.cats</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>groovy-all</artifactId>
+					<groupId>org.codehaus.groovy</groupId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.comcast.cats</groupId>
+					<artifactId>jboss-client-bom</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>  -->
+		<dependency>
+				<groupId>com.comcast.cats</groupId>
+				<artifactId>test-framework</artifactId>
+				<version>0.1-OCATS-SNAPSHOT</version>
+	</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>1.7.8</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>ocats-stability-client</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<parallel>methods</parallel>
+					<threadCount>32</threadCount>
+					<excludes>
+						<exclude>**/CatsStabilityClient.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>stability</id>
+			<build>
+				<finalName>ocats-stability-client</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jar-plugin</artifactId>
+						<version>2.4</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>test-jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/assembly/test-jar.xml</descriptor>
+							</descriptors>
+							<archive>
+								<manifest>
+									<mainClass>org.testng.TestNG</mainClass>
+								</manifest>
+							</archive>
+
+						</configuration>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>attached</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<ui:composition template="/statusTemplate.xhtml">
+	<ui:define name="title">
+		<h:outputText value="Settop Status"></h:outputText>
+	</ui:define>
+	<ui:define name="content">
+		<h:outputScript library="javascript" name="dblclickdatatable.js"
+			target="head" />
+	</ui:define>
+
+	<ui:define name="sideMenu">
+
+			<h:form>
+			<p:menu style="width:195px">
+				<p:menuitem style="width:195px" value="Back"
+					url="/status/status.xhtml" icon="ui-icon-circle-triangle-w" />
+			</p:menu>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="centerPanel">
+
+		<h:panelGroup id="snmpUpTime_monitor" layout="block">
+	 	<h:form id ="upTime_form">
+	 		  <p:messages id="uptime_messages" showDetail="true" closable="false"/>
+         	  <p:poll id="upTime_poll" global="false" interval="10" listener="#{rebootMonitorServiceHealthMonitor.checkIfSNMPServiceIsUp()}"  update=":upTime_form:uptime_messages" />
+			</h:form>
+		</h:panelGroup>
+		
+		<h:outputText escape="false" value="NO SETTOPS FOUND"
+			rendered="#{fn:length(settopController.allConnectedSlots)  == 0}" />
+		<h:form id="form" styleClass="jsfcrud_list_form">
+		
+			<p:poll global="false" interval="120" update="rackList" />
+
+			<p:accordionPanel id="rackList" multiple="true" var="rack"
+				value="#{rackController.rackList}"
+				rendered="#{fn:length(settopController.allConnectedSlots) gt 0}">
+				<p:tab title="#{rack.name}">
+					<p:dataTable widgetVar="slotConnectionTable"
+						id="slotConnectionTable" var="upTimeBean"
+						value="#{upTimeEventHandler.upTimes}"
+						rowKey="#{upTimeBean.settopMac}" styleClass="settopListTable"
+						selectionMode="single"
+						selection="#{upTimeAndRebootStatusBean.selectedUpTimeBean}"
+						paginator="true" rows="16" style="position: relative;"
+						>
+
+						<f:facet name="header">
+							<h:outputText value="Export As"
+								style="margin-left: 5px;position: absolute;top: 6px;left:0px" />
+							<h:commandLink global="false" disabled="#{empty upTimeEventHandler.upTimes}"
+								style="margin-left: 5px;position: absolute;top: 4px;left:61px;">
+								<p:graphicImage value="/images/excel.png" style="border:none" />
+								<p:dataExporter type="xls" target="slotConnectionTable" fileName="SettopUpTimes_#{upTimeAndRebootStatusBean.fileName}"
+								postProcessor="#{upTimeAndRebootStatusBean.postProcessXls}"
+								global="false"/> 
+							</h:commandLink>
+
+							<h:commandLink disabled="#{empty upTimeEventHandler.upTimes}"
+								style="margin-left: 5px;position: absolute;top: 4px;left:83px">
+								<p:graphicImage value="/images/csv.png" style="border:none" />
+								<p:dataExporter type="csv" target="slotConnectionTable" fileName="SettopUpTimes_#{upTimeAndRebootStatusBean.fileName}"/>
+							</h:commandLink>
+
+							<h:commandLink disabled="#{empty upTimeEventHandler.upTimes}"
+								style="margin-left: 5px;position: absolute;top: 4px;left:105px">
+								<p:graphicImage value="/images/xml.png" style="border:none" />
+								<p:dataExporter type="xml" target="slotConnectionTable" fileName="SettopUpTimes_#{upTimeAndRebootStatusBean.fileName}"/>
+							</h:commandLink>
+
+							<h:outputText value="Current Uptimes" />
+						</f:facet>
+
+ 
+						<p:ajax event="rowSelect" listener="#{upTimeAndRebootStatusBean.onRowSelect}"
+							global="false"
+							update=":form:rackList:rebootStatsPanel"/>
+						<p:ajax event="rowUnselect" listener="#{upTimeAndRebootStatusBean.onRowUnselect}"
+							global="false"
+							update=":form:rackList:rebootStatsPanel"/>
+
+						<p:column style="white-space:nowrap;">
+							<f:facet name="header">  
+					            <h:outputText value="Settop Name" />  
+					        </f:facet>  
+							<h:outputText value="#{upTimeBean.settopName}" />
+						</p:column>
+						<p:column>
+							<f:facet name="header">  
+					            <h:outputText value="Settop Mac" />  
+					        </f:facet>  
+							<h:outputText value="#{upTimeBean.settopMac}" />
+						</p:column>
+						<p:column>
+							<f:facet name="header">  
+					            <h:outputText value="IP Address" />  
+					        </f:facet>  
+							<h:outputText value="#{upTimeBean.settopIP}" />
+						</p:column>
+						<p:column>
+							<f:facet name="header">  
+					            <h:outputText value="MCard Mac" />  
+					        </f:facet>  
+							<h:outputText value="#{upTimeBean.settopMCardMac}" />
+						</p:column>
+						<p:column styleClass="#{upTimeAndRebootStatusBean.isLessThanOneDay(upTimeBean.upTime)
+						? 'highlighttColor' : ''}">
+							<f:facet name="header">  
+					            <h:outputText value="Current Uptime" />  
+					        </f:facet>
+							<h:outputText
+								value="#{upTimeBean.upTime}" />
+						</p:column>
+						<p:column>
+							<f:facet name="header">  
+					            <h:outputText value="Settop Type" />  
+					        </f:facet>
+							<h:outputText value="#{upTimeBean.settopType}" />
+						</p:column>
+					</p:dataTable>
+
+					<p:panel id="rebootStatsPanel" visible="#{upTimeAndRebootStatusBean.showDataTable}" > 
+						<p:panelGrid columns="2">
+							<p:column>
+							<p:panelGrid style="margin-top:15px;width:364px">
+
+								<f:facet name="header">
+									<p:row>
+										<p:column colspan="2">Stability Index</p:column>
+									</p:row>
+								</f:facet>
+
+								<p:row>
+									<p:column style="font-weight: bold;">Last Reboot At</p:column>
+									<p:column>#{upTimeAndRebootStatusBean.getLastRebootTime()}</p:column>
+								</p:row>
+
+								<p:row>
+									<p:column style="font-weight: bold;">Uptime before previous reboot</p:column>
+									<p:column>#{upTimeAndRebootStatusBean.getLastUptime()}</p:column>
+								</p:row>
+
+								<p:row>
+									<p:column style="font-weight: bold;">No of Reboots for box in last 5 days</p:column>
+									<p:column>#{upTimeAndRebootStatusBean.getRebootCountForLast5days()}</p:column>
+								</p:row>
+
+								<p:row>
+									<p:column style="font-weight: bold;">Total No of Reboots for box</p:column>
+									<p:column>#{upTimeAndRebootStatusBean.getTotalRebootsCount()}</p:column>
+								</p:row>
+
+								<p:row>
+									<p:column style="font-weight: bold;">Average Uptime in last 5 days</p:column>
+									<p:column>#{upTimeAndRebootStatusBean.getAverageUpTime()} Hours</p:column>
+								</p:row>
+							</p:panelGrid>
+							</p:column>
+							<p:column>
+									<h:panelGroup>
+										<h:outputText value="Export As" />
+										<h:commandLink disabled="#{!upTimeAndRebootStatusBean.isShowDataTable()}"
+											style="margin-left: 5px;position: relative;top: 3px;">
+											<p:graphicImage value="/images/excel.png" style="border:none" />
+											<p:dataExporter type="xls" target="rebootHistoryTable" fileName="RebootHistory_#{upTimeAndRebootStatusBean.fileName}"
+											 postProcessor="#{upTimeAndRebootStatusBean.postProcessXls}"/>
+										</h:commandLink>
+
+										<h:commandLink disabled="#{!upTimeAndRebootStatusBean.isShowDataTable()}"
+											style="margin-left: 5px;position: relative;top: 3px;">
+											<p:graphicImage value="/images/csv.png" style="border:none" />
+											<p:dataExporter type="csv" target="rebootHistoryTable" fileName="RebootHistory_#{upTimeAndRebootStatusBean.fileName}"
+											global="false"/>
+										</h:commandLink>
+
+										<h:commandLink disabled="#{!upTimeAndRebootStatusBean.isShowDataTable()}"
+											style="margin-left: 5px;position: relative;top: 3px;">
+											<p:graphicImage value="/images/xml.png" style="border:none" />
+											<p:dataExporter type="xml" target="rebootHistoryTable" fileName="RebootHistory_#{upTimeAndRebootStatusBean.fileName}"
+											global="false"/>
+										</h:commandLink>
+									</h:panelGroup>		
+
+							<p:dataTable widgetVar="rebootHistoryTable"
+								id="rebootHistoryTable" var="rebootInfo"
+								value="#{upTimeAndRebootStatusBean.rebootHistoryLazyModel}"
+								rowKey="#{rebootInfo.macAddress}" styleClass="settopListTable"
+								paginator="true" rows="20" paginatorPosition="top"
+								sortMode="multiple" lazy="true"
+								style="width:640px;position: relative;margin-top: 15px;"
+								rowStyleClass="#{rebootInfo.status == 'IP_MAC_MISMATCH'
+								? 'alertColor' : ''}">
+
+								<f:facet name="header">
+								<h:outputText value="#{upTimeAndRebootStatusBean.selectedUpTimeBean.settopName}" />
+								</f:facet>
+
+								<p:column sortBy="#{rebootInfo.executionDate}"
+									style="white-space:nowrap;">
+									<f:facet name="header">
+										<h:outputText
+											value="Time of reboot &lt;br/&gt; detection"
+											escape="false" />
+									</f:facet>
+									<h:outputText value="#{rebootInfo.executionDate}" />
+								</p:column>
+								<p:column sortBy="#{rebootInfo.upTime}"
+									style="white-space:nowrap; text-align:center">
+									<f:facet name="header">
+										<h:outputText
+											value="Uptime during &lt;br/&gt; reboot detection"
+											escape="false" />
+									</f:facet>
+									<h:outputText value="#{rebootInfo.formattedUpTime}" />
+								</p:column>
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="Message" escape="false" />
+									</f:facet>
+									<h:outputText value="#{rebootInfo.message}" />
+								</p:column>
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="Status" escape="false" />
+									</f:facet>
+									<h:outputText value="#{rebootInfo.status}" />
+								</p:column>
+							</p:dataTable>
+							</p:column>
+						</p:panelGrid>
+					</p:panel>
+
+				</p:tab>
+			</p:accordionPanel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

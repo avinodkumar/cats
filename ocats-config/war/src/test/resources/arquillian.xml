@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.com/arquillian"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:jbossas="urn:arq:org.jboss.arquillian.container.jbossas.remote_6">
+
+   <container qualifier="jbossas" default="true">
+        <configuration>
+            <property name="providerUrl">jnp://192.168.160.201:1099</property>
+        </configuration>
+        <protocol type="Servlet 3.0">
+            <property name="host">192.168.160.201</property>
+            <property name="port">8080</property>
+        </protocol>
+    </container>   
+</arquillian>

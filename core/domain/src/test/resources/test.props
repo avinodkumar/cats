@@ -1,0 +1,17 @@
+test.mac.id             	=   00:0A:73:1D:D2:8A
+test.reservation.id     	=   b55912a1-f693-407f-9e46-a00bbe6c3c57
+test.reservation.name   	=   CATS Development & Test
+test.settop.group.id    	=   9accd0f8-9dac-4382-8488-a64e0c13a06c
+test.my.settop.id       	=   a92a06d4-7deb-4853-91fd-c6c797d929c9
+test.settop.group.name  	=   CATS Development & Test Group
+test.rack.id            	=   9accd0f8-9dac-4382-8488-a64e0c13a06c
+test.rack.name          	=   CATS_Dev_Stability
+test.server.id              =   f89c730c-200b-4889-bef5-bcee8dca1d8f
+test.environment.id         =   c8718a04-441f-4c2a-8b31-7937cd70f7e3
+test.property.one       	=   Manufacturer
+test.value.one          	=   Pace
+test.property.two       	=   Model
+test.value.two          	=   DC50Xu-Micro
+test.offset             	=   0
+test.count              	=   1
+

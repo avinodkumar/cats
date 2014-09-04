@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<region_info_list>
+    <image_path></image_path>
+    <image_compare_region>
+        <filepath>RefImage.JPG</filepath>
+        <Height>60</Height>
+        <name>Monica-Face</name>
+        <Width>70</Width>
+        <X>30</X>
+        <XTolerance>10</XTolerance>
+        <Y>30</Y>
+        <YTolerance>10</YTolerance>
+        <red_tolerance>20</red_tolerance>
+        <green_tolerance>20</green_tolerance>
+        <blue_tolerance>20</blue_tolerance>
+        <match_percentage>85.0</match_percentage>
+    </image_compare_region>
+    <image_compare_region>
+        <filepath>RefImage.JPG</filepath>
+        <Height>50</Height>
+        <name>Chandler-Face</name>
+        <Width>50</Width>
+        <X>180</X>
+        <XTolerance>10</XTolerance>
+        <Y>85</Y>
+        <YTolerance>10</YTolerance>
+        <red_tolerance>20</red_tolerance>
+        <green_tolerance>20</green_tolerance>
+        <blue_tolerance>20</blue_tolerance>
+        <match_percentage>85.0</match_percentage>
+    </image_compare_region>
+</region_info_list>

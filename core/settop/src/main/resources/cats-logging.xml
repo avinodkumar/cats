@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    OCATS : Automation Test Framework for the Cable Industry
+    Copyright (C) 2013  Comcast Corporation Ltd.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %x - %m\n" />
+		</layout>
+	</appender>
+
+	<appender name="rolling" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${cats.home}/logs/cats.log" />
+		<param name="DatePattern" value="yyyy-MM-dd-HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- CATS Vision Trace Appender since this can get very large and difficult 
+		to understand. -->
+	<appender name="TraceAppender" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${cats.home}/logs/cats-trace.log" />
+		<param name="Append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %p - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.comcast.cats">
+		<level value="debug" />
+	</logger>
+
+	<logger name="com.comcast.cats.event.impl" additivity="false">
+		<level value="warn" />
+		<appender-ref ref="rolling" />
+	</logger>
+
+	<logger name="com.comcast.cats.provider.impl.TraceProviderImpl" additivity="false">
+		<level value="trace" />
+		<appender-ref ref="TraceAppender" />
+	</logger>
+
+	<root>
+		<level value="debug" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="rolling" />
+	</root>
+</log4j:configuration>

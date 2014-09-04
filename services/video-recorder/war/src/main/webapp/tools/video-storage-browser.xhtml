@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<ui:composition template="/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="Video Storage Browser"></h:outputText>
+	</ui:define>
+	<ui:define name="body">
+		<h:form id="form" styleClass="jsfcrud_list_form">
+
+			<p:contextMenu for="docs">
+				<p:menuitem value="Delete"
+					actionListener="#{documentsController.deleteNode}" update="docs">
+				</p:menuitem>
+			</p:contextMenu>
+
+			<p:treeTable value="#{documentsController.root}" var="document"
+				id="docs" selectionMode="single"
+				selection="#{documentsController.selectedDocument}">
+
+				<f:facet name="header"> Video Storage Browser  </f:facet>
+
+				<p:column style="width:200px">
+					<f:facet name="header"> Name </f:facet>
+					<h:outputText value="#{document.name}" />
+				</p:column>
+
+				<p:column style="width:50px">
+					<f:facet name="header"> Type </f:facet>
+					<p:graphicImage value="/images/directory.png" style="border:none"
+						rendered="#{document.type  == 'DIRECTORY'}" />
+					<p:graphicImage value="/images/video-file.png" style="border:none"
+						rendered="#{document.type  == 'FILE'}" />
+				</p:column>
+
+				<p:column style="width:100px">
+					<f:facet name="header"> Size (in MB)</f:facet>
+					<h:outputText value="#{document.size}" />
+				</p:column>
+
+				<p:column style="width:200px">
+					<f:facet name="header"> CATS Media Palyer </f:facet>
+					<p:graphicImage value="/images/processing.gif" style="border:none"
+						rendered="#{document.type  == 'FILE' and document.httpPath!=null and document.playable==false}" />
+					<p:spacer width="20" height="20" />
+					<h:outputText value="Recording in progress"
+						rendered="#{document.type  == 'FILE' and document.httpPath!=null and document.playable==false}" />
+
+					<p:media value="#{document.httpPath}" width="200" height="200"
+						player="windows"
+						rendered="#{document.type  == 'FILE' and document.httpPath!=null and document.playable==true}">
+						<f:param name="autostart" value="false" />
+						<f:param name="fullscreen" value="true" />
+					</p:media>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header"> Http Path </f:facet>
+					<h:outputText value="#{document.httpPath}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header"> Absolute Path </f:facet>
+					<h:outputText value="#{document.absolutePath}" />
+				</p:column>
+
+			</p:treeTable>
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+</html>

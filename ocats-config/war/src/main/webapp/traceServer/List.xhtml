@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTraceServerTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTraceServerEmpty}" rendered="#{traceServerController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{traceServerController.items.rowCount > 0}">
+                    <h:outputText value="#{traceServerController.pagination.pageFirstItem + 1}..#{traceServerController.pagination.pageLastItem + 1}/#{traceServerController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{traceServerController.previous}" value="#{bundle.Previous} #{traceServerController.pagination.pageSize}" rendered="#{traceServerController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{traceServerController.next}" value="#{bundle.Next} #{traceServerController.pagination.pageSize}" rendered="#{traceServerController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{traceServerController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTraceServerTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTraceServerTitle_host}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.host}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{traceServerController.prepareView}" value="#{bundle.ListTraceServerViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{traceServerController.prepareEdit}" value="#{bundle.ListTraceServerEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{traceServerController.destroy}" value="#{bundle.ListTraceServerDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{traceServerController.prepareCreate}" value="#{bundle.ListTraceServerCreateLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ListTraceServerIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %x - %m\n" />
+		</layout>
+	</appender>
+
+	<appender name="rolling" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="domain-rolling.log" />
+		<param name="MaxFileSize" value="2MB" />
+		<param name="MaxBackupIndex" value="14" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="socket" class="org.apache.log4j.net.SocketAppender">
+		<param name="LocationInfo" value="true" />
+		<param name="Port" value="8888" />
+		<param name="ReconnectionDelay" value="20000" />
+		<param name="RemoteHost" value="localhost" />
+	</appender>
+
+	<!-- Application logger -->
+	<logger name="com.comcast.cats" additivity="false">
+		<level value="info" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="rolling" />
+	</logger>
+
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework">
+		<level value="warn" />
+	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<level value="error" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="rolling" />
+	</root>
+
+</log4j:configuration>

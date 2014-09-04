@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<videoRecorderResponse>
+	<resultCode>SUCCESS</resultCode>
+	<recordingList>
+		<recording>
+			<createdTime>2012-12-10T15:06:53-05:00</createdTime>
+			<id>1</id>
+			<lastUpdatedTime>2012-12-10T15:06:53-05:00</lastUpdatedTime>
+			<mediaList>
+				<media>
+					<createdTime>2012-12-10T15:06:53-05:00</createdTime>
+					<filePath>E:\temp\vlc-file-server\2012\12\10\E4-48-C7-A8-1A-56\15-06-53-EST.mp4
+					</filePath>
+					<httpPath>http://127.0.0.1/pvr//2012/12/10/E4-48-C7-A8-1A-56/15-06-53-EST.mp4
+					</httpPath>
+					<id>1</id>
+					<lastUpdatedTime>2012-12-10T15:06:53-05:00</lastUpdatedTime>
+					<playable>true</playable>
+					<size>203.0</size>
+				</media>
+			</mediaList>
+			<mrl>rtsp://192.168.160.201/axis-media/media.amp?videocodec=h264&amp;camera=80
+			</mrl>
+			<recordingStatus>
+				<id>1</id>
+				<message>Stop request for recordingId [1] has been submitted
+					successfully at Mon Dec 10 15:07:49 EST 2012</message>
+				<state>STOPPED</state>
+			</recordingStatus>
+			<requestedDuration>0</requestedDuration>
+			<stbMacAddress>E4:48:C7:A8:1A:56</stbMacAddress>
+			<videoServerIp>192.168.160.202</videoServerIp>
+			<videoServerPort>80</videoServerPort>
+		</recording>
+		<recording>
+			<createdTime>2012-12-10T15:08:47-05:00</createdTime>
+			<id>3</id>
+			<lastUpdatedTime>2012-12-10T15:08:47-05:00</lastUpdatedTime>
+			<mediaList>
+				<media>
+					<createdTime>2012-12-10T15:08:47-05:00</createdTime>
+					<filePath>E:\temp\vlc-file-server\2012\12\10\E4-48-C7-A8-1A-56\15-08-47-EST.mp4
+					</filePath>
+					<httpPath>http://127.0.0.1/pvr//2012/12/10/E4-48-C7-A8-1A-56/15-08-47-EST.mp4
+					</httpPath>
+					<id>3</id>
+					<lastUpdatedTime>2012-12-10T15:08:47-05:00</lastUpdatedTime>
+					<playable>true</playable>
+					<size>4.4417207E7</size>
+				</media>
+			</mediaList>
+			<mrl>rtsp://192.168.160.201/axis-media/media.amp?videocodec=h264&amp;camera=1
+			</mrl>
+			<recordingStatus>
+				<id>3</id>
+				<message>Stop request for recordingId [3] has been submitted
+					successfully at Mon Dec 10 15:16:26 EST 2012</message>
+				<state>STOPPED</state>
+			</recordingStatus>
+			<requestedDuration>0</requestedDuration>
+			<stbMacAddress>E4:48:C7:A8:1A:56</stbMacAddress>
+			<videoServerIp>192.168.160.202</videoServerIp>
+			<videoServerPort>1</videoServerPort>
+		</recording>
+	</recordingList>
+</videoRecorderResponse>

@@ -1,0 +1,18 @@
+- !!com.comcast.cats.local.domain.SettopType {manufacturer: Motorola, model: DCT6412,
+  name: Settop.Motorola.DCT6412, remoteType: COMCAST, traceType: Normal Trace}
+- !!com.comcast.cats.local.domain.SettopType {manufacturer: Motorola, model: DCH6416,
+  name: Settop.Motorola.DCH6416, remoteType: COMCAST, traceType: Normal Trace}
+- !!com.comcast.cats.local.domain.SettopType {manufacturer: Motorola, model: DCX3400-M,
+  name: Settop.Motorola.DCX3400-M, remoteType: COMCAST_XMP, traceType: Normal Trace}
+- !!com.comcast.cats.local.domain.SettopType {manufacturer: Cisco, model: RNG200, name: Settop.Cisco.RNG200,
+  remoteType: XR2, traceType: Normal Trace}
+- !!com.comcast.cats.local.domain.SettopType {manufacturer: Cisco, model: RNG150, name: Settop.Cisco.RNG150,
+  remoteType: COMCAST_XMP, traceType: Normal Trace}
+- !!com.comcast.cats.local.domain.SettopType {manufacturer: SA, model: EXP-3250HD,
+  name: Settop.SA.EXP3250HD, remoteType: SA, traceType: Normal Trace}
+- !!com.comcast.cats.local.domain.SettopType {manufacturer:  --, model: X1, name: Settop.Pace.X1, remoteType: XR2, traceType: Normal Trace}
+- !!com.comcast.cats.local.domain.SettopType {manufacturer:  Technicolor, model: DCI401COM3, name: Settop.Technicolor.DCI401COM3, remoteType: DTA, traceType: Normal Trace}
+
+
+
+

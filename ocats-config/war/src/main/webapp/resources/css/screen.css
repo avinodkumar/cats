@@ -1,0 +1,366 @@
+/**
+ * Copyright 2014 Comcast Cable Communications Management, LLC
+ *
+ * This file is part of CATS.
+ *
+ * CATS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * CATS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+ */
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #EAECEE;
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+}
+
+#header {
+	height: 80px;
+	border-bottom: 2px solid #c0c0c0;
+	background: #ffffff;
+	text-align: center;
+	color: #800000;
+	margin: 0;
+	padding: 0;
+}
+
+#header h1 {	
+	padding-top: 8px;
+	text-align: center;
+	font-size: 250%;
+}
+
+#header a {
+	color: #630404;
+}
+
+#page {
+	background: #ffffff;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: solid 2px #a0a0a0;
+	border-left: solid 2px #a0a0a0;
+	border-right: solid 2px #a0a0a0;
+	border-bottom: solid 2px #a0a0a0;
+}
+
+#sidebar {
+	float: right;
+	width: 200px;
+	border: 1px solid #d0d0d0;
+	min-height: 240px;
+	padding: 4px;
+}
+
+#sidebar h1 {
+	display: block;
+	font-size: 120%;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+#container {
+	padding: 8px;
+}
+
+#content {
+	min-height: 320px;
+	font-size: 120%;
+	width: 720px;
+}
+
+#footer {
+	text-align: center;
+	padding: 8px;
+	margin: 8px;
+	border-top: 1px solid #c0c0c0;
+	clear: both;
+}
+
+.panel {
+	border: 1px solid #d0d0d0;
+	padding: 8px;
+	margin: 8px 4px 16px 4px;
+	background: #fafafa;
+}
+
+.panel h1 {
+	font-size: 120%;
+	display: block;
+	background: #f0f0f0;
+	padding: 6px;
+	margin: -8px;
+	border-bottom: 1px solid #d0d0d0;
+	margin-bottom: 8px;
+}
+
+.odd {
+	background: #f0f0f0;
+}
+
+.even {
+	background: #ffffff;
+}
+
+.dataTable {
+	border-collapse: collapse;;
+	width: 80%;
+}
+
+.dataTable th {
+	background: #790925;
+	color: #f0f0f0;
+	padding: 6px;
+	border: 1px solid #f0f0f0;
+}
+
+.dataTable td {
+	border: 1px solid #d0d0d0;
+	padding: 4px;
+}
+
+.caption {
+	float: left;
+	width: 100px;
+}
+
+.formCaption {
+	float: left;
+	width: 100px;
+	padding-top: 4px;
+}
+
+.value {
+	margin-right: 8px;
+}
+
+.errorMessage {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.property {
+	margin-bottom: 12px;
+}
+
+#navcontainer ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#navcontainer li {
+	margin: 0 0 .2em 0;
+}
+
+#navcontainer a {
+	display: block;
+	color: #FDDDDA;
+	background-color: #036;
+	padding: .2em .8em;
+	text-decoration: none;
+}
+
+#navcontainer a:hover {
+	background-color: #AE0D36;
+	color: #FDDDDA;
+}
+
+.basictab{
+padding: 3px 0;
+margin-left: auto;
+font: bold 12px Verdana;
+list-style-type: none;
+text-align: left; /*set to left, center, or right to align the menu as desired*/
+position: relative;
+border-bottom: 2px solid #c0c0c0;
+}
+
+.basictab li{
+display: inline;
+margin: 0;
+}
+
+.basictab li a{
+text-decoration: none;
+padding: 3px;
+border: 1px solid gray;
+border-bottom: 1px solid gray;
+background-color: #FDDDDA;
+color: #2d2b2b;
+}
+
+.basictab li a:visited{
+color: #2d2b2b;
+}
+
+.basictab li a:hover{
+position: relative;
+top: 1px;
+padding-top: 4px;
+background-color: #AE0D36;
+}
+
+.basictab li a:active{
+position: relative;
+top: 1px;
+padding-top: 4px;
+color: black;
+}
+
+.basictab li.selected a{ /*selected tab effect*/
+position: relative;
+top: 1px;
+padding-top: 4px;
+background-color: #AE0D36;
+color: black;
+}
+
+.basictab li a#hm,
+.basictab li a#rm,
+.basictab li a#kcf,
+.basictab li a#keys,
+.basictab li a#layouts{ /*selected tab effect*/
+position: relative;
+top: 1px;
+padding-top: 4px;
+background-color: #AE0D36;
+color: #FDDDDA;
+}
+/*
+#button a:link, a:visited
+{
+  float: left;
+  margin: 2px 5px 2px 5px;
+  padding: 2px;
+  width: 100px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid black;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid black;
+  background: #cccccc;
+  text-align: center;
+  text-decoration: none;
+  font: normal 10px Verdana;
+  color: black;
+}
+
+#button a:hover
+{
+  background: #eeeeee;
+}
+
+#button a:active
+{
+  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid black;
+  border-right: 1px solid #eeeeee;
+  border-left: 1px solid black;
+}*/
+
+
+div#buttonA {
+    margin-left: 50px;
+}
+div#buttonA ul {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 30px;
+}
+div#buttonA li {
+    list-style-type: none;
+    height: 30px;
+    width: 125px;
+    margin: 10px;
+    text-align:center;
+}
+div#buttonA li a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: #999999;
+    border-style: solid;
+    border-bottom-color: #333333;
+    border-right-color: #555555;
+    border-left-color: #BBBBBB;
+    border-top-color: #DDDDDD;
+}
+div#buttonA li a:link {
+    color: #000000;
+    font-weight: bold;
+    background-color: #999999;
+    border-style: solid;
+    border-bottom-color: #333333;
+    border-right-color: #555555;
+    border-left-color: #BBBBBB;
+    border-top-color: #DDDDDD;
+}
+div#buttonA li a:visited {
+    color: #000000;
+    font-weight: normal;
+    background-color: #999999;
+    border-style: solid;
+    border-bottom-color: #333333;
+    border-right-color: #555555;
+    border-left-color: #BBBBBB;
+    border-top-color: #DDDDDD;
+}
+div#buttonA li a:hover {
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #777777;
+    border-style: solid;
+    border-bottom-color: #333333;
+    border-right-color: #555555;
+    border-left-color: #BBBBBB;
+    border-top-color: #DDDDDD;
+}
+div#buttonA li a:active {
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #666666;
+    border-style: solid;
+    border-top-color: #333333;
+    border-left-color: #555555;
+    border-right-color: #BBBBBB;
+    border-bottom-color: #DDDDDD;
+}
+
+.button a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: #999999;
+    border-style: solid;
+    border-bottom-color: #333333;
+    border-right-color: #555555;
+    border-left-color: #BBBBBB;
+    border-top-color: #DDDDDD;
+}
+
+.button a:hover {
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #777777;
+    border-style: solid;
+    border-bottom-color: #333333;
+    border-right-color: #555555;
+    border-left-color: #BBBBBB;
+    border-top-color: #DDDDDD;
+}
+
+

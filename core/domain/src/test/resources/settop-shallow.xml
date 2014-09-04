@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    OCATS : Automation Test Framework for the Cable Industry
+    Copyright (C) 2013  Comcast Corporation Ltd.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<settopDesc xmlns:ns2="http://cats.comcast.com" unitAddress="1900548372432110"
+	serialNumber="" remoteType="Settop"
+	rackId="2657112d-9111-419f-b310-a437a6e0c18e" model="DC50Xu"
+	manufacturer="PACE (Micro)" hostMacAddress="12:BE:20:AF:7F:D0"
+	environmentId="c8718a04-441f-4c2a-8b31-7937cd70f7e3" componentType="Settop.Pace.DTA.DC50Xu(Micro)"
+	name="Settop.12:BE:20:AF:7F:D0" id="d6622ae0-763f-4d7c-b4a7-af180f38eaa1">
+     <extraProperties>
+         <item value="Settop" name="Tag"/>
+         <item value="54D46F96CD79" name="eCM MAC"/>
+         <item value="Checked Out" name="Inventory Status"/>
+         <item value="Automation Rack " name="Owner Description"/>
+         <item value="Automation Rack" name="Owner"/>
+      </extraProperties>
+</settopDesc>

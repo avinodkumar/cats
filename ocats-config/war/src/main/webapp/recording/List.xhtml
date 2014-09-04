@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <ui:composition template="/template.xhtml">
+    <ui:param name="activeIndex" value="1"/>
+        <ui:define name="title">
+            <h:outputText value="Recordings List"></h:outputText>
+        </ui:define>
+         <ui:define name="content">
+        				<h:outputScript library="javascript" name="dblclickdatatable.js" target="head" />
+    	</ui:define>
+        <ui:define name="body">
+			<f:event type="postAddToView" listener="#{settopRecordingController.refreshAll}" />
+                <h:outputText escape="false" value="NO SETTOPS FOUND" rendered="#{fn:length(settopRecordingController.settopRecordingStatusList)  == 0}"/>
+                <h:form id ="form" styleClass="jsfcrud_list_form">
+            	<p:growl id="recording_messages" showDetail="true" life="10000" sticky="false" /> 
+                <h:panelGroup id="panelGroup" >
+					 <p:poll interval="30" id="recordingPoll" widgetVar="recordingRefreshPoll" global="false" listener="#{settopRecordingController.refreshAll()}" update="recordingsTable"/>
+                    <p:dataTable  widgetVar="recordingsTable" id = "recordingsTable" var="recording" value="#{settopRecordingController.settopRecordingStatusList}" rowKey="#{recording.settop.id}"
+                    	styleClass="settopListTable"
+                 		selection="#{settopRecordingController.selectedRecordings}" selectionMode="multiple"
+						paginator="true" rows="16"
+						sortBy="#{recording.slot}"> 
+                          
+                          <f:facet name="header" >  
+  							 <h:panelGroup  style="display: block; left:0px;width:100%;height:23px" >
+  								<h:outputLink target="_blank" style="left:25px; position:absolute; text-align:left" value="#{settopRecordingController.masterRecordDirectory}">
+	                					 <p:graphicImage value="/images/recordingFolder.png" style="border:none" />
+	                			</h:outputLink> 
+	                			 <h:outputLink target="_blank" value="#{settopRecordingController.masterRecordDirectory}" style="left:55px; position:absolute; padding-top:7px; text-align:left;text-decoration:none;">
+	                			 	<h:outputText value="Recordings" />  
+	                			 </h:outputLink>
+                            
+                            	<p:commandLink style="left:140px; position:absolute; text-align:left" ajax="true"  actionListener="#{settopRecordingController.recordSelectedSettops()}"
+                            	update="recordingsTable :form:recording_messages">
+	                					 <p:graphicImage value="/images/record.png" style="border:none" />
+	                			</p:commandLink>
+	                			 <p:commandLink ajax="true"  actionListener="#{settopRecordingController.recordSelectedSettops()}" style="left:170px; position:absolute; padding-top:7px; text-align:left;text-decoration:none;"
+	                			 update="recordingsTable :form:recording_messages">
+	                			 	<h:outputText value="Record Selected" /> 
+	                			 </p:commandLink>
+                            	<p:commandLink style="left:280px; position:absolute; text-align:left" ajax="true"  actionListener="#{settopRecordingController.stopSelectedSettops()}" >
+	                					 <p:graphicImage value="/images/stopSelected.png" style="border:none" update="recordingsTable :form:recording_messages"/>
+	                			</p:commandLink>
+	                			 <p:commandLink ajax="true"  actionListener="#{settopRecordingController.stopSelectedSettops()}" style="left:310px; position:absolute; padding-top:7px; text-align:left;text-decoration:none;"
+	                			 update="recordingsTable :form:recording_messages">
+	                			 <h:outputText value="Stop Selected" /> 
+	                			 </p:commandLink>
+	                			 <p:commandLink style="left:400px; position:absolute; text-align:left" ajax="false" actionListener="#{settopRecordingController.refreshAll()}" update="@this">
+	                					 <p:graphicImage value="/images/refreshAll.png" style="border:none" />
+	                			</p:commandLink> 
+	                			 <p:commandLink ajax="false" actionListener="#{settopRecordingController.refreshAll()}" update="@this" style="left:435px; position:absolute; padding-top:7px; text-align:left;text-decoration:none;">
+	                			  <h:outputText value="Refresh All" /> 
+	                			 </p:commandLink>
+
+                            </h:panelGroup>
+
+        					</f:facet>
+                          
+                          <p:column style="display:none" headerText="Settop ID" filterBy="#{recording.settop.id}" >  
+               				 	<f:facet name="output">  
+                    				<h:outputText value="#{recording.settop.id}" />  
+                				</f:facet>  
+                        </p:column>
+                          
+                        <p:column headerText="" style="white-space:nowrap;width:25px" sortBy="#{recording.state}"> 
+                    				<p:panelGrid  styleClass="controlPanel" >
+                    				<p:row style="width:100%; border-width:0px">
+                    				<p:column colspan="1" style="width:25px; border-width:0px"> 
+                                      	<p:graphicImage id="prepare" value="/images/processing.gif" style="border:none" rendered="#{recording.state  == 'INITIALIZING' and recording.latestMedia.filePath  != null}"/>
+                                      	<p:tooltip style="max-width:1075px" for="prepare" value="#{recording.statusMessage}"/> 
+                                      	<p:graphicImage id="buffered" value="/images/processing.gif" style="border:none" rendered="#{recording.state  == 'BUFFERING'}"/>
+										<p:tooltip  style="max-width:1075px" for="buffered" value="#{recording.statusMessage}"/> 
+										<p:graphicImage id="recording" value="/images/processing.gif" style="border:none" rendered="#{recording.state  == 'RECORDING'}"/>
+	                                    <p:tooltip  style="max-width:1075px" for="recording" value="#{recording.statusMessage}"/> 
+	                                    <p:graphicImage id="stopped" value="/images/stopped.png" style="border:none" rendered="#{recording.state  == 'STOPPED'}"/>
+	                                   	<p:tooltip  style="max-width:1075px" for="stopped" value="#{recording.statusMessage}"/> 
+	                                    <p:graphicImage id="errorRecording" value="/images/error.png" style="border:none" rendered="#{recording.state  == 'ERROR'}"/>
+                                  		<p:tooltip  style="max-width:1075px" for="errorRecording" value="Error : #{recording.statusMessage}"/> 
+                                  		<p:graphicImage id="forceCloseRecording" value="/images/error.png" style="border:none" rendered="#{recording.state  == 'FORCE_CLOSE'}"/>
+                                  		<p:tooltip  style="max-width:1075px" for="forceCloseRecording" value="Error :Force Closed:  #{recording.statusMessage}"/> 
+                                  	</p:column>
+                                  </p:row>
+                    				</p:panelGrid>
+                        </p:column>
+                         <p:column headerText="Ctrl" style="white-space:nowrap;width:50px;overflow:visible"> 
+                    				<p:panelGrid  styleClass="controlPanel" >
+                    				<p:row style="width:100%; border-width:0px">
+
+                                  <p:column colspan="1" style="width:25px; border-width:0px">
+                                  <p:commandLink  global="false" style ="border:none"
+                                      ajax="true" actionListener="#{settopRecordingController.stop(recording)}" update="recordingsTable :form:recording_messages">
+                                       <p:graphicImage id="stopRecord" value="/images/stop.png" style="border:none" rendered="#{recording.state  == 'RECORDING' or recording.state == 'BUFFERING' or (recording.state == 'INITIALIZING' and recording.latestMedia.filePath  != null)}"/>
+                                       <p:tooltip for="stopRecord" value="Stop Recording"/> 
+                                       </p:commandLink>
+                                       
+                                       <p:commandLink style ="border:none" global="false"
+                                      ajax="true" actionListener="#{settopRecordingController.start(recording)}" update="recordingsTable :form:recording_messages" >
+                                       <p:graphicImage id="startRecord" value="/images/startRecord.png" style="border:none;width: 19px;" rendered="#{recording.state  == 'STOPPED' or recording.state == 'ERROR' or recording.state == 'FORCE_CLOSE' or  recording.state == 'UNKNOWN'}"/>
+                                      <p:tooltip for="startRecord" value="Record"/> 
+                                       </p:commandLink>
+                                  </p:column>
+
+                                  <p:column colspan="1" style="width:25px; border-width:0px">
+                                   <p:graphicImage id ="playRecordingDisabled" value="/images/play-disabled.png" style="border:none" rendered="#{recording.state  != 'STOPPED'}"/>
+                                   <p:commandLink global="false"  style ="border:none" oncomplete="mediaPlayer.show()" update=":mediaPlayerView"
+                                      ajax="true" actionListener="#{settopRecordingController.setMediaToPlay(recording.latestMedia)}">
+                                       <p:graphicImage id ="playRecording" value="/images/play.png" style="border:none" rendered="#{recording.state  == 'STOPPED'}"/>
+                                       <p:tooltip for="playRecording" value="Play"/>
+                                  </p:commandLink>
+                                  </p:column>
+                                  </p:row>
+                    				</p:panelGrid>
+                        </p:column>
+                        
+                        <p:column headerText="Latest Recording" style="white-space:nowrap;width:5%; text-align:center;" sortBy="#{recording.latestMedia.fileName}"> 
+                   				<h:outputText value="No Past Recordings" rendered="#{recording.latestMedia.filePath  == null}"/>
+                   				<h:outputLink  id ="recordingName" target="_blank" value="#{recording.latestMedia.filePath}" rendered="#{recording.latestMedia.filePath  != null}">
+                   					<h:outputText value="#{recording.latestMedia.fileName}" rendered="#{recording.latestMedia.fileName.length() lt 17}"/>
+                   					<h:outputText value="#{fn:substring(recording.latestMedia.fileName , 0 ,15)}..." rendered="#{recording.latestMedia.fileName.length() gt 16}"/>
+                   				</h:outputLink>
+                   				<p:tooltip for="recordingName" value="#{recording.latestMedia.fileName}" rendered="#{recording.latestMedia.fileName.length() gt 16}"/> 
+                        </p:column>
+
+                        <p:column headerText="File Size" style="white-space:nowrap;width:68px" sortBy="#{recording.latestMedia.fileSize}"> 
+                    			<h:outputText value="#{recording.latestMedia.fileSize} MB" rendered="#{recording.latestMedia.filePath  != null}"/>
+                        </p:column>
+                        
+                        <p:column headerText="Settop" style="white-space:nowrap;" sortBy="#{recording.settop.name}"> 
+                    				<h:outputText value="#{recording.settop.name}" />  
+                        </p:column>
+
+                        <p:column headerText="CV"  style="white-space:nowrap;width:26px" >
+                                  <p:commandLink  id="pcv"  
+                                      ajax="false" title="CV" actionListener="#{settopController.launchCATSVision(recording.settop)}">
+                                      <p:graphicImage value="/images/pcv.png" style="border:none" />
+                                  </p:commandLink>
+                        </p:column>
+                        
+                        <p:column headerText="Save" style="white-space:nowrap;width:26px	"> 
+                       				<h:outputText value="NA" rendered="#{recording.latestMedia.filePath  == null}" /> 
+	                             <p:commandLink  id="download"  rendered="#{recording.latestMedia.filePath  != null}"
+                                      ajax="false" title="Download" actionListener="#{settopRecordingController.downloadMedia(recording.latestMedia)}">
+                                      <p:graphicImage value="/images/download.png" style="border:none" />
+                                  </p:commandLink>
+                        </p:column>
+                        
+                       <p:column headerText="Rec" style="white-space:nowrap;width:26px	"> 
+                       				<h:outputText value="NA" rendered="#{recording.latestMedia.directory  == null}" /> 
+	                               <h:outputLink target="_blank" value="#{recording.latestMedia.directory}" rendered="#{recording.latestMedia.directory  != null}">
+	                					 <p:graphicImage value="/images/recordingFolder.png" style="border:none" />
+	                				</h:outputLink>
+                        </p:column>
+                        
+                        <p:column headerText="List" style="text-align:center;width:30px">
+                         		<p:commandLink  id="historyList"  update=":historydialog" oncomplete="historydlg.show()">
+                                      <p:graphicImage value="/images/historylist.png" style="border:none" />
+                                      <f:setPropertyActionListener value="#{recording}" target="#{settopRecordingController.selectedRecording}" />
+                                  </p:commandLink>
+				        </p:column>  
+                        
+                        <p:column headerText="Settop Mac" sortBy="#{recording.settop.hostMacAddress}">
+                    				<h:outputText value="#{recording.settop.hostMacAddress}" /> 
+                        </p:column>
+                        
+                        <p:column headerText="Settop Type" sortBy="#{recording.settop.componentType}"> 
+                    				<h:outputText value="#{recording.settop.componentType}" />  
+                        </p:column>
+                        
+                         <p:column  headerText="Serial Number" sortBy="#{recording.settop.serialNumber}">
+                    			<h:outputText value="#{recording.settop.serialNumber}" />  
+                        </p:column>
+                        
+                         <p:column  headerText="Manufacturer" sortBy="#{recording.settop.manufacturer}">
+                    			<h:outputText value="#{recording.settop.manufacturer}" />  
+                        </p:column>
+                        
+                        <p:column  headerText="Unit Address" sortBy="#{recording.settop.unitAddress}">
+							<h:outputText value="#{recording.settop.unitAddress}" />
+                        </p:column>
+                        
+                         <p:column  headerText="MCard Mac" sortBy="#{recording.settop.mcardMacAddress}">
+                    				<h:outputText value="#{recording.settop.mcardMacAddress}" />  
+                        </p:column>
+                        
+                         <p:column  headerText="Content Type" style="white-space:nowrap;" sortBy="#{recording.settop.content}">
+                    				<h:outputText value="#{recording.settop.content}" />  
+                        </p:column>
+
+                        <p:column  headerText="Rack" rendered="#{true}" sortBy="#{recording.slot.number}">
+                    				<h:outputText style="width:100px; white-space:pre;overflow:auto;" value="#{recording.slot.rack.name}-#{recording.slot.number}" />
+                        </p:column>
+                        
+                        
+                        <f:facet name="footer" >  
+  							 <h:panelGroup  style="display: block; left:0px;width:100%;height:23px" >
+                           
+                            		<p:graphicImage style="left:25px; position:absolute;padding-top:7px; text-align:left; border:none" ajax="false" value="/images/stopped.png"  />
+	                			 	<h:outputText  style="left:45px; position:absolute; padding-top:7px; text-align:left;text-decoration:none;" value="Stopped" />
+	                				
+	                			<p:graphicImage style="left:115px; position:absolute; padding-top:7px; text-align:left; border:none" ajax="false" value="/images/error.png"  />
+	                			 	<h:outputText  style="left:135px; position:absolute; padding-top:7px; text-align:left;text-decoration:none;" value="Error" />
+	                			 
+                            </h:panelGroup>
+
+        					</f:facet>
+
+                    </p:dataTable>
+
+				</h:panelGroup>
+				</h:form>
+
+				<div id="mediaContainer">
+						<h:panelGroup id="mediaPlayerView" layout="block">
+							<ui:include src="media-player.xhtml" />
+						</h:panelGroup>
+				</div>
+						
+				<div id="history">
+				
+					<p:dialog width="1020" header="#{settopRecordingController.selectedRecording.settop.name}" widgetVar="historydlg" resizable="true" id="historydialog"  
+                	showEffect="fade" hideEffect="puff" modal="true" >  
+                	
+                	<p:ajax event="close" global="false"
+                	 listener="#{settopRecordingController.handleRecordingHistoryDlgClose}"/>
+                	
+				   <h:messages id="delete_messages" showDetail="true" autoUpdate="false" />
+				   <h:outputText value="No Recording History" rendered="#{fn:length(settopRecordingController.selectedRecording.recordingHistoryList) == 0}" style="height:100px;padding-top: 60px;text-align: center;width: 100%;"/>
+				   <h:form id="historyForm">
+				    <h:panelGrid columns="2" style="width:100%;"> 
+						<p:panel style="width:385px;vertical-align:top;height:365px" >
+				   <p:dataTable  id="recordingsHistoryList" 
+				    rowKey="#{recording.id}"
+				   	var="recording" value="#{settopRecordingController.selectedRecording.recordingHistoryList}"
+				    paginator="true" rows="14" paginatorTemplate="{FirstPageLink} {PageLinks}  {LastPageLink}"  paginatorPosition="bottom"
+				     selection="#{settopRecordingController.selectedRecordingHistoryList}" selectionMode="multiple"
+				   	>
+				   	<p:ajax event="rowSelect"  global="false"
+                    update=":historyForm:historyPanel"/>  
+                    
+				   	<f:facet name="header" >  
+				   				 <p:commandLink   style ="border:none;left: -45px;position: relative;" update=":historydialog" oncomplete="historydlg.show()"
+                                      ajax="true" actionListener="#{settopRecordingController.deleteRecordingsList()}">
+                                        <p:graphicImage value="/images/delete1.png" style="border:none;padding-right: 4px;" />
+                                       <h:outputText value="Delete selected recordings" style="border:none" />
+                                  </p:commandLink>
+				   	</f:facet>
+				   	<p:column>  
+		             	<h:outputText value="#{empty recording.name ? recording.createdTime : recording.name }" />  
+		        	</p:column>  createdTime
+		        		<p:column>  
+		             	<h:outputText value="#{recording.createdTime}" />  
+		        	</p:column>
+				   </p:dataTable>
+				  	</p:panel>
+				   <p:panel id="historyPanel" style="height:365px;width: 612px;" >
+				   <div id="deleteRecording" style="left: 3%;position: relative;width: 111px;" >
+					        <p:commandLink id="deleteSingleRecordingCommandLink"  style ="border:none" update=":historydialog" oncomplete="historydlg.show()"
+                                      ajax="true" actionListener="#{settopRecordingController.deleteRecording()}"
+                                      rendered= "#{not empty settopRecordingController.selectedRecordingHistoryList}">
+                                        <p:graphicImage value="/images/remove.png" style="border:none" />
+                                       <h:outputText value="Delete Recording" style="border:none" />
+                                  </p:commandLink>
+                                  </div>
+                              <div id="recordingStatus" style="left: 78%;position: relative;width: 109px;top: -13px;vertical-align: top;">
+                              	<h:outputText value="Recording Status " 
+                              	rendered= "#{not empty settopRecordingController.selectedRecordingHistory}"/>
+                                   <p:graphicImage id="prepare" value="/images/processing.gif" style="border:none" rendered="#{settopRecordingController.selectedRecordingHistory.state  == 'INITIALIZING' and recording.latestMedia.filePath  != null}"/>
+                                      	<p:tooltip style="max-width:200px;word-wrap:break-word;" for="prepare" value="#{settopRecordingController.selectedRecordingHistory.statusMessage}"/> 
+                                      	<p:graphicImage id="buffered" value="/images/processing.gif" style="border:none" rendered="#{settopRecordingController.selectedRecordingHistory.state  == 'BUFFERING'}"/>
+										<p:tooltip style="max-width:200px;word-wrap:break-word;" for="buffered" value="#{settopRecordingController.selectedRecordingHistory.statusMessage}"/> 
+										<p:graphicImage id="recording" value="/images/processing.gif" style="border:none" rendered="#{settopRecordingController.selectedRecordingHistory.state  == 'RECORDING'}"/>
+	                                    <p:tooltip  style="max-width:200px;word-wrap:break-word;" for="recording" value="#{settopRecordingController.selectedRecordingHistory.statusMessage}"/> 
+	                                    <p:graphicImage id="stopped" value="/images/stopped.png" style="border:none" rendered="#{settopRecordingController.selectedRecordingHistory.state  == 'STOPPED'}"/>
+	                                   	<p:tooltip style="max-width:200px;word-wrap:break-word;" for="stopped" value="#{settopRecordingController.selectedRecordingHistory.statusMessage}"/> 
+	                                    <p:graphicImage id="errorRecording" value="/images/error.png" style="border:none" rendered="#{settopRecordingController.selectedRecordingHistory.state  == 'ERROR'}"/>
+                                  		<p:tooltip style="max-width:200px;word-wrap:break-word;" for="errorRecording" value="Error: Some of the files may not play properly : #{settopRecordingController.selectedRecordingHistory.statusMessage}"/> 
+                                  		<p:graphicImage id="forceCloseRecording" value="/images/error.png" style="border:none" rendered="#{settopRecordingController.selectedRecordingHistory.state  == 'FORCE_CLOSE'}"/>
+                                  		<p:tooltip style="max-width:200px;word-wrap:break-word;" for="forceCloseRecording" value="Error :Force Closed : Some of the files may not play properly :  #{settopRecordingController.selectedRecordingHistory.statusMessage}"/> 
+                              </div>    
+                                  
+					        <h:panelGrid columns="1" cellpadding="10" style="width:100%"> 
+								<p:dataTable id="historytable" var="media" rowKey = "#{media.fileName}" value="#{settopRecordingController.selectedRecordingHistory.mediaInfo}" sortBy="#{media.createdDate}" sortOrder="descending" 
+								paginator="true" rows="7" style="top: -21px;position: relative;"
+								rendered= "#{not empty settopRecordingController.selectedRecordingHistory}">  
+
+							        <p:column headerText="Created Time #" sortBy="#{media.createdDate}">  
+							            <h:outputText value="#{media.createdDate}" />  
+							        </p:column>  
+							        
+							          <p:column headerText="Ctrl" colspan="1" style="text-align:center" >
+                                   <p:commandLink global="false" style ="border:none" oncomplete="mediaPlayer.show()" update=":mediaPlayerView"
+                                      ajax="true" actionListener="#{settopRecordingController.setMediaToPlay(media)}">
+                                       <p:graphicImage value="/images/play.png" style="border:none"/>
+                                       <!-- <p:graphicImage value="/images/play.png" style="border:none" rendered="#{media.playable}"/>
+                                        <p:graphicImage value="/images/play-disabled.png" style="border:none" rendered="#{!media.playable}" /> -->
+                                  </p:commandLink>
+                       			</p:column>
+							  
+							        <p:column headerText="Name" sortBy="#{media.fileName}">
+							            <h:outputText value="No Past Recordings" rendered="#{media.filePath  == null}"/>
+                   				<h:outputLink value="#{media.filePath}" rendered="#{media.filePath  != null}">
+                   					<h:outputText value="#{media.fileName}"/>
+                   				</h:outputLink> 
+							        </p:column>  
+							  
+							       <p:column headerText="Size" sortBy="#{media.fileSize}">  
+							            <h:outputText value="#{media.fileSize} MB" />    
+							        </p:column>
+							        
+							         <p:column headerText="Save" style="white-space:nowrap;width:26px	"> 
+                       				<h:outputText value="NA" rendered="#{media.filePath  == null}" /> 
+	                             <h:form>
+	                             <p:commandLink  id="download"  rendered="#{media.filePath  != null}"
+                                      ajax="false" title="Download" actionListener="#{settopRecordingController.downloadMedia(media)}">
+                                      <p:graphicImage value="/images/download.png" style="border:none" />
+                                  </p:commandLink>
+                                  </h:form>
+                        			</p:column>  
+							        
+							          <p:column headerText="Del" colspan="1" style="text-align:center" >
+                                   <p:commandLink   style ="border:none" update=":historyForm:deleteSingleRecordingCommandLink,:historyForm:historytable,:historydialog,:delete_messages" oncomplete="historydlg.show()"
+                                      ajax="true" actionListener="#{settopRecordingController.deleteMedia(media)}">
+                                       <p:graphicImage value="/images/remove.png" style="border:none" />
+                                  </p:commandLink>
+                       			</p:column>
+							        
+							    </p:dataTable>  
+					        </h:panelGrid>  
+				   </p:panel>
+				   </h:panelGrid>
+				  </h:form>
+				     
+				    </p:dialog>  
+				</div>
+
+            </ui:define>
+	    </ui:composition>
+</html>

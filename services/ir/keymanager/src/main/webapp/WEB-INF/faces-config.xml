@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+	<!--
+		This file is not required if you don't need any extra configuration.
+	-->
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	<!--
+		<converter>
+		<converter-id>com.comcast.cats.keymanager.web.RemoteTypeConverter</converter-id>
+		<converter-class>com.comcast.cats.keymanager.web.RemoteTypeConverter</converter-class>
+		</converter>
+	-->
+
+	<converter>
+		<converter-for-class>java.lang.Enum</converter-for-class>
+		<converter-class>javax.faces.convert.EnumConverter</converter-class>
+	</converter>
+
+	<!--
+		<managed-bean> <managed-bean-name>KeyManager</managed-bean-name>
+		<managed-bean-class>com.comcast.cats.keymanager.web.KeyManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope> <managed-property>
+		<property-name>keySet</property-name>
+		<value>#{param.paramName}</value> </managed-property> </managed-bean>
+	-->
+	<!--
+		Write your navigation rules here. You are encouraged to use CDI for
+		creating @Named managed beans.
+	-->
+	<navigation-rule>
+		<description>
+        The decision rule used by the NavigationHandler to
+        determine which view must be displayed after the
+        current view, greeting.xhtml is processed.
+        </description>
+		<from-view-id>/home.xhtml</from-view-id>
+		<navigation-case>
+			<description>
+            Indicates to the NavigationHandler that the response.xhtml
+            view must be displayed if the Action referenced by a
+            UICommand component on the greeting.xhtml view returns
+            the outcome "success".
+            </description>
+
+			<from-outcome>success</from-outcome>
+			<to-view-id>/index.html</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

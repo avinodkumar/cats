@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   template="/WEB-INF/templates/template.xhtml"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a4j="http://richfaces.org/a4j">
+   <ui:define name="content">
+   	<ul class="basictab">
+			<li class="a"><a href="home.jsf">Home</a></li>
+			<li class="a"><a href="listRemotes.jsf">Remotes</a></li>
+			<li class="a"><a href="listKeyCodeFormats.jsf">Formats</a></li>
+			<li class="a"><a href="listKeys.jsf">Keys</a></li>
+			<li class="a"><a id="layouts" href="listLayouts.jsf">Layouts</a></li>	
+			<li class="a"><a href="listRedRats.xhtml">Manage IrNetBox</a></li>		
+			<li class="a"><a id="redrathubs" href="listRedRatHubs.xhtml">Manage RedratHubs</a></li>	
+		</ul>   
+      <h3>Remote Layout</h3>
+		<h:messages style="color:red;margin:8px;" />
+		<h:form>
+     
+   <h:panelGrid columns="11">
+   				<h:outputText value="Remote" />
+				<h:outputText value="Format" />
+				<h:outputText value="Key" />
+				<h:outputText value="Panel" />
+				<h:outputText value="Row" />
+				<h:outputText value="Col" />
+				<h:outputText value="Fore" />
+				<h:outputText value="Back" />
+				<h:column /><h:column /><h:column />
+				 <h:selectOneMenu binding="#{KeyManager.selectRemoteType}"
+					onchange="submit()" styleClass="common-dropdown"
+					value="#{KeyManager.selectRemote}" var="remote">
+				</h:selectOneMenu>				
+				<h:selectOneMenu binding="#{KeyManager.selectKeyCodeFormat}"
+					onchange="submit()" styleClass="common-dropdown"
+					value="#{KeyManager.selectedFormat}">
+				</h:selectOneMenu>
+				<h:selectOneMenu id="key" value="#{KeyManager.key}"
+					onchange="submit()">
+					<f:selectItems value="#{KeyManager.keys}" />
+				</h:selectOneMenu>
+				<h:inputText value="#{KeyManager.layoutPanel}" style=" width : 32px;"/>
+				<h:inputText value="#{KeyManager.layoutRow}" style=" width : 32px;"/>
+				<h:inputText value="#{KeyManager.layoutColumn}" style=" width : 32px;"/>
+				<h:inputText value="#{KeyManager.layoutForeColor}" style=" width : 32px;"/>
+				<h:inputText value="#{KeyManager.layoutBackColor}" style=" width : 32px;"/>
+				<h:commandButton value="Delete"
+				onclick="if (!confirm('Are you sure you want to delete this Layout?')) return false"
+				action="#{KeyManager.deleteLayout}" style=" width : 47px;"/>
+			<h:commandButton value="Update"
+				actionListener="#{KeyManager.updateLayout}" style=" width : 54px;"/>
+			<h:commandButton value="Add" action="#{KeyManager.addLayout}" style=" width : 32px;"/>
+			</h:panelGrid>
+			
+		   <h:dataTable rendered="#{!empty(KeyManager.kcList)}"
+				value="#{KeyManager.layoutList}" styleClass="dataTable" var="layout"  >
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="ID" />
+					</f:facet>
+					<h:outputText value="#{layout.keyLayoutId}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Key Name" />
+					</f:facet>
+					<h:outputText value="#{layout.keyName}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Panel" />
+					</f:facet>
+					<h:outputText value="#{layout.panel}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Row" />
+					</f:facet>
+					<h:outputText value="#{layout.row}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Column" />
+					</f:facet>
+					<h:outputText value="#{layout.column}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="ForeColor" />
+					</f:facet>
+					<h:outputText value="#{layout.foreColor}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="BackColor" />
+					</f:facet>
+					<h:outputText value="#{layout.backColor}" />
+				</h:column>
+								
+			</h:dataTable>
+      
+			<p><h:commandButton value="Refresh"
+				action="#{KeyManager.refreshPage}" /> <h:commandButton
+				value="Go Back" action="home.jsf" /></p>
+		</h:form>
+   </ui:define>
+</ui:composition>
+
+ 
+
+ 
+
+ 

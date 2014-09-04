@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+  <appender name="RebootFileAppender"   class="com.comcast.cats.SettopLoggerFileAppender"> 
+	    <param name="Append" value="true" />
+	    <layout class="org.apache.log4j.PatternLayout">
+		    <param name="ConversionPattern" value="%d [%c] %m%n"/>
+	    </layout>
+    </appender>
+	<appender name="AggregatedReportAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${cats.home}/AggregatedRebootReport.log" />
+		<param name="DatePattern" value="yyyy-MM-dd-HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+		</layout>
+	</appender>
+   <logger name="AggregatedRebootReport" additivity="false">
+  	   <level value="info"/> 
+  	   <appender-ref ref="AggregatedReportAppender"/>
+    </logger>
+    <logger name="RebootDetection" additivity="false">
+  	   <level value="info"/> 
+  	   <appender-ref ref="RebootFileAppender"/>
+    </logger>
+ </log4j:configuration>

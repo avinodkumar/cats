@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %x - %m\n" />
+		</layout>
+	</appender>
+
+    <appender name="rolling" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cats-config-rolling.log" />
+        <param name="DatePattern" value="yyyy-MM-dd-HH" />
+        <param name="MaxFileSize" value="2MB" />
+        <param name="MaxBackupIndex" value="14" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+        </layout>
+    </appender>
+
+	<!-- Application logger -->
+	<!-- 
+	<logger name="com.comcast.cats" additivity="false">
+		<level value="warn" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="rolling" />
+	</logger>
+    -->
+	
+	<!-- 3rdparty Loggers -->
+	<!-- 
+	<logger name="org.springframework">
+		<level value="warn" />
+	</logger>
+    -->
+	
+	<!-- Root Logger -->
+	<root>
+		<level value="info" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="rolling" />
+	</root>
+
+</log4j:configuration>
+

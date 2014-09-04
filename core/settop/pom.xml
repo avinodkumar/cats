@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>cats-settop-impl</artifactId>
+	<packaging>jar</packaging>
+	<name>CATS Settop APIs Implementation</name>
+	<description>
+		CATS Settop APIs Implementation.
+	</description>
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>core-parent</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>cats-settop-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>cats-domain-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>ir-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>power-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>video-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>video-recorder-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Old versions won't work with spring-test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+		<!-- Include CVS dependencies for Trace and a few other things. -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-easymock</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>verify</id>
+						<goals>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- This must be present so that JUnit tests are run. -->
+					<testNGArtifactName>none:none</testNGArtifactName>
+					<!-- <includes> <include>**/*IT.java</include> <include>**/*AT.java</include> 
+						</includes> -->
+					<excludes>
+						<exclude>**/*IT.java</exclude>
+						<exclude>**/*Test.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>-XX:-UseSplitVerifier</argLine>
+					<!-- This must be present so that JUnit tests are run. -->
+					<testNGArtifactName>none:none</testNGArtifactName>
+					<excludes>
+						<exclude>**/WiringTest.java</exclude>
+						<exclude>**/CiscoDTATest.java</exclude>
+						<exclude>**/TraceProviderIntegrationTest.java</exclude>
+						<!-- Excluding the below test cases as it fails when running through 
+							command line for Mac users -->
+						<exclude>**/EnvironmentFactoryTest.java</exclude>
+						<exclude>**/SettopFactoryImplBasedOnPropertyTest.java</exclude>
+						<exclude>**/SettopFactoryImplTest.java</exclude>
+						<exclude>**/CatsEnvironmentTest.java</exclude>
+						<exclude>**/VideoRecorderUnitTest.java</exclude>
+						<exclude>**/VideoRecorderIntegrationTest.java</exclude>
+						<!-- java.io.IOException: Unable to set the last modification time 
+							for CATS_HOME\cats.props -->
+						<exclude>**/CatsFrameworkLocalTest.java</exclude>
+						<exclude>**/SettopFactoryLocalTest.java</exclude>
+							<exclude>**/CatsFrameworkTest.java</exclude>
+						<!-- Issues while compiling with JDK1.7 -->
+						<!-- TODO fix the below tests to run in JDK 1.7 -->
+						<!--exclude>**/RecorderProviderFactoryTest.java</exclude> <exclude>**/RFControlProviderFactoryTest.java</exclude> 
+							<exclude>**/RemoteProviderExclusiveAccessTest.java</exclude> <exclude>**/RFControlProviderTest.java</exclude -->
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<!--version>1.4</version> <dependencies> <dependency> <groupId>org.aspectj</groupId> 
+					<artifactId>aspectjrt</artifactId> <version>1.7.0</version> </dependency> 
+					<dependency> <groupId>org.aspectj</groupId> <artifactId>aspectjtools</artifactId> 
+					<version>1.7.0</version> </dependency> </dependencies> <executions> <execution> 
+					<goals> <goal>compile</goal> <goal>test-compile</goal> </goals> </execution> 
+					</executions -->
+				<configuration>
+					<!--verbose>true</verbose> <privateScope>true</privateScope> <encoding>UTF-8</encoding> 
+						<source>1.6</source> <target>1.6</target> <complianceLevel>1.6</complianceLevel> 
+						<showWeaveInfo>true</showWeaveInfo> <outxml>true</outxml -->
+					<weaveDependencies>
+						<weaveDependency>
+							<groupId>com.comcast.cats</groupId>
+							<artifactId>cats-settop-api</artifactId>
+						</weaveDependency>
+					</weaveDependencies>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											aspectj-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.4,)
+										</versionRange>
+										<goals>
+											<goal>compile</goal>
+											<goal>test-compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

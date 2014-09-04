@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<ui:composition>
+	<p:dialog id="mediaPlayerModalDialog" header="CATS Media Player"
+		widgetVar="mediaPlayer" modal="false" width="600" height="490"
+		dynamic="true" resizable="false" showEffect="clip" hideEffect="clip">
+		<center>
+			<p:media value="#{mediaMetaData.httpPath}" width="550" height="350"
+				player="windows">
+				<!-- For complete list of supported params http://www.thebestsolver.com/parameter-of-windows-media-player-embedding.html -->
+				<f:param name="autostart" value="false" />
+				<f:param name="fullscreen" value="true" />
+				<p:outputPanel layout="block">  
+        Windows Media is required to view this media. If you can't see the media, please download appropriate browser addon from <h:outputLink
+						value="http://www.microsoft.com/Windows/MediaPlayer/">here</h:outputLink>
+				</p:outputPanel>
+			</p:media>
+			Double Click for FullScreen
+		</center>
+		<br />
+		<b>Media Information</b>
+		<p:separator />
+		<h:outputText id="httpPathText" value="#{mediaMetaData.httpPath}" />
+		<br />
+		<h:outputText id="sizeText" value="Size #{mediaMetaData.size/1024} KB" />
+		<p:separator />
+	</p:dialog>
+</ui:composition>
+</html>

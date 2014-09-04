@@ -1,0 +1,7 @@
+#cats.server.url=http://192.168.160.201:8080/
+cats.server.url=http://cats-dev:8080/
+cats.config.url=http://192.168.160.201:8080/rest/cats/
+cats.user.authToken=8520
+settop.url=file:/D:/comcast/settop-list.xml
+strings.dm.location=file:/D:/comcast/strings.dm
+

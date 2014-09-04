@@ -1,0 +1,216 @@
+/**
+ * Copyright 2014 Comcast Cable Communications Management, LLC
+ *
+ * This file is part of CATS.
+ *
+ * CATS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * CATS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+ */
+/* CATS TRACE CSS */
+body 
+{
+margin:0;
+padding:0;
+height:100%;
+background-color:#FFFFFF;
+-x-system-font:none;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:normal;
+}
+
+.cats-container
+{
+position:absolute;
+margin:0px auto;
+background-color:#FFFFFF; 
+width: 100%; 
+height:100%;
+}
+
+.cats-app-bar
+{
+background-color: #FFFFFF; 
+width: 80%; 
+margin: 0 auto;
+height:15px;
+}
+
+a
+{
+color: #5474C6;
+text-decoration:none;
+font-weight:bold;
+background-color: transparent;
+}
+
+a:hover
+{
+color:#E31836;
+text-decoration:none;
+font-weight:bold;
+background-color: transparent;
+}
+
+.cats-header
+{
+background-color: #B2CDE0; 
+width: 80%; 
+margin: 0 auto;
+height:100px;
+}
+
+.cats-header-title
+{
+color:#E31836;
+font-size: 20px;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.cats-content 
+{
+position:relative;
+width: 80%; 
+margin: 0 auto;
+border-top: 5px ridge #E31836;
+border-bottom: 5px ridge #E31836;
+background-color:#FFFFFF;
+}
+
+.cats-footer
+{
+position:relative;	
+background-color: #B2CDE0;
+width: 80%; 
+margin: 0 auto;
+text-align:center;
+}
+.index-content 
+{
+width: 80%; 
+margin: 0 auto;
+height:90%;
+border-top: 5px ridge #E31836;
+border-bottom: 5px ridge #E31836;
+background-color:#FFFFFF;
+}
+
+.index-footer
+{
+background-color: #B2CDE0;
+width: 80%; 
+margin: 0 auto;
+height:15px;
+text-align:center;
+}
+img
+{
+border:0px;
+margin-top:0px;
+}
+
+a.button
+{
+background:url(../images/button.gif);
+display:block;
+color:#555555;
+font-weight:bold;
+height:30px;
+line-height:29px;
+margin-top:2px;
+margin-left:2px;
+margin-right:2px;
+margin-bottom:2px;
+text-decoration:none;
+width:100px;
+}
+
+.header-button
+{
+display:block;
+color:#555555;
+font-weight:bold;
+height:100%;
+line-height:15px;
+margin-top:0px;
+margin-left:0px;
+margin-right:0px;
+margin-bottom:0px;
+text-decoration:none;
+width:100px;
+}
+
+a:hover.button
+{
+color:#0066CC;
+}
+
+.home
+{
+background:url("../images/home.png") no-repeat scroll 40px 0px transparent;
+text-indent:30px;
+display:block;
+}
+
+.settings
+{
+background:url("../images/settings_small.png") no-repeat scroll 25px 0px transparent;
+text-indent:30px;
+display:block;
+}
+
+.add
+{
+background:url(../images/add.gif) no-repeat 10px 8px;
+text-indent:30px;
+display:block;
+}
+
+.delete
+{
+background:url(../images/delete.gif) no-repeat 10px 8px;
+text-indent:30px;
+display:block;
+}
+
+.stop
+{
+background:url(../images/stop.gif) no-repeat 10px 8px;
+text-indent:30px;
+display:block;
+}
+
+.cancel
+{
+background:url(../images/cancel.png) no-repeat 10px 8px;
+text-indent:30px;
+display:block;
+}
+
+.ok
+{
+background:url(../images/ok.png) no-repeat 10px 8px;
+text-indent:30px;
+display:block;
+}
+
+.green-highlight
+{
+color:#26BD15;
+font-weight:900;
+}

@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>snmp-common</artifactId>
+	<packaging>jar</packaging>
+	<name>CATS SNMP Service Common</name>
+	<description>The core project: Includes all common EJB/WebService interface definitions.</description>
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>snmp-parent</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>webservice-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.snmp4j</groupId>
+			<artifactId>snmp4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>snmp4j</id>
+			<name>SNMP4J Maven Repository </name>
+			<layout>default</layout>
+			<url>http://maven.opennms.org/content/repositories/snmp4j-repo</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<build>
+	</build>
+</project>

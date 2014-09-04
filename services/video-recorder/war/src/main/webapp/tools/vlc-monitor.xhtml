@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<ui:composition template="/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="VLC Process Monitor"></h:outputText>
+	</ui:define>
+	<ui:define name="body">
+		<h:panelGroup id="vlcProcessPanelGroup">
+			<h:form id="vlcForm" styleClass="jsfcrud_list_form">
+				<p:dataTable id="tbl1" var="vlcProcess"
+					value="#{vlcProcessController.vlcProcesses}" paginator="true"
+					rows="10">
+					<f:facet name="header"> VLC Process Monitor  </f:facet>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Recording Id" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.recordingId}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Telnet Host" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.telnetHost}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Telnet Port" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.telnetPort}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="VLC Command" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.command}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="File Name" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.fileName}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Size (in MB)" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.size}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Absolute Path" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.absolutePath}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Http Path" />
+						</f:facet>
+						<h:outputLink target="_blank" value="#{vlcProcess.httpPath}"
+							rendered="#{vlcProcess.httpPath  != null}">
+							<p:graphicImage id="openFolder" value="/images/folder.png"
+								style="border:none" />
+						</h:outputLink>
+						<p:tooltip for="openFolder" value="Open in folder" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Playable" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.playable}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Exists" />
+						</f:facet>
+						<h:outputText value="#{vlcProcess.exists}" />
+					</p:column>
+					<p:column headerText="Force Stop" style="width:45px">
+						<h:outputText value="NA" rendered="#{vlcProcess.exists  == true}" />
+
+						<p:commandLink id="pr" ajax="false" title="Stop"
+							actionListener="#{vlcProcessController.stop(vlcProcess.recordingId)}"
+							rendered="#{vlcProcess.exists  == false}">
+							<p:graphicImage value="/images/stop.png" />
+						</p:commandLink>
+					</p:column>
+				</p:dataTable>
+			</h:form>
+			<br />
+			<br />
+			<h:outputText
+				value="Requires admin privilege to perform this operation"
+				style="color: red" />
+			<h:form id="vlcProcessForm" styleClass="jsfcrud_list_form">
+				<p:dataTable id="tbl2" var="processBean"
+					value="#{vlcProcessController.processBeanList}" paginator="true"
+					rows="10" style="width:300px">
+					<f:facet name="header"> PID Monitor  </f:facet>
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="PID" />
+						</f:facet>
+						<h:outputText value="#{processBean.pid}" />
+					</p:column>
+					<p:column headerText="" style="width:100px">
+						<!-- p:commandLink id="killProcess" ajax="false" title="Kill Process"
+							onclick="confirmation.show()">
+							<p:graphicImage id="killImg" value="/images/process-killer.jpg" />
+						</p:commandLink>
+						<p:tooltip for="killImg" value="Kill Process" /-->
+					</p:column>
+				</p:dataTable>
+
+				<p:confirmDialog id="confirmDialog"
+					message="This will kill the vlc process #{processBean.pid}. Do you want to proceed ?"
+					header="Kill VLC process" severity="alert" widgetVar="confirmation">
+
+					<p:commandButton id="confirm" value="Yes Sure" update="tbl2"
+						oncomplete="confirmation.hide()"
+						actionListener="#{vlcProcessController.killProcess(processBean.pid)}" />
+					<p:commandButton id="decline" value="Not Yet"
+						onclick="confirmation.hide()" type="button" />
+
+				</p:confirmDialog>
+
+			</h:form>
+			<br />
+			<br />
+			<table cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td><p:dataTable id="tbl4" var="telnetPort"
+							value="#{vlcProcessController.activeTelnetPortList}"
+							paginator="true" rows="10" style="width:300px">
+							<f:facet name="header"> Active Telnet Port Monitor  </f:facet>
+							<p:column style="width:100px" sortBy="#{telnetPort}">
+								<f:facet name="header">
+									<h:outputText value="Port" />
+								</f:facet>
+								<h:outputText value="#{telnetPort}" />
+							</p:column>
+						</p:dataTable></td>
+					<td>&nbsp;&nbsp;&nbsp;</td>
+					<td><p:dataTable id="tbl5" var="usedTelnetPort"
+							value="#{vlcProcessController.recentlyUsedTelnetPortList}"
+							paginator="true" rows="10" style="width:300px">
+							<f:facet name="header"> Used Telnet Port Monitor  </f:facet>
+							<p:column style="width:100px" sortBy="#{usedTelnetPort}">
+								<f:facet name="header">
+									<h:outputText value="Port" />
+								</f:facet>
+								<h:outputText value="#{usedTelnetPort}" />
+							</p:column>
+						</p:dataTable></td>
+				</tr>
+			</table>
+			<br />
+			<br />
+			<h:outputText
+				value="Requires admin privilege to perform this operation"
+				style="color: red" />
+			<p:dataList value="#{vlcProcessController.processList}"
+				var="processObj" type="definition">
+				<f:facet name="header">PID Monitor - Detailed View </f:facet>
+				<f:facet name="description">
+					<h:outputText value="#{processObj} " />
+				</f:facet>
+			</p:dataList>
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>
+
+</html>

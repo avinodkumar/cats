@@ -1,0 +1,89 @@
+<!--
+
+    OCATS : Automation Test Framework for the Cable Industry
+    Copyright (C) 2013  Comcast Corporation Ltd.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_20" class="java.beans.XMLDecoder"> 
+ <object class="com.comcast.cats.image.ImageRegionInfo"> 
+  <void property="regionInfoList"> 
+    <void method="add"> 
+    <object class="com.comcast.cats.image.OCRRegionInfo"> 
+     <void property="expectedResult"> 
+      <string>Channel Map ID</string> 
+     </void> 
+     <void property="height"> 
+      <int>32</int> 
+     </void> 
+     <void property="name"> 
+      <string>Full_Channel_Map_Id</string> 
+     </void> 
+     <void property="width"> 
+      <int>352</int> 
+     </void> 
+     <void property="x"> 
+      <int>217</int> 
+     </void> 
+     <void property="y"> 
+      <int>257</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="com.comcast.cats.image.OCRRegionInfo"> 
+     <void property="expectedResult"> 
+      <string>Channel Map ID</string> 
+     </void> 
+     <void property="height"> 
+      <int>29</int> 
+     </void> 
+     <void property="name"> 
+      <string>Channel_Map_Id</string> 
+     </void> 
+     <void property="width"> 
+      <int>143</int> 
+     </void> 
+     <void property="x"> 
+      <int>218</int> 
+     </void> 
+     <void property="y"> 
+      <int>257</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="com.comcast.cats.image.OCRRegionInfo"> 
+     <void property="height"> 
+      <int>35</int> 
+     </void> 
+     <void property="name"> 
+      <string>Controller_id</string> 
+     </void> 
+     <void property="width"> 
+      <int>234</int> 
+     </void> 
+     <void property="x"> 
+      <int>215</int> 
+     </void> 
+     <void property="y"> 
+      <int>226</int> 
+     </void> 
+    </object> 
+   </void>
+  </void> 
+ </object> 
+</java> 

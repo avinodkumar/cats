@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<param name="MaxFileSize" value="2MB" />
+		<param name="MaxBackupIndex" value="14" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %x - %m\n" />
+		</layout>
+	</appender>
+
+	<!-- A Size-based log file that rolls over to a new file after maxFileSize 
+		bytes and keeps at most 5 log files -->
+	<appender name="rolling" class="org.apache.log4j.rolling.RollingFileAppender">
+		<rollingPolicy class="org.apache.log4j.rolling.FixedWindowRollingPolicy">
+			<param name="activeFileName" value="video-recorder-rolling.log" />
+			<param name="fileNamePattern" value="video-recorder-rolling.%i.log" />
+			<param name="minIndex" value="1" />
+			<param name="maxIndex" value="5" />
+		</rollingPolicy>
+		<triggeringPolicy class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+			<!-- Sets rollover threshold size in bytes 2MB = 2097152 bytes -->
+			<param name="maxFileSize" value="2097152" />
+		</triggeringPolicy>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}]:%7.7p [%6.6x] - %m%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="stdout" />
+		<!-- appender-ref ref="rolling" /-->
+	</root>
+
+</log4j:configuration>
+

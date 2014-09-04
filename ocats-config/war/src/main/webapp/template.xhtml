@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:shiro="http://shiro.apache.org/tags"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="refresh" /> <!-- content="#{session.maxInactiveInterval};url=#{authController.logoutURL}" --> 
+	<title><ui:insert name="title">CATS</ui:insert></title>
+	<h:outputStylesheet library="css" name="ocats.css" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</h:head>
+
+<h:body>
+	<h:panelGroup id="page" layout="block">
+		<h:panelGroup id="header" layout="block">
+			<h1>
+				<!-- <h:graphicImage style="width:300px" id="logo" alt="CATS Logo" url="/images/logo.png" /> -->
+				<h:outputText value = "OCATS" style="color: #00BFFF;font-family: Tahoma;font-size: 55px;font-weight: bolder;"/>
+			</h1>
+		</h:panelGroup>
+		
+
+
+		<h:panelGroup id="menu" layout="block">
+		<h:form>
+			<p:tabMenu activeIndex="#{activeIndex}" styleClass="tabbedMenu" rendered = "#{authController.logoutURL != null}"> <!-- rendered logic temp just to intsantiate auth controller. Temporary since logout is disabled in prod. -->
+				<p:menuitem  value="Settops" url="/settop/List.xhtml" />
+				<p:menuitem  value="Recordings" url="/recording/List.xhtml" />
+				<p:menuitem  value="Hardware Configuration" url="/rack/List.xhtml" />
+				<p:menuitem  value="Settop Status" url="/status/status.xhtml" />
+			<!-- 	<p:menuitem  value="Logout" actionListener="#{authController.logout}" /> -->
+			</p:tabMenu>
+			</h:form>
+		</h:panelGroup>
+		
+		<h:panelGroup id="mem_usage_monitor" layout="block">
+	 	<h:form id ="mem_form">
+	 		<p:messages id="mem_messages" showDetail="true" closable="false"/>
+         	  <p:poll global="false" interval="10" listener="#{memoryManagementBean.refreshMemoryDetails()}"  update=":mem_form:memMonitor,:mem_form:mem_messages,:mem_form:pnl" />
+         	 <p:panel id="pnl" rendered="#{memoryManagementBean.meterGaugeModel != null}" closable="true" 
+         	 style="width:140px;height:110px;position:absolute;left:84%;top:7px;z-index:1000;border:none;background:transparent">  	 
+			 <p:meterGaugeChart id="memMonitor" value="#{memoryManagementBean.meterGaugeModel}" intervalOuterRadius="30"   
+			seriesColors="00FF00, FFFF00, FF0000" style="width:200px;height:135px;left:0px;top:0px"
+			title="Used: #{memoryManagementBean.usedMemory} GB | Free: #{memoryManagementBean.freeMemory} GB" labelHeightAdjust="-10">
+			</p:meterGaugeChart>
+			</p:panel>
+			</h:form>
+		</h:panelGroup>
+
+		<h:panelGroup id="container" layout="block">
+			<!-- <p:messages id="messages" autoUpdate="true" /> -->
+			<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();"/>  
+              
+			<p:dialog modal="true" widgetVar="statusDialog"   
+			        draggable="false" closable="false"  resizable="false">  
+			    <p:graphicImage value="/images/ajax-loader.gif" />  
+			</p:dialog>  
+
+
+			<h:panelGroup id="content" layout="block">
+				<ui:insert name="body">Main Content</ui:insert>
+			</h:panelGroup>
+		</h:panelGroup>
+
+		<h:panelGroup id="footer" layout="block">
+
+			<div id="footerBanner" align="right">
+				<p>
+					 OCATS<br /> VERSION:
+					 #{bundle.ProductVersion}
+					<!--  <br /> BUILD: #{bundle.ProductBuildNumber} -->
+				</p>
+			</div>
+			<br />
+		</h:panelGroup>
+	</h:panelGroup>
+</h:body>
+</html>

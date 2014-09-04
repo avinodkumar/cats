@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:application="http://java.sun.com/xml/ns/javaee/application_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
+  <display-name>cats-master-ear</display-name>
+  <initialize-in-order>true</initialize-in-order>
+  <module id="wm-keymanager-service">
+    <web>
+      <web-uri>keymanager-service.war</web-uri>
+      <context-root>/keymanager-service</context-root>
+    </web>
+  </module>
+   <module id="wm-snmp-service">
+    <web>
+      <web-uri>snmp-service.war</web-uri>
+      <context-root>/snmp-service</context-root>
+    </web>
+  </module>
+  <module id="wm-power-service">
+		<web>
+			<web-uri>power-service.war</web-uri>
+			<context-root>/power-service</context-root>
+		</web>
+	</module>
+	<module id="wm-ir-service">
+		<web>
+			<web-uri>ir-service.war</web-uri>
+			<context-root>/ir-service</context-root>
+		</web>
+	</module>
+  	<module id="wm-settop-service">
+		<web>
+			<web-uri>settop-service.war</web-uri>
+			<context-root>/settop-service</context-root>
+		</web>
+	</module>
+  <library-directory>lib</library-directory>
+</application>

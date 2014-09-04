@@ -1,0 +1,63 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ir-common</artifactId>
+	<packaging>jar</packaging>
+	<name>CATS IR Service Common</name>
+
+	<description>
+		CATS IR Service Common.
+	</description>
+
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>ir-parent</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>webservice-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.comcast.cats</groupId>
+            <artifactId>cats-common</artifactId>
+        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/IRCommunicatorTest.java</exclude>
+						<exclude>**/PowerServiceTest.java</exclude>
+						<exclude>**/SettopServiceTest.java</exclude>
+						<exclude>**/IRServiceImplThreadTest.java</exclude>
+						<exclude>**/IRServiceImplPoolTest.java</exclude>
+						<exclude>**/GC100TimingTest.java</exclude>
+						<exclude>**/TurboModeTest.java</exclude>
+						<!--<exclude>**/GlobalCache6CommunicatorTest.java</exclude> -->
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

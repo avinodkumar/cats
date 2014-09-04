@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditSlotTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditSlotLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{slotController.selected.id}" title="#{bundle.EditSlotTitle_id}" />
+                    <h:outputLabel value="#{bundle.EditSlotLabel_num}" for="num" />
+                    <h:inputText id="num" value="#{slotController.selected.num}" title="#{bundle.EditSlotTitle_num}" />
+                    <h:outputLabel value="#{bundle.EditSlotLabel_rack}" for="rack" />
+                    <h:selectOneMenu id="rack" value="#{slotController.selected.rack}" title="#{bundle.EditSlotTitle_rack}" >
+                        <f:selectItems value="#{rackController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditSlotLabel_settop}" for="settop" />
+                    <h:selectOneMenu id="settop" value="#{slotController.selected.settop}" title="#{bundle.EditSlotTitle_settop}" >
+                        <f:selectItems value="#{settopController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{slotController.update}" value="#{bundle.EditSlotSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditSlotViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{slotController.prepareList}" value="#{bundle.EditSlotShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditSlotIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

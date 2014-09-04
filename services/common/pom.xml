@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>webservice-common</artifactId>
+    <packaging>jar</packaging>
+    <name>CATS WebService Common</name>
+    <description>
+	   Common dependencies for all CATS web services
+	</description>
+    <parent>
+        <groupId>com.comcast.cats</groupId>
+        <artifactId>services-parent</artifactId>
+	<version>0.1-OCATS-SNAPSHOT</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.comcast.cats</groupId>
+            <artifactId>cats-settop-api</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.comcast.cats</groupId>
+                    <artifactId>cats-domain-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.comcast.cats</groupId>
+            <artifactId>cats-domain-api</artifactId>
+        </dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+            	<artifactId>slf4j-log4j12</artifactId>  
+		<scope>test</scope>
+	</dependency>
+    </dependencies>
+</project>

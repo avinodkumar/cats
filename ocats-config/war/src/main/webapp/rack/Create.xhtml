@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Create Settop"></h:outputText>
+        </ui:define>	
+        <ui:define id="settopCreate" name="body">
+         <h:form id ="createSettopForm">
+                <p:growl for="response" severity="info,warn" id="messages"  errorStyle="color: red" infoStyle="color: green" layout="table"/>
+           
+                <p:panelGrid columns="2">
+                    <h:outputLabel value="Settop Name" for="name" />
+                    <h:inputText id="name" value="#{settopController.name}" title="Name" />
+                    <h:outputLabel value="Mac Address" for="hostMacAddress" />
+                    <h:inputText id="hostMacAddress" value="#{settopController.hostMacAddress}" title="Mac Address" />
+                    <h:outputLabel value="Model" for="model" />
+                    <h:inputText id="model" value="#{settopController.model}" title="Model" />
+                    <h:outputLabel value="Serial Number" for="serialNumber" />
+                    <h:inputText id="serialNumber" value="#{settopController.serialNumber}" title="Serial Number" />
+                    <h:outputLabel value="Manufacturer" for="manufacturer" />
+                    <h:inputText id="manufacturer" value="#{settopController.manufacturer}" title="Manufacturer" />
+                    <h:outputLabel value="MCard SN" for="mcardsn" />
+                    <h:inputText id="mcardsn" value="#{settopController.mcardsn}" title="MCard SN" />
+                    <h:outputLabel value="MCard MAC" for="mcardmac" />
+                    <h:inputText id="mcardmac" value="#{settopController.mcardmac}" title="MCard MAC" />
+                    <h:outputLabel value="Content Type" for="contentType" />
+                    <h:inputText id="contentType" value="#{settopController.contentType}" title="Content Type" />
+                    <h:outputLabel value="Remote Type" for="remoteType" />
+                    <h:inputText id="remoteType" value="#{settopController.remoteType}" title="Remote Type" />
+                    <h:outputLabel value="Trace Type" for="traceType" />
+                    <h:inputText id="traceType" value="#{settopController.traceType}" title="traceType" />
+	                </p:panelGrid>
+                <p:commandButton action="#{settopController.create}" value="Create" ajax="false" update="messages"></p:commandButton>
+                 <p:commandButton type="reset" value="Reset"></p:commandButton>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

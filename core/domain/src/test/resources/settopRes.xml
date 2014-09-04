@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    OCATS : Automation Test Framework for the Cable Industry
+    Copyright (C) 2013  Comcast Corporation Ltd.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<settopReservationDesc xmlns:ns2="http://cats.comcast.com"
+	firmwareVersion="12345">
+	<location zone="04" row="04" rack="13" lab="usa" />
+	<extraProperties>
+		<item value="three" name="3" />
+		<item value="two" name="2" />
+		<item value="one" name="1" />
+	</extraProperties>
+	<hardwareInterfaces>
+		<hardwareInterface>
+			<componentType>gc100</componentType>
+			<connectionPort>99</connectionPort>
+			<deviceHost>10.10.10.3</deviceHost>
+			<devicePort>8003</devicePort>
+			<extraProperties />
+			<hardwarePurpose>IR</hardwarePurpose>
+			<path>gc100://192.168.201.23:8003/?connectionport=99</path>
+		</hardwareInterface>
+		<hardwareInterface>
+			<componentType>wti100</componentType>
+			<connectionPort>99</connectionPort>
+			<deviceHost>10.10.10.3</deviceHost>
+			<devicePort>8003</devicePort>
+			<extraProperties />
+			<hardwarePurpose>POWER</hardwarePurpose>
+			<path>wti100://192.168.201.23:8003/?connectionport=99</path>
+		</hardwareInterface>
+		<hardwareInterface>
+			<componentType>axis</componentType>
+			<connectionPort>99</connectionPort>
+			<deviceHost>10.10.10.3</deviceHost>
+			<devicePort>8003</devicePort>
+			<extraProperties />
+			<hardwarePurpose>VIDEOSERVER</hardwarePurpose>
+			<path>axis://192.168.201.23:8003/?connectionport=99</path>
+		</hardwareInterface>
+	</hardwareInterfaces>
+	<plant name="plant1">
+		<controller version="v1.0" type="00" ipAddress="192.168.201.23"
+			name="controller1" id="1" />
+	</plant>
+	<reservations>
+		<reservation status="Active" startDate="2013-04-11T14:05:35.373-04:00"
+			endDate="2013-04-11T14:05:35.373-04:00" name="Test Reservation" id="1">
+			<environment name="Test Env" id="2" />
+			<reservationOwner active="true" name="Test User" id="1" />
+		</reservation>
+	</reservations>
+	<rack name="CATS dev rack" id="1" />
+</settopReservationDesc>

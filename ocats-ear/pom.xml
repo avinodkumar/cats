@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ocats-master-ear</artifactId>
+	<name>OCATS Master EAR</name>
+	<description>The Master EAR project: Used to hold all service archives (WARs).</description>
+	<packaging>ear</packaging>
+
+	<parent>
+		<groupId>com.comcast.cats</groupId>
+		<artifactId>ocats-project</artifactId>
+		<version>0.1-OCATS-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+	    <!-- There are some JSF conflict happening in EAR deployment and we suspect 
+		its due to different Mojarra instances being used by JBoss for different 
+		application. -->
+	    <!--
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>ocats-ui</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>ir-service</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>keymanager-service</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>power-service</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>snmp-service</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comcast.cats</groupId>
+			<artifactId>settop-service</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<version>6</version><!-- Java EE 6 -->
+					<modules>
+					    <!--
+						<webModule>
+							<groupId>com.comcast.cats</groupId>
+							<artifactId>ocats-ui</artifactId>
+							<bundleFileName>ocats-ui.war</bundleFileName>
+						</webModule>
+						--> 
+						<webModule>
+							<groupId>com.comcast.cats</groupId>
+							<artifactId>ir-service</artifactId>
+							<bundleFileName>ir-service.war</bundleFileName>
+						</webModule>
+						<webModule>
+							<groupId>com.comcast.cats</groupId>
+							<artifactId>keymanager-service</artifactId>
+							<bundleFileName>keymanager-service.war</bundleFileName>
+						</webModule>
+						<webModule>
+							<groupId>com.comcast.cats</groupId>
+							<artifactId>power-service</artifactId>
+							<bundleFileName>power-service.war</bundleFileName>
+						</webModule>
+						<webModule>
+							<groupId>com.comcast.cats</groupId>
+							<artifactId>snmp-service</artifactId>
+							<bundleFileName>snmp-service.war</bundleFileName>
+						</webModule>
+						<webModule>
+							<groupId>com.comcast.cats</groupId>
+							<artifactId>settop-service</artifactId>
+							<bundleFileName>settop-service.war</bundleFileName>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

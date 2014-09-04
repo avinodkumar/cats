@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <ui:composition template="/template.xhtml">
+    <ui:param name="activeIndex" value="2"/>
+        <ui:define name="title">
+            <h:outputText value="Rack List"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+             <p:growl for="response" severity="info,warn" id="rack_list_messages"  errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                <h:outputText escape="false" value="NO RACKS CONFIGURED" rendered="#{fn:length(rackController.rackList)  == 0}"/>
+               
+                <h:panelGroup>
+                    <h:form id ="form" styleClass="jsfcrud_list_form">
+                    <p:commandButton value="Reload Configuration"
+						action="#{rackController.refresh}" update="rackList" />
+                    <p:accordionPanel id="rackList" multiple="true" var="rack" value="#{rackController.rackList}" rendered="#{fn:length(rackController.rackList) > 0}">  
+					    <p:tab title="#{rack.name}					 : No Of Available Slots : #{rackController.getNoOfEmptySlots(rack.name)}">  
+					        <h:panelGrid columns="1" cellpadding="10"> 
+								<p:dataTable var="slot" value="#{rack.slots}" >  
+							        <p:column headerText="Slot #">  
+							            <h:outputText value="#{slot.number}" />  
+							        </p:column>  
+							  
+							        <p:column headerText="IR Device">  
+							            <h:outputText value="#{slot.irHost}:#{(slot.irPort == -1)? '--' : slot.irPort}" />  
+							        </p:column>  
+							  
+							       <p:column headerText="Power Device">  
+							            <h:outputText value="#{slot.powerHost}:#{(slot.powerPort == -1)? '--' : slot.powerPort}" />  
+							        </p:column>  
+							  
+							        <p:column headerText="Video Device">  
+							            <h:outputText value="#{slot.videoHost}:#{(slot.videoPort == -1)? '--' : slot.videoPort}" />  
+							        </p:column>
+							        
+							        <p:column headerText="Trace Device">  
+							            <h:outputText value="#{slot.traceHost}:#{(slot.tracePort == -1)? '--' : slot.tracePort}" />  
+							        </p:column>  
+							        
+							        <p:column headerText="Settop">  
+							            <h:outputText value="#{rackController.getSettopName(slot)}" />  
+							        </p:column>  
+							        
+							    </p:dataTable>  
+					        </h:panelGrid>  
+					    </p:tab> 
+					</p:accordionPanel>  
+                    </h:form>
+				</h:panelGroup>
+            </ui:define>
+	    </ui:composition>
+
+</html>

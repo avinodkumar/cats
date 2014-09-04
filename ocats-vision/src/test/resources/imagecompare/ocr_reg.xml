@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<region_info_list>
+    <image_path></image_path>
+    <ocr_region>
+        <filepath>ocr_reg.jpg</filepath>
+        <Height>146</Height>
+        <name>ocr_reg</name>
+        <Width>149</Width>
+        <X>184</X>
+        <XTolerance>10</XTolerance>
+        <Y>112</Y>
+        <YTolerance>10</YTolerance>
+        <AxisURL></AxisURL>
+        <ExpectedResultText></ExpectedResultText>
+        <OCRtimeout>10</OCRtimeout>
+        <Tolerance>100</Tolerance>
+    </ocr_region>
+</region_info_list>

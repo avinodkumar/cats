@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Basic Console Appender -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %x - %m\n" />
+		</layout>
+	</appender>
+
+	<!-- Rolling File Appender -->
+	<appender name="rolling" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="RebootMonitor.log" />
+		<param name="MaxFileSize" value="2MB" />
+		<param name="MaxBackupIndex" value="14" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+	
+		<!-- Rolling File Appender 
+	<appender name="REPORT_AGGREGATOR" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${cats.home}/RebootAggregatedLog.log" />
+		<param name="MaxFileSize" value="2MB" />
+		<param name="MaxBackupIndex" value="14" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="AggregatedRebootReport" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="REPORT_AGGREGATOR" />
+	</logger>
+-->
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="rolling" />
+		<appender-ref ref="stdout" />
+	</root>
+
+</log4j:configuration>

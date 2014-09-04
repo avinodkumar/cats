@@ -1,0 +1,3 @@
+cats.server.url=http://localhost:8080/
+cats.user.authToken="DummyToken"
+#strings.dm.location=file:///Users/cfrede001/workspace/cats_jboss/trunk/core/settop/target/test-classes/stringsdm/strings.dm

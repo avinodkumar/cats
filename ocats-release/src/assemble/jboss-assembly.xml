@@ -1,0 +1,89 @@
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!-- JBoss specific distribution configuration -->
+<assembly>
+	<id>${artifact.version}</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<unpack>false</unpack>
+			<outputFileNameMapping>${artifact.artifactId}-${artifact.version}.${artifact.extension}</outputFileNameMapping>
+			<includes>
+				<include>*:ear:*</include>
+				<include>*:zip:*</include>
+				<include>mysql:mysql-connector-java:jar:*</include>
+			</includes>
+			<excludes>
+			</excludes>
+		</dependencySet>
+		<dependencySet>
+			<unpack>false</unpack>
+			<outputFileNameMapping>${artifact.artifactId}-${artifact.classifier}.${artifact.extension}</outputFileNameMapping>
+			<includes>
+			    <!-- groupId:artifactId:extension:classifier:version-->
+				<include>com.comcast.cats.prod:prod-cats-stability:jar:test-jar:*</include>
+			</includes>
+			<excludes>
+			</excludes>
+		</dependencySet>
+		<dependencySet>
+			<unpack>false</unpack>
+			<outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+			<includes>
+				<include>*:war:*</include>
+			</includes>
+			<excludes>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+	
+	<fileSets>
+		<fileSet>
+			<directory>src/main</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>docs</directory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>bin</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}</directory>
+			<includes>
+				<include>*.txt</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>

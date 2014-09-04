@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:shiro="http://shiro.apache.org/tags"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="title">CATS Video Recorder</ui:insert></title>
+	<style type="text/css">
+</style>
+	<h:outputStylesheet name="css/cats.css" />
+	<link rel="shortcut icon"
+		href="/video-recorder-service/images/favicon.ico" type="image/x-icon" />
+</h:head>
+
+<h:body>
+	<h:panelGroup id="page" layout="block">
+		<h:panelGroup id="header" layout="block">
+			<h1>
+				<h:graphicImage id="recorder_logo" alt="Comcast Logo"
+					url="/images/cats-pvr-logo.png" />
+			</h1>
+		</h:panelGroup>
+
+		<h:form id="formmaster" styleClass="jsfcrud_list_form">
+			<h:panelGroup id="menu" layout="block">
+				<p:menubar>
+					<p:submenu label="Recording">
+						<p:menuitem value="New Recording" url="/record/new.xhtml" />
+						<p:menuitem value="Active Recordings" url="/record/list.xhtml" />
+						<p:menuitem value="Recording History" url="/record/history.xhtml" />
+					</p:submenu>
+
+					<p:submenu label="Tools">
+						<p:menuitem value="Video Storage Browser"
+							url="/tools/video-storage-browser.xhtml" />
+						<p:menuitem value="VLC Process Monitor"
+							url="/tools/vlc-monitor.xhtml" />
+						<p:menuitem value="Disk Usage Monitor"
+							url="/tools/disk-space-usage.xhtml" />
+						<p:menuitem value="System Properties"
+							url="/tools/system-properties.xhtml" />
+					</p:submenu>
+
+					<p:submenu label="Help">
+						<p:menuitem value="About" oncomplete="aboutDlg.show();" />
+						<p:menuitem value="WSDL" url="/VideoRecorderService?wsdl"
+							target="_blank" />
+						<p:menuitem value="Wiki"
+							url=""
+							target="_blank" />
+						<p:menuitem value="Support"
+							url=""
+							target="_blank" />
+					</p:submenu>
+
+				</p:menubar>
+			</h:panelGroup>
+		</h:form>
+
+		<h:panelGroup id="clockContainer" layout="block">
+			<div style="text-align: right">
+				<h:form id="dateForm">
+					<h:outputText value="Server Time: ">
+					</h:outputText>
+					<h:outputText id="txt_date" value="#{dateBean.date}" style="color: green">
+						<!-- f:convertDateTime pattern="MM-dd-yyyy hh:mm:ss zzz" type="date" /-->
+					</h:outputText>
+
+					<p:poll interval="1" listener="#{dateBean.update}"
+						update="txt_date" />
+				</h:form>
+			</div>
+		</h:panelGroup>
+
+		<h:panelGroup id="container" layout="block">
+			<p:messages id="messages" autoUpdate="true" />
+			<h:panelGroup id="content" layout="block">
+				<ui:insert name="body">Main Content</ui:insert>
+			</h:panelGroup>
+		</h:panelGroup>
+
+		<h:panelGroup id="footer" layout="block">
+			<div id="footerBanner" align="right">
+				<p>OCATS</p>
+			</div>
+			<br />
+		</h:panelGroup>
+	</h:panelGroup>
+
+	<div id="aboutContainer">
+		<h:panelGroup id="aboutView" layout="block">
+			<ui:include src="/help/about.xhtml" />
+		</h:panelGroup>
+	</div>
+
+</h:body>
+</html>

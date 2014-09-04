@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	<ui:define name="content">
+		<ul class="basictab">
+			<li class="a"><a href="home.jsf">Home</a></li>
+			<li class="a"><a href="listRemotes.jsf">Remotes</a></li>
+			<li class="a"><a href="listKeyCodeFormats.jsf">Formats</a></li>
+			<li class="a"><a href="listKeys.jsf">Keys</a></li>
+			<li class="a"><a href="listLayouts.jsf">Layouts</a></li>
+			<li class="a"><a id="redrats" href="listRedRats.xhtml">Manage
+					IrNetBox</a></li>
+			<li class="a"><a id="redrathubs" href="listRedRatHubs.xhtml">Manage RedratHubs</a></li>
+		</ul>
+		<h3>Manage RedRat IrNetBoxPro Devices</h3>
+		
+		<h1 style="color:lime">Appliance: #{KeyManager.hostIp}</h1>
+		
+		<h:messages />
+		<h:form>
+
+			<h:panelGrid id="redratHubAdd" columns="2"
+				rendered="#{empty(KeyManager.selectedRRHub)}">
+				<h:outputText value="RedRatHub IP " />
+				<h:inputText value="#{KeyManager.redratHubIp}"
+					style=" width : 368px;" />
+				<h:outputText value="RedRatHub Port " />
+				<h:inputText value="#{KeyManager.redratHubPort}"
+					style=" width : 368px;" />	
+
+				<h:commandButton value="Add"
+					action="#{KeyManager.addRedratHub}" update="irNetBoxListTable"/>
+			</h:panelGrid>
+			
+			<h:panelGrid id="rrHubEdit" columns="2" style="border:1px solid #790925;width:80%;background: none repeat scroll 0 0 greenyellow;"
+				rendered="#{!empty(KeyManager.selectedRRHub)}">
+				<h:outputText value="RedRatHub IP " />
+				<h:inputText value="#{KeyManager.selectedRRHub.ip}"
+					style=" width : 368px;" />
+					<h:outputText value="RedRatHub Port " />
+				<h:inputText value="#{KeyManager.selectedRRHub.port}"
+					style=" width : 368px;" />	
+				<h:commandButton value="Save"
+					action="#{KeyManager.updateRedRatHub}"
+					update="rrHubListTable, redratHubAdd, rrHubEdit" />
+				<h:commandButton value="Cancel"
+					action="#{KeyManager.resetSelectedRedRatHub()}"
+					update="rrHubListTable, redratHubAdd, rrHubEdit" />
+			</h:panelGrid>
+
+
+			<h:panelGrid id="confirmDlg" columns="1" style="border:1px solid #790925;width:80%;background: none repeat scroll 0 0 gold;"
+				rendered="#{!empty(KeyManager.toDeleteRRHub)}">
+				<h:outputText value="Are you Sure? " />
+				<h:panelGrid columns="2">
+				<h:commandButton value="Yes! Delete"
+					action="#{KeyManager.deleteRedRatHub}"
+					update="rrHubListTable, confirmDlg" />
+				<h:commandButton value="No"
+					action="#{KeyManager.setToDeleteRRHub(null)}"
+					update="confirmDlg" />
+					</h:panelGrid>
+			</h:panelGrid>
+			
+			<h:panelGrid columns="1" style="width:100%">
+
+				<h:dataTable id="rrHubListTable"
+					rendered="#{!empty(KeyManager.rrHubList)}"
+					value="#{KeyManager.rrHubList}" styleClass="dataTable"
+					var="rrHub">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="RedRatHub Ip" />
+						</f:facet>
+						<h:outputText  value="#{rrHub.ip}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="RedRatHub Port" />
+						</f:facet>
+						<h:outputText  value="#{rrHub.port}" />
+					</h:column>
+					<h:column style="text-align:center">
+						<f:facet name="header">
+							<h:outputText value="Edit" />
+						</f:facet>
+						<h:commandButton value="Edit" update="rrHubEdit, redratHubAdd"
+							actionListener="#{KeyManager.setSelectedRRHub(rrHub)}" />
+					</h:column>
+					<h:column style="text-align:center">
+						<f:facet name="header">
+							<h:outputText value="Delete" />
+						</f:facet>
+						<h:commandButton value="Delete" update="confirmDlg"
+							actionListener="#{KeyManager.setToDeleteRRHub(rrHub)}" />
+					</h:column>
+				</h:dataTable>
+
+			</h:panelGrid>
+			
+			<p>
+				<h:commandButton value="Refresh" action="#{KeyManager.refreshPage}" />
+				<h:commandButton value="Go Back" action="home.jsf" />
+			</p>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+

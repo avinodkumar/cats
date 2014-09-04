@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Wire Rack"></h:outputText>
+        </ui:define>	
+        <ui:define id="wireRackBody" name="body">
+         <h:form id ="selectRackForm">
+         <br /> <br />
+         
+			<h:outputLabel value="Select Rack: " />  
+          		<h:selectOneMenu value="#{rackController.selectedRack}" id="rackSelect" required="true" converter="#{rackController}">  
+              		<f:selectItems value="#{rackController.rackList}" var ="rack"
+              		itemLabel="#{rack.name}" itemValue="#{rack}"  /> 
+                   
+          		</h:selectOneMenu>
+          		<br /> <br />
+          		<p:commandButton value="Submit" update="panel" id="ajaxButton"  />  
+             	
+             
+             	  <p:panel id="panel" header="Assign Slots" style="margin-top:10px;">  
+        			Rack : #{rackController.selectedRack.name}
+        
+  
+   				<h:panelGrid columns="2">  
+     			 <p:panel header="Settops #{fn:length(rackController.selectedRack.slots)}" style="width:300px;height:400px">  
+		            <p:dataGrid id="availableSettops" value="#{settopController.unattachedSettops}" var="settop" columns="1">  
+		                <p:column>  
+		                    <p:droppable  style="border:1px solid black" for="settopMac" tolerance="touch"  activeStyleClass="slotActive" datasource="availableSettops">  
+			                <p:ajax listener="#{rackController.removedSettop}" />  
+			                <h:outputText id="settopMac"  value="#{settop.hostMacAddress}"/> 
+		                    <p:draggable for="settopMac" revert = "true" stack=".ui-panel"/> 
+			                </p:droppable>  
+		                </p:column> 
+		            </p:dataGrid>  
+		        </p:panel> 
+  				 <h:panelGroup rendered ="#{not empty rackController.selectedRack}"> 
+				<h:panelGrid columns="2">  
+			       
+			      <h:panelGrid columns="4">  
+	
+			      
+			        <p:panel header="Slot 0" style="width:140px;height:90px" rendered ="#{1 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot0" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,0).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot0" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,0).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot0">
+			        	 <p:droppable id = "dropSlot0" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,0).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			   
+			        
+			     <p:panel header="Slot 1" style="width:140px;height:90px" rendered ="#{2 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot1" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,1).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot1" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,1).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot1">
+			        	 <p:droppable id = "dropSlot1" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,1).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			          <p:panel header="Slot 2" style="width:140px;height:90px" rendered ="#{3 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot2" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,2).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot2" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,2).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot2">
+			        	 <p:droppable id = "dropSlot2" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,2).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			        
+			          <p:panel header="Slot 3" style="width:140px;height:90px" rendered ="#{4 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot3" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,3).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot3" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,3).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot3">
+			        	 <p:droppable id = "dropSlot3" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,3).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			        <p:panel header="Slot 4" style="width:140px;height:90px" rendered ="#{5 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot4" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,4).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot4" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,4).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot4">
+			        	 <p:droppable id = "dropSlot4" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,4).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			        <p:panel header="Slot 5" style="width:140px;height:90px" rendered ="#{6 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot5" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,5).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot5" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,5).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot5">
+			        	 <p:droppable id = "dropSlot5" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,5).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			        <p:panel header="Slot 6" style="width:140px;height:90px" rendered ="#{7 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot6" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,6).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot6" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,6).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot6">
+			        	 <p:droppable id = "dropSlot6" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,6).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			        
+			        <p:panel header="Slot 7" style="width:140px;height:90px" rendered ="#{8 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot7" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,7).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot7" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,7).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot7">
+			        	 <p:droppable id = "dropSlot7" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,7).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			         <p:panel header="Slot 8" style="width:140px;height:90px" rendered ="#{9 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot8" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,8).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot8" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,8).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot8">
+			        	 <p:droppable id = "dropSlot8" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,8).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			        <p:panel header="Slot 9" style="width:140px;height:90px" rendered ="#{10 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot9" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,9).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot9" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,9).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot9">
+			        	 <p:droppable id = "dropSlot9" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,9).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        <p:panel header="Slot 11" style="width:140px;height:90px" rendered ="#{12 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot11" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,11).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot11" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,11).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot11">
+			        	 <p:droppable id = "dropSlot11" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,11).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        <p:panel header="Slot 12" style="width:140px;height:90px" rendered ="#{13 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot12" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,12).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot12" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,12).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot12">
+			        	 <p:droppable id = "dropSlot12" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,12).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        <p:panel header="Slot 13" style="width:140px;height:90px" rendered ="#{14 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot13" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,13).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot13" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,13).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot13">
+			        	 <p:droppable id = "dropSlot13" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,13).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        
+			        <p:panel header="Slot 14" style="width:140px;height:90px" rendered ="#{15 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot14" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,14).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot14" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,14).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot14">
+			        	 <p:droppable id = "dropSlot14" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,14).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        <p:panel header="Slot 15" style="width:140px;height:90px" rendered ="#{16 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot15" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,15).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot15" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,15).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot15">
+			        	 <p:droppable id = "dropSlot15" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,15).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			        <p:panel header="Slot 16" style="width:140px;height:90px" rendered ="#{17 le fn:length(rackController.selectedRack.slots)}">  
+			        	 <h:outputText  id = "rackSlot16" value="#{settopController.getSettopAtSlot(rackController.selectedRack.name,16).hostMacAddress}"/> 
+			        	 <p:draggable for="rackSlot16" revert = "true" stack=".ui-panel" rendered ="#{not empty settopController.getSettopAtSlot(rackController.selectedRack.name,16).hostMacAddress}"/> 
+			        	 <p:outputPanel id="Slot16">
+			        	 <p:droppable id = "dropSlot16" tolerance="touch" datasource="availableSettops" rendered ="#{empty settopController.getSettopAtSlot(rackController.selectedRack,16).hostMacAddress}">  
+			                <p:ajax event="drop" listener="#{rackController.onDrop()}" />  
+			             </p:droppable>  
+			             </p:outputPanel>   
+			        </p:panel>
+			       	
+					</h:panelGrid>
+			         
+			        <h:panelGrid columns="1" cellpadding="10" rendered ="#{not empty rackController.selectedRack}"> 
+								<p:dataTable var="slot" value="#{rackController.selectedRack.slots}" >  
+							        
+							        
+							        <p:column headerText="Slot #" style="background:#909090">  
+							            <h:outputText value="#{slot.num}" />  
+							        </p:column>  
+							  
+							        <p:column headerText="IR Device">  
+							            <h:outputText value="#{rackController.getIrHost(slot)}:#{rackController.getIrPort(slot)}" />  
+							        </p:column>  
+							  
+							       <p:column headerText="Power Device">  
+							            <h:outputText value="#{rackController.getPowerHost(slot)}:#{rackController.getPowerPort(slot)}" />  
+							        </p:column>  
+							  
+							        <p:column headerText="Video Device">  
+							            <h:outputText value="#{rackController.getVideoHost(slot)}:#{rackController.getVideoPort(slot)}" />  
+							        </p:column>  
+							    </p:dataTable>  
+					        </h:panelGrid> 
+					        </h:panelGrid> 
+					        </h:panelGroup>
+					        </h:panelGrid>
+			        <p:commandButton value="Save" action="#{settopController.create}" id="ajaxButton1"  />  
+		        </p:panel> 
+             		
+		 </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<region_info_list>
+    <image_path></image_path>
+    <image_compare_region>
+        <filepath>ocr_region.jpg</filepath>
+        <Height>53</Height>
+        <name>Xfinity</name>
+        <Width>130</Width>
+        <X>37</X>
+        <XTolerance>10</XTolerance>
+        <Y>37</Y>
+        <YTolerance>10</YTolerance>
+        <red_tolerance>60</red_tolerance>
+        <green_tolerance>40</green_tolerance>
+        <blue_tolerance>40</blue_tolerance>
+        <match_percentage>85.0</match_percentage>
+    </image_compare_region>
+    <ocr_region>
+        <filepath>ocr_region.jpg</filepath>
+        <Height>27</Height>
+        <name>main_menu</name>
+        <Width>105</Width>
+        <X>363</X>
+        <XTolerance>10</XTolerance>
+        <Y>416</Y>
+        <YTolerance>10</YTolerance>
+        <AxisURL></AxisURL>
+        <ExpectedResultText>Main Menu</ExpectedResultText>
+        <OCRtimeout>10</OCRtimeout>
+        <Tolerance>80</Tolerance>
+    </ocr_region>
+</region_info_list>

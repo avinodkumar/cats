@@ -1,0 +1,19 @@
+15: !!com.comcast.cats.recorder.DefaultVideoRecorderTask
+  command: E:/dev-tools/vlc/vlc-2.0.0-win32/vlc -I dummy rtsp://192.168.160.201/axis-media/media.amp?videocodec=h264&camera=80 --sout file/mp4:E:\temp\vlc-file-server\2012\12\10\00-19-47-25-AD-7E\10-59-51-EST.mp4 --extraintf=telnet --telnet-password admin --telnet-port 9001
+  filePath: E:\temp\vlc-file-server\2012\12\10\00-19-47-25-AD-7E\10-59-51-EST.mp4
+  recording:
+    createdTime: null
+    id: 15
+    lastUpdatedTime: null
+    mediaInfoEntityList:
+    - {createdTime: null, filePath: 'E:\temp\vlc-file-server\2012\12\10\00-19-47-25-AD-7E\10-59-51-EST.mp4',
+      httpPath: 'http://127.0.0.1/pvr//2012/12/10/00-19-47-25-AD-7E/10-59-51-EST.mp4',
+      id: 16, lastUpdatedTime: null, playable: false, recordingEntity: null, size: 0.0}
+    mrl: rtsp://192.168.160.201/axis-media/media.amp?videocodec=h264&camera=80
+    recordingStatus: &id001 {id: 15, message: Recording in progress., state: RECORDING}
+    requestedDuration: 0
+    stbMacAddress: 00:19:47:25:AD:7E
+    videoServerIp: 192.168.160.202
+    videoServerPort: 80
+  recordingStatus: *id001
+  telnetPort: 9000

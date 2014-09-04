@@ -1,0 +1,862 @@
+02/04@00:44:43 - 10.244.31.90   : 
+02/04@00:44:43 - 10.244.31.90   : ** Post Reboot Failure Report **
+02/04@00:44:43 - 10.244.31.90   : Diagnostics Failure Report - Failing PID 763
+02/04@00:44:43 - 10.244.31.90   : 
+02/04@00:44:43 - 10.244.31.90   : PTV Emulation Failure Report, PID 763
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: PowerTV Diagnostic Report: 2.0 (Linux)
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Cause: 0x91 - out_of_events
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Reason: Queue CAM Q has 439 events. First event code:50000601 x:2c4f50e0 y:0 z:0
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Thread: 8 - "evntThrd", Priority: 1, AppID: 0
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Backtrace: 2b3b1440 2ae3411c 2ae2ea84 2ae275e4 2ae27d9c 2ac8ffc0 2ac68090 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: RF MAC: 00:22:ce:de:e9:b2
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: IMAGE; Image File; 1.2.1.101p; Wed Jan 18 2012, 10:00:40 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: PTV; OS; 8.2.0.610314p; Thu Dec 15 2011,  8:03:57 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: RESAPP; iGuide App; 1.0.0.0p; Wed Jan 18 2012, 10:00:36 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: UNDEFINED; MIPS NetProcs; 1.0.49.101p; Wed Nov 12 2008, 10:19:19 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: UNDEFINED; MIPS Diagnostics; 1.0.12.1d; Thu Sep 18 2008,  1:11:22 AM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: UNDEFINED; NVM Library; 1.0.5.1d; Wed Jan 28 2009, 10:10:16 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: DRIVER; HAL Driver-p; 1.7.8.10p; Tue Nov  2 2010,  5:14:20 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: DRIVER; DOCSIS CM Bin; 7.14.178.0p; Tue Nov  2 2010,  5:14:21 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: POWERKEY; PkeyCC-DVR; 4.0.5.10p; Wed Jun 25 2008,  2:12:40 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: UNDEFINED; firebus; 3.18.111207.1 ; Tue Nov 13 2007,  6:17:17 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: UNDEFINED; firebus; 3.18.111207.1 ; Tue Nov 13 2007,  6:29:44 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: Version: UNDEFINED; Linux; 1.0.27.1 ; Mon Aug 18 2008,  6:44:39 PM GMT
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: HW MODEL: 8540, HW VER: 20
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: LD MAP: module name          version              app id text     text sz data     data sz bss      bss sz
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: LD MAP: -------------------- -------------------- ------ -------- ------- -------- ------- -------- -------
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: LD MAP: MAC-S 3.4.1-r8.3-72020    102 0x2c2fb328  850680 0x2c3cae28   40840 0x2c3e19c0   12504
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: LD MAP: SCI VODMOD 0623 P     101 0x2c29b3c0  291820 0x2c2e27b0     464 0x2c2e2980   15132
+02/04@00:44:43 - 10.244.31.90   : DIAG 0x91: 
+02/04@00:44:44 - 10.244.31.90   : DIAG 0x91: ResApp: 100 "Name:tvgi" "Version:1.0.0" mdtinfo=00632d20 main=0069deb0 init=0069de98 shutdown=0069de9c
+02/04@00:44:44 - 10.244.31.90   : DIAG 0x91: Boot Time: Thu Jan 26 22:31:20 2012 GMT
+02/04@00:44:44 - 10.244.31.90   : DIAG 0x91: Fail Time: Sat Feb  4 05:28:53 2012 GMT
+02/04@00:44:44 - 10.244.31.90   : DIAG 0x91: Up Time: 8d:6h:57m:33s
+02/04@00:44:44 - 10.244.31.90   : DIAG 0x91: 
+02/04@00:44:44 - 10.244.31.90   : Event Pool Report: current time = a6c40b636f
+02/04@00:44:44 - 10.244.31.90   : **Queues:
+02/04@00:44:44 - 10.244.31.90   : Queue                             Num Events  1st Code  1st x     1st y     1st z     time hi  time lo
+02/04@00:44:44 - 10.244.31.90   : --------------------------------  ----------  --------  --------  --------  --------  -------- --------
+02/04@00:44:44 - 10.244.31.90   : CAM Q                                    439  50000601  2c4f50e0  00000000  00000000        a5 be72d0d9
+02/04@00:44:44 - 10.244.31.90   : SAM Queue                                 10  0f000100  00000000  00000000  00000000        a5 d2c4402c
+02/04@00:44:44 - 10.244.31.90   : SecMainQ                                 262  03008031  00000000  00000000  2bab8428        a5 9be108ad
+02/04@00:44:44 - 10.244.31.90   : IRB Mutex                                  1  00000001  00000000  00000000  00000000         0  2139f8f
+02/04@00:44:44 - 10.244.31.90   : fbSemQ11001394                             1  11011394  00000000  00000000  00000000         0  1a61c13
+02/04@00:44:44 - 10.244.31.90   : DB EPG ReceiveQ                            9  fc000900  00000000  00000000  00000000        a5 df78ed62
+02/04@00:44:44 - 10.244.31.90   : g1394Queue                                10  0f000100  00000000  00000000  00000000        a5 ab523935
+02/04@00:44:44 - 10.244.31.90   : NetpBrfQ                                   9  0f000100  00000000  00000000  00000000        a5 d2c4402c
+02/04@00:44:44 - 10.244.31.90   : QPSK PPV Daemon                            2  0a000b01  2c522ea0  00000000  00000000        a6 154a80f9
+02/04@00:44:44 - 10.244.31.90   : DvrAlarmThread                             1  45daddee  00000000  00000000  00000000        a5 f84adf0b
+02/04@00:44:44 - 10.244.31.90   : fbSemQ11021394                             1  11031394  00000000  00000000  00000000         0  1b08d70
+02/04@00:44:44 - 10.244.31.90   : Conn List Sem                              1  00000000  00000000  00000000  00000000         0  1fc5460
+02/04@00:44:44 - 10.244.31.90   : Activation List                            1  00000000  00000000  00000000  00000000         0  1fe72e7
+02/04@00:44:44 - 10.244.31.90   : Activation List                            1  00000000  00000000  00000000  00000000         0  1fe7319
+02/04@00:44:44 - 10.244.31.90   : Activation List                            1  00000000  00000000  00000000  00000000         0  1fe7342
+02/04@00:44:44 - 10.244.31.90   : Activation List                            1  00000000  00000000  00000000  00000000         0  1fe7370
+02/04@00:44:44 - 10.244.31.90   : UnConfig Sem                               1  00000000  00000000  00000000  00000000         0  1fe743e
+02/04@00:44:44 - 10.244.31.90   : reset semaphore                            1  00000000  00000000  00000000  00000000         0  1fe74c8
+02/04@00:44:44 - 10.244.31.90   : Sess PassThru                              1  00000000  00000000  00000000  00000000         0  1fe75b4
+02/04@00:44:44 - 10.244.31.90   : Stream Sem                                 1  00000000  00000000  00000000  00000000        a6 c14f5af5
+02/04@00:44:44 - 10.244.31.90   : MWL SemaphoreQ                             1  00000001  00000000  00000000  00000000         0  211a989
+02/04@00:44:44 - 10.244.31.90   : **Timers:
+02/04@00:44:44 - 10.244.31.90   : id       code     time hi  time lo  x        y        z        queue
+02/04@00:44:44 - 10.244.31.90   : -------- -------- -------- -------- -------- -------- -------- ------------------------
+02/04@00:44:44 - 10.244.31.90   :        1 13000000 7fffffff ffffffff        0        0        0 PkTimerThread
+02/04@00:44:44 - 10.244.31.90   :   5e3d19        0       a6 d168ccb8        1        0        0 Memory Mgr Queue
+02/04@00:44:45 - 10.244.31.90   :   5e3620 c0000102       a6 d1b10ba0        0        0        0 IBTuner Queue
+02/04@00:44:45 - 10.244.31.90   :   5def76  a008400       a6 d09b59fd        0        0        0 UnSess Q.
+02/04@00:44:45 - 10.244.31.90   :   5e3edd f2009802       a6 c40f4cfb        9        0        0 7d0cafe
+02/04@00:44:45 - 10.244.31.90   :   5e3ed9        0       a6 c412cb6a        0        0        0 Videod Queue
+02/04@00:44:45 - 10.244.31.90   :   5e3ed8 f2009802       a6 c419c899        4        0        0 7d0cafe
+02/04@00:44:45 - 10.244.31.90   :   5b0f88 12000001       b5 11217ae6        0        0        0 gSrmQueue
+02/04@00:44:45 - 10.244.31.90   :   5e3eda c0000101       a6 c406d51b        0        0    aeac2 IBTuner Queue
+02/04@00:44:45 - 10.244.31.90   :   53ffa7 fc000700       a9 2ec2df82        0        0        0 DB EPG ReceiveQ
+02/04@00:44:45 - 10.244.31.90   :   5e3717 c0000102       a6 d42a31df        1        0        0 IBTuner Queue
+02/04@00:44:45 - 10.244.31.90   :   5e3ac9 50000100       a6 c8e4a9c0        0        0        0 Ocm Send System Time Queue
+02/04@00:44:45 - 10.244.31.90   :   5e3e0b  500d500       a6 c58144d2        0        0        0 App Sys Q.
+02/04@00:44:45 - 10.244.31.90   :   5e39cc f4000600       a6 c91b5110        0        0        0 App CfgQ
+02/04@00:44:45 - 10.244.31.90   :   5d1bcc     2100       a7 b028b92e        0        0        0 FsmAsyncQ
+02/04@00:44:45 - 10.244.31.90   :   5324a7 f2009802       a8 ea7e5c62       13        0        0 7d0cafe
+02/04@00:44:45 - 10.244.31.90   :   535b21 f9009400       a8  bb07701        0        0        0 tvgi
+02/04@00:44:45 - 10.244.31.90   :   5e11ee f2009802       ab  33b8b6b        b        0        0 7d0cafe
+02/04@00:44:45 - 10.244.31.90   :   5e3a94 f2009802       a7 22a1b082       15        0        0 7d0cafe
+02/04@00:44:45 - 10.244.31.90   :   5e34df        0       a6 ce847abf        2        0        0 Memory Mgr Queue
+02/04@00:44:45 - 10.244.31.90   :   5307e7 fc000700       a7 7e438310        0        0        0 DB EPG ReceiveQ
+02/04@00:44:45 - 10.244.31.90   :   5e3edb c0000101       a6 c40d596d        1        0    ae5af IBTuner Queue
+02/04@00:44:45 - 10.244.31.90   :   5e3ecf  500db00       a6 c471b03d        0        0        0 App Sys Q.
+02/04@00:44:45 - 10.244.31.90   :   5b0ae9        0       b5  f6b8609        0        0        0 ETI Queue
+02/04@00:44:45 - 10.244.31.90   :   5dcab5        3       a6 c450ea4d        0        0        0 VCXO Queue
+02/04@00:44:45 - 10.244.31.90   :   5af5c9 fc000700       b4 e4d4eae9        0        0        0 DB EPG ReceiveQ
+02/04@00:44:45 - 10.244.31.90   :   5e3edc fc000100       a6 c40d59aa        0        0        0 DBMainQ
+02/04@00:44:45 - 10.244.31.90   :       10 22000002      25b 8150b5ac        1        0        0 CAM Q
+02/04@00:44:45 - 10.244.31.90   : **Other events:
+02/04@00:44:45 - 10.244.31.90   : Queue (originator)                Code        Thread (owner)                    time hi  time lo   Comment
+02/04@00:44:45 - 10.244.31.90   : --------------------------------  ----------  --------------------------------  -------- --------  ----------------------
+02/04@00:44:45 - 10.244.31.90   : TomMutantReaderQueue              0x25005100  TomMutantReaderThread                   a6 c3f3d1c7  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : g1394Queue                        0x22008100  tm_1394Thread                           a5 9bdfc48f  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : SAM Queue                         0xfd006400  SAM Thread                              a5 b1910946  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : VAMQ                              0x47002000  VAM Thread                              a5 9bdfa7ea  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : Mpeg Main Q                       0x08000202  MPEGT                                   a5 9be74f06  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   :                                   0x0a008400  TblMgr Main                             a6 c404c6e0  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : TblMA4a5e8S126cP6                 0x25001100  TblMA4a5e8S126cP6                       a5 9be927bf  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : TVP Event Q                       0x08008202  Tvp Manager                             a5 9bef06f9  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   :                                   0x0a000200  Tvp Manager                             a6 c404c789  !!Free event not in free event list
+02/04@00:44:46 - 10.244.31.90   : DB EPG ReceiveQ                   0x0f008600  DB EPG Rx Thread                        a5 d9482bdd  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : TblMA4baecS110cPb                 0x25001100  TblMA4baecS110cPb                       a5 9bedf5e4  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : NetpBrfQ                          0x0f000100  NetpBrfThread                           a5 ab523935  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   :                                   0x0a000200  NetpBrfThread                           a6 c404c789  !!Free event not in free event list
+02/04@00:44:46 - 10.244.31.90   : CAM Q                             0x50000601  CAM                                     a5 9be39288  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : QPSK PPV Daemon                   0x00000002  QPSK PPV Daemon                         a5 ab36f9ff  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : SecMainQ                          0x44004c00  SecondMainTask                          a5 9bdfaa69  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : DvrAlarmThread                    0x22008100  DvrAlarmThread                          a5 9bdfc483  Returned by pk_NextEvent*
+02/04@00:44:46 - 10.244.31.90   : 
+02/04@00:44:46 - 10.244.31.90   : 
+02/04@00:44:46 - 10.244.31.90   : Usage Statistics:
+02/04@00:44:46 - 10.244.31.90   :                      In Use: 15
+02/04@00:44:46 - 10.244.31.90   :                        Free: 2
+02/04@00:44:46 - 10.244.31.90   :                     Unknown: 0
+02/04@00:44:46 - 10.244.31.90   :                      Timers: 28
+02/04@00:44:46 - 10.244.31.90   :               Queued Events: 755
+02/04@00:44:46 - 10.244.31.90   :                      Errors: 2
+02/04@00:44:46 - 10.244.31.90   : 
+02/04@00:44:46 - 10.244.31.90   : MMAP: Linux Process Memory Load Map PID:763 (TVGI_RNG_F)
+02/04@00:44:46 - 10.244.31.90   : MMAP: start    end      perm offset   ver   inode      image
+02/04@00:44:47 - 10.244.31.90   : MMAP: -------- -------- ---- -------- ----- ---------- ------------
+02/04@00:44:47 - 10.244.31.90   : MMAP: 00400000-0065b000 r-xp 00000000 07:00 8696       /bin/TVGI_RNG_F
+02/04@00:44:47 - 10.244.31.90   : MMAP: 0069a000-006a5000 rw-p 0025a000 07:00 8696       /bin/TVGI_RNG_F
+02/04@00:44:47 - 10.244.31.90   : MMAP: 006a5000-0071b000 rwxp 006a5000 00:00 0          [heap]
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2aaa8000-2aac8000 r-xp 00000000 07:00 4056032    /lib/ld-2.4.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ab07000-2ab09000 rw-p 0001f000 07:00 4056032    /lib/ld-2.4.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ab0a000-2ab2b000 r-xp 00000000 07:00 8305896    /lib/libpk_lite_cak-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ab2b000-2ab6b000 ---p 00021000 07:00 8305896    /lib/libpk_lite_cak-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ab6b000-2ab6d000 rw-p 00021000 07:00 8305896    /lib/libpk_lite_cak-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ab6e000-2ad1f000 r-xp 00000000 07:00 6122376    /lib/libhal-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ad1f000-2ad5e000 ---p 001b1000 07:00 6122376    /lib/libhal-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ad5e000-2ad7b000 rw-p 001b0000 07:00 6122376    /lib/libhal-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2ad92000-2b1d1000 r-xp 00000000 07:00 8446500    /lib/libptvp.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b1d1000-2b211000 ---p 0043f000 07:00 8446500    /lib/libptvp.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b211000-2b22d000 rw-p 0043f000 07:00 8446500    /lib/libptvp.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b292000-2b2a0000 r-xp 00000000 07:00 5797112    /lib/libelf.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b2a0000-2b2df000 ---p 0000e000 07:00 5797112    /lib/libelf.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b2df000-2b2e0000 rw-p 0000d000 07:00 5797112    /lib/libelf.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b2e0000-2b355000 r-xp 00000000 07:00 5827008    /lib/libfirebus-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b355000-2b394000 ---p 00075000 07:00 5827008    /lib/libfirebus-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b394000-2b39d000 rw-p 00074000 07:00 5827008    /lib/libfirebus-p.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b3a0000-2b3b4000 r-xp 00000000 07:00 8399692    /lib/libpthread-2.4.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b3b4000-2b3f4000 ---p 00014000 07:00 8399692    /lib/libpthread-2.4.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b3f4000-2b3f5000 r--p 00014000 07:00 8399692    /lib/libpthread-2.4.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b3f5000-2b3f6000 rw-p 00015000 07:00 8399692    /lib/libpthread-2.4.so
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b3f8000-2b438000 r-xp 00000000 07:00 10992308   /lib/libssl.so.0.9.8
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b438000-2b43b000 rw-p 00040000 07:00 10992308   /lib/libssl.so.0.9.8
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b43c000-2b55e000 r-xp 00000000 07:00 5041816    /lib/libcrypto.so.0.9.8
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b55e000-2b59d000 ---p 00122000 07:00 5041816    /lib/libcrypto.so.0.9.8
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b59d000-2b5b1000 rw-p 00121000 07:00 5041816    /lib/libcrypto.so.0.9.8
+02/04@00:44:47 - 10.244.31.90   : MMAP: 2b5b4000-2b69b000 r-xp 00000000 07:00 11130124   /lib/libstdc++.so.6.0.7
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b69b000-2b6db000 ---p 000e7000 07:00 11130124   /lib/libstdc++.so.6.0.7
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b6db000-2b6f0000 r--p 000e7000 07:00 11130124   /lib/libstdc++.so.6.0.7
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b6f0000-2b6f3000 rw-p 000fc000 07:00 11130124   /lib/libstdc++.so.6.0.7
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b6fa000-2b7cc000 r-xp 00000000 07:00 7189744    /lib/libm-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b7cc000-2b80b000 ---p 000d2000 07:00 7189744    /lib/libm-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b80b000-2b80c000 r--p 000d1000 07:00 7189744    /lib/libm-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b80c000-2b80d000 rw-p 000d2000 07:00 7189744    /lib/libm-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b80e000-2b820000 r-xp 00000000 07:00 6085376    /lib/libgcc_s.so.1
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b820000-2b85f000 ---p 00012000 07:00 6085376    /lib/libgcc_s.so.1
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b85f000-2b860000 rw-p 00011000 07:00 6085376    /lib/libgcc_s.so.1
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b860000-2b9a9000 r-xp 00000000 07:00 4170064    /lib/libc-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b9a9000-2b9e9000 ---p 00149000 07:00 4170064    /lib/libc-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b9e9000-2b9f1000 r--p 00149000 07:00 4170064    /lib/libc-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b9f1000-2b9f3000 rw-p 00151000 07:00 4170064    /lib/libc-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b9f6000-2b9f9000 r-xp 00000000 07:00 5775380    /lib/libdl-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2b9f9000-2ba38000 ---p 00003000 07:00 5775380    /lib/libdl-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2ba38000-2ba39000 r--p 00002000 07:00 5775380    /lib/libdl-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 2ba39000-2ba3a000 rw-p 00003000 07:00 5775380    /lib/libdl-2.4.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 329b2000-329ce000 r-xp 00000000 07:00 5673716    /lib/libcss.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 329ce000-32a0e000 ---p 0001c000 07:00 5673716    /lib/libcss.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 32a0e000-32a10000 rw-p 0001c000 07:00 5673716    /lib/libcss.so
+02/04@00:44:48 - 10.244.31.90   : MMAP: 7fbca000-7fc2d000 rwxp 7fbca000 00:00 0          [stack]
+02/04@00:44:48 - 10.244.31.90   : MMAP: End Load Map PID:763 (TVGI_RNG_F)
+02/04@00:44:48 - 10.244.31.90   : id      tid   owner app name                            policy pri waiting on                      t timeout  events   cpu(ms) 
+02/04@00:44:48 - 10.244.31.90   : ------- ----- ----- --- ------------------------------- ------ --- ------------------------------- - -------- -------- --------
+02/04@00:44:48 - 10.244.31.90   :       1   777     0     PkTimerThread                   RR       1 <sleeping>                          <1(ms)        0     3910 
+02/04@00:44:48 - 10.244.31.90   :       8   786     4     evntThrd                        RR       1 <running>                            never        0  4502070 
+02/04@00:44:48 - 10.244.31.90   :      24   803     4     HDCP RT Thread                  RR       1 HDCP RT Thread Queue            Q    never        0        0 
+02/04@00:44:49 - 10.244.31.90   :      28   816     4     user display[0]                 RR       1 displayQ[0]                     Q    never     3736      250 
+02/04@00:44:49 - 10.244.31.90   :      30   826     4     user display[1]                 RR       1 displayQ[1]                     Q    never        0        0 
+02/04@00:44:49 - 10.244.31.90   :      41   837     4     Capt Buf Update Thread          RR       1 Capt Update Buffer Sem          S    never        0        0 
+02/04@00:44:49 - 10.244.31.90   :  **Semaphore "Capt Update Buffer Sem" count: 0, max: 2
+02/04@00:44:49 - 10.244.31.90   : 4238995 18208   123 100 record1_task                    RR       1 <running>                            never        0    63880 
+02/04@00:44:49 - 10.244.31.90   : 4238996 18209   123 100 record1_tricklink               RR       1 WaitReadyLink_Trick             S 1193(hrs)        0    14540 
+02/04@00:44:49 - 10.244.31.90   :  **Semaphore "WaitReadyLink_Trick" count: 0, max: 96
+02/04@00:44:49 - 10.244.31.90   : 4238997 18210   123 100 record1_filelink                RR       1 WaitFreeLink_Cluster            S 1193(hrs)        0      240 
+02/04@00:44:49 - 10.244.31.90   :  **Semaphore "WaitFreeLink_Cluster" count: 0, max: 8
+02/04@00:44:49 - 10.244.31.90   :      17   795     4     Scale Unit 1                    OTHER    2 <running>                            never        0   527110 
+02/04@00:44:49 - 10.244.31.90   :      18   796     4     Scale Unit 2                    OTHER    2 <running>                            never        0   244700 
+02/04@00:44:49 - 10.244.31.90   :      19   797     4     Scale Unit 3                    OTHER    2 <running>                            never        0        0 
+02/04@00:44:49 - 10.244.31.90   :      70   873     4     FPKey Thread                    OTHER    3 <running>                            never        0        0 
+02/04@00:44:49 - 10.244.31.90   :      71   874     4     Irif Thread                     OTHER    3 <running>                            never        0     2110 
+02/04@00:44:49 - 10.244.31.90   :      32   828     4     SC Driver                       OTHER    4 SC Cmds                         Q    never      387       10 
+02/04@00:44:49 - 10.244.31.90   :      38   834     4     STBLIT IntEvntTst               OTHER    4 <running>                            never        0    19080 
+02/04@00:44:49 - 10.244.31.90   :      39   835     4     STBLIT ErrChkTsk                OTHER    4 ST Sem   13 BlitErrorChkSubmit  S    never        0    15130 
+02/04@00:44:49 - 10.244.31.90   :  **Semaphore "ST Sem   13 BlitErrorChkSubmit" count: 0, max: 10000
+02/04@00:44:49 - 10.244.31.90   :      73   879     4     PCM Play Worker                 OTHER    4 PCM Play Q                      Q    never        1        0 
+02/04@00:44:49 - 10.244.31.90   :      11   789     4     Vcxo Thread                     OTHER    5 VCXO Queue                      Q    never 40255189  2469750 
+02/04@00:44:49 - 10.244.31.90   :      27   806     4     hal_mpegdv0                     OTHER    5 mpegdvQ1                        Q    never     7464      780 
+02/04@00:44:49 - 10.244.31.90   :      29   817     4     hal_mpegdv1                     OTHER    5 mpegdvQ2                        Q    never        0        0 
+02/04@00:44:50 - 10.244.31.90   :      40   836     4     GFX Compo Renderer              OTHER    5 <sleeping>                          <1(ms)        0    14070 
+02/04@00:44:50 - 10.244.31.90   :      82   958    81     PKEY Secure Micro               OTHER    5 PKEY SMCMD Q                    Q    never      342       30 
+02/04@00:44:50 - 10.244.31.90   :      84   961     4     PcmciaThread                    OTHER    5 PCMCIA Q                        Q    never  1636286   171410 
+02/04@00:44:50 - 10.244.31.90   :      89   969    84     PcmciaReadThread                OTHER    5 <running>                            never        0   185970 
+02/04@00:44:50 - 10.244.31.90   :      13   791     4     VBI CommandThrd                 OTHER    6 VBI_CommandQ                    Q    never        0        0 
+02/04@00:44:50 - 10.244.31.90   :      75   881     4     ScMgr                           OTHER    6 ScmanInt Q                      Q    never      410       80 
+02/04@00:44:50 - 10.244.31.90   :      34   830     4     MPEGT                           OTHER    7 Mpegt Mutex                     M    never     3660      490 
+02/04@00:44:50 - 10.244.31.90   :  **Mutex "Mpegt Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:44:50 - 10.244.31.90   :      76   886    75     ScMgrExt                        OTHER    7 ScmanExt Q                      Q    never        0        0 
+02/04@00:44:50 - 10.244.31.90   :      93   973     4     tm_1394Thread                   OTHER    7 AVR Mgr Mutex                   M    never    19561     1580 
+02/04@00:44:50 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:44:50 - 10.244.31.90   :      25   804     4     Mpegda T                        OTHER    8 Mpegda Q                        Q    never        0        0 
+02/04@00:44:50 - 10.244.31.90   :      31   827     4     Mpegdc Alarm Thread             OTHER    8 Mpegdc Alarm Queue              Q    never        0        0 
+02/04@00:44:50 - 10.244.31.90   :      60   859    59     SdmDevice0001                   OTHER    8 SdmDeviceQ00000001              Q    never        0        0 
+02/04@00:44:50 - 10.244.31.90   :      59   855     4     SdmAsync                        OTHER    9 SdmAsyncQ                       Q    never        1        0 
+02/04@00:44:50 - 10.244.31.90   :      68   871     4     AppManager                      OTHER    9 App Sys Q.                      Q    never   137332     8110 
+02/04@00:44:50 - 10.244.31.90   :      86   966     4     Production                      OTHER    9 Production                      Q    never    23874     1150 
+02/04@00:44:50 - 10.244.31.90   :      90   970     4     DvrSdmAsync                     OTHER    9 DvrSdmAsyncQ                    Q    never        9        0 
+02/04@00:44:50 - 10.244.31.90   :      88   968     4     FsmAsync                        OTHER    9 FsmAsyncQ                       Q    never       55      190 
+02/04@00:44:50 - 10.244.31.90   :      44   840     4     APDUP Event Thread              OTHER   10 apdup_Queue                     Q    never      156       50 
+02/04@00:44:50 - 10.244.31.90   :      46   842    44     APDUP IPC Thread                OTHER   10 <running>                            never        0       10 
+02/04@00:44:50 - 10.244.31.90   :      48   844     4     NetpBrfThread                   OTHER   10 Stream Device List Mutex        M    never     1347     2830 
+02/04@00:44:51 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:44:51 - 10.244.31.90   :      50   846     4     NetpThread                      OTHER   10 <running>                            never        0        0 
+02/04@00:44:51 - 10.244.31.90   :      52   848     4     TblMgr Main                     OTHER   10 TblMgr_Mutex                    M    never  2015115   115480 
+02/04@00:44:51 - 10.244.31.90   :  **Mutex owner 0x0 does not appear to be valid
+02/04@00:44:51 - 10.244.31.90   :      53   849     4     TomeThread                      OTHER   10 TomeQueue                       Q    never        4        0 
+02/04@00:44:51 - 10.244.31.90   :      54   850     4     TomMutantReaderThread           OTHER   10 <running>                            never   722295    19370 
+02/04@00:44:51 - 10.244.31.90   :      55   851     4     TomMutantThread                 OTHER   10 TomMutantQueue                  Q    never   679857    26880 
+02/04@00:44:51 - 10.244.31.90   :      56   852     4     TomcThread                      OTHER   10 TomcQueue                       Q    never        4        0 
+02/04@00:44:51 - 10.244.31.90   :      61   861     4     UNConfig                        OTHER   10 UnConfig Q.                     Q   <1(ms)    23882    63120 
+02/04@00:44:51 - 10.244.31.90   : 4238994 18207    58     TblMA4a5e8S126cP6               OTHER   10 AVR Mgr Mutex                   M    never    85870   121870 
+02/04@00:44:51 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:44:51 - 10.244.31.90   : 4334021 16550    58     TblMA4baecS110cPb               OTHER   10 Stream Device List Mutex        M    never        1        0 
+02/04@00:44:51 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:44:51 - 10.244.31.90   :      15   793     4     vmpegps private thread          OTHER   11 VMPEGPS Q                       Q    never        0        0 
+02/04@00:44:51 - 10.244.31.90   :      20   799     4     SNMPSVC                         OTHER   11 <running>                            never        1       30 
+02/04@00:44:51 - 10.244.31.90   :      35   831     4     HDMI Thread                     OTHER   11 HDMI Thread Queue               Q    never      847       20 
+02/04@00:44:51 - 10.244.31.90   :      49   845     4     OOBFilterThread                 OTHER   11 OOBFilterThreadQueue            Q    never    77235    51570 
+02/04@00:44:51 - 10.244.31.90   :      62   862     4     UNSession                       OTHER   11 UnSess Q.                       Q   <1(ms)    24737    16490 
+02/04@00:44:51 - 10.244.31.90   :      63   863     4     UNPassthru                      OTHER   11 UnPthr Q.                       Q   <1(ms)     4413    12560 
+02/04@00:44:51 - 10.244.31.90   :      65   867     4     Carousel OOB R                  OTHER   11 <running>                            never        0    39590 
+02/04@00:44:51 - 10.244.31.90   :      66   868     4     CarouselMulti                   OTHER   11 CarouselMain                    Q    never      446      220 
+02/04@00:44:52 - 10.244.31.90   :      26   805     4     Videod Thread                   OTHER   12 Videod Queue                    Q    never   361951     3960 
+02/04@00:44:52 - 10.244.31.90   :      23   802     4     HDCP Thread                     OTHER   13 HDCP Thread Queue               Q    never        2        0 
+02/04@00:44:52 - 10.244.31.90   :      33   829     4     IB Tunning                      OTHER   13 IBTuner Queue                   Q    never  1436247     9980 
+02/04@00:44:52 - 10.244.31.90   :      83   960    81     PKEY CAK                        OTHER   15 PKEY CA Q                       Q    never       27       10 
+02/04@00:44:52 - 10.244.31.90   :     113  1040     4     CC Render                       OTHER   15 ccrEvtQ                         Q    never     3835      580 
+02/04@00:44:52 - 10.244.31.90   :       9   787     4     DriverTimer                     OTHER   16 driverTimerQueue                Q    never       93        0 
+02/04@00:44:52 - 10.244.31.90   :      37   833     4     System Bootloader Iface         OTHER   16 System Bootloader Iface         Q  21(sec)       49       60 
+02/04@00:44:52 - 10.244.31.90   :      42   838     4     AVRTmon                         OTHER   16 AVRT MonQ                       Q    never     9453     1000 
+02/04@00:44:52 - 10.244.31.90   :      67   869     4     GetBFSDirectory                 OTHER   16 GetDir                          Q    never    34040    79510 
+02/04@00:44:52 - 10.244.31.90   :     115  1042     4     CC Parser                       OTHER   16 ccmCntlQ                        Q    never     3997      430 
+02/04@00:44:52 - 10.244.31.90   :      78   954     4     WinMgr Main                     OTHER   17 Window Manager                  Q    never    23213     1220 
+02/04@00:44:52 - 10.244.31.90   :     112  1039     4     VAM Thread                      OTHER   17 AVR Mgr Mutex                   M    never     4131     1510 
+02/04@00:44:52 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:44:52 - 10.244.31.90   :     114  1041   112     VAM Analog                      OTHER   17 VAMAnalogQ                      Q    never        0        0 
+02/04@00:44:52 - 10.244.31.90   :      79   955    78     WinMgr Input Thread             OTHER   20 unnamed                         Q    never    29904     4320 
+02/04@00:44:52 - 10.244.31.90   :      91   971     4     DvrAlarmThread                  OTHER   20 AVR Mgr Mutex                   M    never    17563    25610 
+02/04@00:44:52 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:44:52 - 10.244.31.90   :     119  1046     4     hotplug_thread                  OTHER   20 <running>                            never        0        0 
+02/04@00:44:52 - 10.244.31.90   :     120  1047     4     SSM                             OTHER   20 SSM                             Q    never       17        0 
+02/04@00:44:52 - 10.244.31.90   :      14   792     4     Bldr Driver Thread              OTHER   21 <sleeping>                          <1(ms)        0      690 
+02/04@00:44:52 - 10.244.31.90   :      21   800     4     Driver Diag Thread              OTHER   23 DriverDiagQueue                 Q  985(ms)      572      300 
+02/04@00:44:52 - 10.244.31.90   :      47   843     4     snmpx thread                    OTHER   23 <running>                            never     1923   160600 
+02/04@00:44:53 - 10.244.31.90   :      69   872     4     HIDM: b-thread                  OTHER   23 HIDM: b-thread                  Q    never    29904     3100 
+02/04@00:44:53 - 10.244.31.90   :      72   878     4     FPDM b. thread                  OTHER   23 FPDM b. thread                  Q    never        0        0 
+02/04@00:44:53 - 10.244.31.90   :      22   801     4     snmpd driver                    OTHER   24 SNMPD-Q                         Q    never       26       40 
+02/04@00:44:53 - 10.244.31.90   :      43   839     4     OpenCable Manager               OTHER   24 OCM main Q                      Q    never        0        0 
+02/04@00:44:53 - 10.244.31.90   :      57   853     4     Tv Manager                      OTHER   24 TV Man. Q.                      Q    never    14829      920 
+02/04@00:44:53 - 10.244.31.90   :      58   854     4     Tvp Manager                     OTHER   24 TVP_Mutex                       M    never   633908   205620 
+02/04@00:44:53 - 10.244.31.90   :  **Mutex "TVP_Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:44:53 - 10.244.31.90   :      64   864     4     SgMgr                           OTHER   24 SgMgr_CmdQueue                  Q    never     1365       50 
+02/04@00:44:53 - 10.244.31.90   :      80   956     4     PodHandler                      OTHER   24 NativePodH threadQueue          Q    never   798956   111480 
+02/04@00:44:53 - 10.244.31.90   :      81   957     4     CAM                             OTHER   24 AVR Mgr Mutex                   M    never    10486   108910 
+02/04@00:44:53 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:44:53 - 10.244.31.90   :      96  1003    43     OCM Homing Handle Apdu Events   OTHER   24 Ocm Homing Queue                Q    never       17        0 
+02/04@00:44:53 - 10.244.31.90   :      97  1004    43     OCM HostCtrl Thread             OTHER   24 OCM Host Control Queue          Q    never      101        0 
+02/04@00:44:53 - 10.244.31.90   :      98  1005    43     ocmResMgrHandleSpduEvents       OTHER   24 OcmOsmRecvQ                     Q    never   809923   102480 
+02/04@00:44:53 - 10.244.31.90   :      99  1006    43     OCM ResMgr MonitorCardState Thr OTHER   24 OcmResMgrQ                      Q    never        2        0 
+02/04@00:44:53 - 10.244.31.90   :     100  1007    43     OCM AppProv Handle Apdu Events  OTHER   24 Ocm AppInfo Queue               Q    never        0        0 
+02/04@00:44:53 - 10.244.31.90   :     102  1009    43     OCM SesProvider Handle Apdu Eve OTHER   24 Ocm Sas Queue                   Q    never        0        0 
+02/04@00:44:53 - 10.244.31.90   :     103  1010    43     OCM System Time Handle Apdu Eve OTHER   24 Ocm System Time Resource Provid Q    never        1        0 
+02/04@00:44:53 - 10.244.31.90   :     104  1011    43     OCM Systen Time Send Time       OTHER   24 Ocm Send System Time Queue      Q    never     2809      130 
+02/04@00:44:53 - 10.244.31.90   :     105  1012    43     OCM GenDiag HandleApduEvents Th OTHER   24 Ocm Generic Diagnostic Resource Q    never        8        0 
+02/04@00:44:53 - 10.244.31.90   :     106  1013    43     OCM GFC Thread                  OTHER   24 OCM GFC Queue                   Q    never        6        0 
+02/04@00:44:54 - 10.244.31.90   :     107  1014    43     OCM MMI Prov Handle Apdu Events OTHER   24 Ocm MMI Resource Provider Queue Q    never        0        0 
+02/04@00:44:54 - 10.244.31.90   :     108  1015    43     OCM HEComm Prov Handle Apdu Eve OTHER   24 Ocm HEComm Resource Provider Qu Q    never        0        0 
+02/04@00:44:54 - 10.244.31.90   :  133125  5152   178 101 VOD Component                   OTHER   24 VOD Q                           Q    never      999      220 
+02/04@00:44:54 - 10.244.31.90   :       6   782     4     SALOG_C2kThrd                   OTHER   25 <running>                            never        5       20 
+02/04@00:44:54 - 10.244.31.90   :       7   783     4     SALOG_FdrThrd                   OTHER   25 <running>                            never        0    96580 
+02/04@00:44:54 - 10.244.31.90   :      36   832     4     VDM CopyP Event Handler         OTHER   25 VDM CopyP Event Handler         Q    never    14126     3710 
+02/04@00:44:54 - 10.244.31.90   :     116  1043     4     Diag UDP                        OTHER   25 <running>                            never        0        0 
+02/04@00:44:54 - 10.244.31.90   :     117  1044     4     Diag TCP                        OTHER   25 <running>                            never        0        0 
+02/04@00:44:54 - 10.244.31.90   :     121  1048     4 100 iGuide Main                     OTHER   25 tvgi                            Q    never   459567    45960 
+02/04@00:44:54 - 10.244.31.90   :     123  1055   121 100 SecondMainTask                  OTHER   25 <running>                            never  1196608  1979930 
+02/04@00:44:54 - 10.244.31.90   :     138  1089   121 100 Tvp Wrapper Thread              OTHER   25 gTvpwThreadQueue                Q    never     7690    24110 
+02/04@00:44:54 - 10.244.31.90   :      10   788     4     ccMetrics                       OTHER   26 ccMetricsQueue                  Q    never    52250     2760 
+02/04@00:44:54 - 10.244.31.90   :      45   841     4     OOBM NetDiag Thread             OTHER   26 netdiag_Queue                   Q    never        0        0 
+02/04@00:44:54 - 10.244.31.90   :      74   880     4     ap_Main thread                  OTHER   26 Ap MainQ                        Q    never        0        0 
+02/04@00:44:54 - 10.244.31.90   :     122  1052   121 100 FlashUpdate                     OTHER   26 FlashUpdate                     Q    never        0        0 
+02/04@00:44:54 - 10.244.31.90   :     174  1125   125 101 SCI VODMOD                      OTHER   26 SCI VODMOD                      Q    never     7490      760 
+02/04@00:44:54 - 10.244.31.90   :     176  1127   175 101 GENERIC                         OTHER   26 <sleeping>                          <1(ms)        0     5520 
+02/04@00:44:54 - 10.244.31.90   :     177  1128   175 101 STREAMMONITORTASK               OTHER   26 0x2b247270                      Q   <1(ms)       54     1100 
+02/04@00:44:54 - 10.244.31.90   :     178  1129   175 101 CMODTASK                        OTHER   26 0x2b2474e0                      Q   <1(ms)     2119     3960 
+02/04@00:44:54 - 10.244.31.90   :     179  1130   175 101 VOD Mod Main                    OTHER   26 0x2b247410                      Q   <1(ms)     2651     4490 
+02/04@00:44:55 - 10.244.31.90   :     180  1131   175 101 VOD Mod Back                    OTHER   26 0x2b247478                      Q   <1(ms)    14952    22870 
+02/04@00:44:55 - 10.244.31.90   :     202  1153   123 102 MAC-S                           OTHER   26 MAC-S                           Q   <1(ms)    42710    25750 
+02/04@00:44:55 - 10.244.31.90   :     203  1154   202 102 GuideEvtThd                     OTHER   26 GuideEventQueue                 Q    never    32061     2620 
+02/04@00:44:55 - 10.244.31.90   :     204  1155   202 102 primaryThread                   OTHER   26 7d0cafe                         Q   7(sec)  2176846  2287020 
+02/04@00:44:55 - 10.244.31.90   :     205  1156   204 102 guide_task_loop                 OTHER   26 7d06103                         Q 1460(ms)    36466    13560 
+02/04@00:44:55 - 10.244.31.90   :     206  1157   204 102 DataReadTaskMainLoop            OTHER   26 7d0f00d                         Q   <1(ms)   396837   131080 
+02/04@00:44:55 - 10.244.31.90   :     207  1158   204 102 socket_thread                   OTHER   26 <running>                            never        2        0 
+02/04@00:44:55 - 10.244.31.90   :     208  1159   204 102 PvtDataRdTask                   OTHER   26 ResponseQ                       Q    never   596762   430670 
+02/04@00:44:55 - 10.244.31.90   :     209  1160   204 102 KeyReadTaskMainLoop             OTHER   26 MotoKeyQ                        Q    never    14952     7110 
+02/04@00:44:55 - 10.244.31.90   :     210  1161   204 102 dumpmeminfotask                 OTHER   26 <sleeping>                         48(sec)        0    59450 
+02/04@00:44:55 - 10.244.31.90   :       5   781     4     LdWorkerThread                  OTHER   27 LdUtilWorkerThreadSem           S    never        0        0 
+02/04@00:44:55 - 10.244.31.90   :  **Semaphore "LdUtilWorkerThreadSem" count: 0, max: -1
+02/04@00:44:55 - 10.244.31.90   :     133  1084   121 100 DB Main Thread                  OTHER   28 DBMainQ                         Q    never   861345   474670 
+02/04@00:44:55 - 10.244.31.90   :     135  1086   121 100 DB EPG Rx Thread                OTHER   28 Stream Device List Mutex        M    never    15280  3392290 
+02/04@00:44:55 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:44:55 - 10.244.31.90   :     136  1087   121 100 SAM Thread                      OTHER   28 Stream Device List Mutex        M    never   269663   416490 
+02/04@00:44:55 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:44:55 - 10.244.31.90   :     139  1090   121 100 QPSK PPV Daemon                 OTHER   28 Stream Device List Mutex        M    never     4787     3000 
+02/04@00:44:55 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:44:55 - 10.244.31.90   :     140  1091   121 100 QAM PPV Daemon                  OTHER   28 QAM PPV Daemon                  Q    never      414       30 
+02/04@00:44:55 - 10.244.31.90   :     175  1126   174 101 VOD Client                      OTHER   28 VODC                            Q   <1(ms)     1722     8190 
+02/04@00:44:55 - 10.244.31.90   :     134  1085   121 100 DB Hkeep Thread                 OTHER   29 <sleeping>                        2611(ms)        0  2196600 
+02/04@00:44:56 - 10.244.31.90   :      12   790     4     sdATA Event                     OTHER   30 sdATA Event                     Q    never        0        0 
+02/04@00:44:56 - 10.244.31.90   :      77   950     4     SRM Thread                      OTHER   30 gSrmQueue                       Q    never     1364       60 
+02/04@00:44:56 - 10.244.31.90   :      94   982     4     vl_VLNMEventHandler             OTHER   30 fbSemQ11011394                  Q    never        3        0 
+02/04@00:44:56 - 10.244.31.90   :      95   983     4     vl_MfrNotificationEventsTask    OTHER   30 <running>                            never        0        0 
+02/04@00:44:56 - 10.244.31.90   :     109  1034     4     vl_CMMLightHandler              OTHER   30 <running>                            never        2        0 
+02/04@00:44:56 - 10.244.31.90   :     110  1037     4     vl_ConnMgrListener              OTHER   30 <running>                            never        0        0 
+02/04@00:44:56 - 10.244.31.90   :     118  1045     4     Amm Event Handler Thread        OTHER   30 amm_EventQ                      Q    never        2        0 
+02/04@00:44:56 - 10.244.31.90   :     125  1058   121 100 App Cfg Thread                  OTHER   30 App CfgQ                        Q    never    18194    68080 
+02/04@00:44:56 - 10.244.31.90   :     137  1088   121 100 CONFIG THREAD                   OTHER   30 ConfigQ                         Q    never       36        0 
+02/04@00:44:56 - 10.244.31.90   :       3   779     2     Memory Mgr                      OTHER   31 Memory Mgr Queue                Q    never     3583    43590 
+02/04@00:44:56 - 10.244.31.90   :      16   794     4     ETI Thread                      OTHER   31 ETI Queue                       Q    never        8        0 
+02/04@00:44:56 - 10.244.31.90   :     111  1038     4     vlCea931Listener                OTHER   31 <running>                            never        0        0 
+02/04@00:44:56 - 10.244.31.90   :     141  1092   121 100 GxpMain Thread                  OTHER   31 <running>                            never  2740946    45360 
+02/04@00:44:56 - 10.244.31.90   : 148 Threads
+02/04@00:44:56 - 10.244.31.90   : 4333878 Retired Threads
+02/04@00:44:56 - 10.244.31.90   : System Init:         26913ms
+02/04@00:44:56 - 10.244.31.90   : 
+02/04@00:44:56 - 10.244.31.90   : Backtrace:      1 PkTimerThread                    2b3aaa5c 2ae26e24 2ae2ff18 2ae282b0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:56 - 10.244.31.90   : Backtrace:      8 evntThrd                         2b3b1440 2ae3411c 2ae2ea84 2ae275e4 2ae27d9c 2ac8ffc0 2ac68090 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:56 - 10.244.31.90   : Backtrace:     24 HDCP RT Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aca032c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:56 - 10.244.31.90   : Backtrace:     28 user display[0]                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac90dd4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:56 - 10.244.31.90   : Backtrace:     30 user display[1]                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac90dd4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:56 - 10.244.31.90   : Backtrace:     41 Capt Buf Update Thread           2b3aa658 2ae26e9c 2ae2ff18 2ae2c1cc 2abc1630 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace: 4238995 record1_task                     2b939d24 2abab990 2ac249d4 2ac25180 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace: 4238996 record1_tricklink                2b3aaa5c 2ae26e24 2ae2ff18 2ae2c1cc 2abfea80 2ac255e4 2ac25984 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace: 4238997 record1_filelink                 2b3aaa5c 2ae26e24 2ae2ff18 2ae2c1cc 2abfe924 2ac21968 2ac21e20 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     17 Scale Unit 1                     2b3aec88 2ac82094 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     18 Scale Unit 2                     2b3aec88 2ac82094 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     19 Scale Unit 3                     2b3aec88 2ac82094 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     70 FPKey Thread                     2b939d24 2ac424b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     71 Irif Thread                      2b939d24 2ac429b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     32 SC Driver                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac3f0e4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     38 STBLIT IntEvntTst                2b3aec88 2abca684 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     39 STBLIT ErrChkTsk                 2b3aa658 2ae26e9c 2ae2ff18 2ae2c1cc 2abd18c0 2abc47bc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     73 PCM Play Worker                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2abdef6c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     11 Vcxo Thread                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac90138 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     27 hal_mpegdv0                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac87aa8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     29 hal_mpegdv1                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac87aa8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     40 GFX Compo Renderer               2b3afd30 2ae289c8 2aca5798 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     82 PKEY Secure Micro                2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ab1deb8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     84 PcmciaThread                     2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac452a8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     89 PcmciaReadThread                 2b3aec88 2abab334 2ac457d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     13 VBI CommandThrd                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac8c47c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     75 ScMgr                            2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afd7528 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:57 - 10.244.31.90   : Backtrace:     34 MPEGT                            2b3ae474 2b3a8500 2ae2a84c 2af4ceb4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     76 ScMgrExt                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afd70bc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     93 tm_1394Thread                    2b3ae474 2b3a8400 2ae2a84c 2aee8378 2b120624 2b11ec08 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     25 Mpegda T                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2abdb3cc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     31 Mpegdc Alarm Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac845dc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     60 SdmDevice0001                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b065438 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     59 SdmAsync                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b062cc0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     68 AppManager                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aed44c4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     86 Production                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afee99c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     90 DvrSdmAsync                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b020448 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     88 FsmAsync                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b030e8c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     44 APDUP Event Thread               2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b06f85c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     46 APDUP IPC Thread                 2b93ab98 2b07296c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     48 NetpBrfThread                    2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2b11457c 2b115e8c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     50 NetpThread                       2b93ab98 2b10bf20 2b10c86c 2b11180c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     52 TblMgr Main                      2b3a80d0 2ae2a84c 2af24a40 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     53 TomeThread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af3cddc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     54 TomMutantReaderThread            2b93ab98 2af3c668 2af39a10 2af3d24c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     55 TomMutantThread                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af3adc8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     56 TomcThread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af3f3d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace:     61 UNConfig                         2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2b0f6d6c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:58 - 10.244.31.90   : Backtrace: 4238994 TblMA4a5e8S126cP6                2b3ae474 2b3a8400 2ae2a84c 2aee7d38 2ae4931c 2af33ca0 2af33e2c 2af20ecc 2af21c74 2af21fc0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace: 4334021 TblMA4baecS110cPb                2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2af33ca0 2af33e2c 2af20ecc 2af21c74 2af21fc0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     15 vmpegps private thread           2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af40f10 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     20 SNMPSVC                          2b945ac4
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     35 HDMI Thread                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac98868 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     49 OOBFilterThread                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b10ff24 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     62 UNSession                        2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2b1024d4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     63 UNPassthru                       2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2b0f1acc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     65 Carousel OOB R                   2b93ab98 2afc3440 2afc32a0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     66 CarouselMulti                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afc61b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     26 Videod Thread                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac93678 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     23 HDCP Thread                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac9fea4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     33 IB Tunning                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac554d8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     83 PKEY CAK                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ab218a8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:    113 CC Render                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0443d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:      9 DriverTimer                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac689b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     37 System Bootloader Iface          2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2aed53e0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     42 AVRTmon                          2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aef2924 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     67 GetBFSDirectory                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afcbc14 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:    115 CC Parser                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b03dbd8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:     78 WinMgr Main                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afa3114 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:    112 VAM Thread                       2b3ae474 2b3a8400 2ae2a84c 2aee7d38 2b055040 2ae27ec4 2b3a585c 2b943e98
+02/04@00:44:59 - 10.244.31.90   : Backtrace:    114 VAM Analog                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b053ddc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     79 WinMgr Input Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af9f514 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     91 DvrAlarmThread                   2b3ae474 2b3a8400 2ae2a84c 2aee8378 2b01d090 2b01ef08 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:    119 hotplug_thread                   2b3af228 2b116f04 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:    120 SSM                              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b12e39c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     14 Bldr Driver Thread               2b3afd30 2ae289c8 2abbffdc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     21 Driver Diag Thread               2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2ac6c67c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     47 snmpx thread                     2b93ab98 2b0c59e4 2b0c4bf4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     69 HIDM: b-thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af552c0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     72 FPDM b. thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afb7afc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     22 snmpd driver                     2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac6d9cc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     43 OpenCable Manager                2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0946d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     57 Tv Manager                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af5b954 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     58 Tvp Manager                      2b3ae474 2b3a8500 2ae2a84c 2af78d34 2af798ec 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     64 SgMgr                            2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afd3f18 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     80 PodHandler                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b09cd00 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     81 CAM                              2b3ae474 2b3a8400 2ae2a84c 2aee8378 2afe2ef4 2afe6438 2afeaec4 2afdcf64 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     96 OCM Homing Handle Apdu Events    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07a488 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     97 OCM HostCtrl Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07afb4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     98 ocmResMgrHandleSpduEvents        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0778e4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:     99 OCM ResMgr MonitorCardState Thr  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07861c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:00 - 10.244.31.90   : Backtrace:    100 OCM AppProv Handle Apdu Events   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07950c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    102 OCM SesProvider Handle Apdu Eve  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b078e04 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    103 OCM System Time Handle Apdu Eve  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b079b2c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    104 OCM Systen Time Send Time        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b079968 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    105 OCM GenDiag HandleApduEvents Th  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0962a4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    106 OCM GFC Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0996f8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    107 OCM MMI Prov Handle Apdu Events  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07b6c8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    108 OCM HEComm Prov Handle Apdu Eve  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07baac 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace: 133125 VOD Component                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b03c814 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:      6 SALOG_C2kThrd                    2b3aec88 2ac745c0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:      7 SALOG_FdrThrd                    2b3aec88 2ac74a2c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:     36 VDM CopyP Event Handler          2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aedfe64 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    116 Diag UDP                         2b3af540 2b1302b4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    117 Diag TCP                         2b3af228 2b130440 2b1305b4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    121 iGuide Main                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 00596668 00598a34 2aed1f28 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    123 SecondMainTask                   2b939d24 2abdd9c4 2af478d0 2af480c0 2aef1e84 2aeeb604 2aee8c1c 2af7e8f0 2af6f75c 005c742c 0057b5ac 00597bbc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    138 Tvp Wrapper Thread               2b3aa658 2ae26e9c 2ae2ff18 2ae25460 005c4f60 005c5484 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:     10 ccMetrics                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac694b0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:     45 OOBM NetDiag Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07480c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:     74 ap_Main thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af0f5b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    122 FlashUpdate                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 0059a69c 0059ad90 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:01 - 10.244.31.90   : Backtrace:    174 SCI VODMOD                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c2dbf20 2aed1f28 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    176 GENERIC                          2b3afd30 2ae289c8 2c2d3c14 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    177 STREAMMONITORTASK                2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2c3748 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    178 CMODTASK                         2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2b3dcc 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    179 VOD Mod Main                     2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2af770 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    180 VOD Mod Back                     2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2ab650 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    202 MAC-S                            2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3898c4 2aed1f28 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    203 GuideEvtThd                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c2fd2d8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    204 primaryThread                    2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3a8860 2c3019d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    205 guide_task_loop                  2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3a8860 2c393f34 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    206 DataReadTaskMainLoop             2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3a8860 2c30d6a0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    207 socket_thread                    2b93ab98 2c30529c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    208 PvtDataRdTask                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c30c9f4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    209 KeyReadTaskMainLoop              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c301de0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    210 dumpmeminfotask                  2b3afd30 2ae289c8 2c3a9480 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:      5 LdWorkerThread                   2b3aa658 2ae26e9c 2ae2ff18 2ae2c1cc 2ae52084 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    133 DB Main Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 00582a94 0045b1ac 00582950 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    135 DB EPG Rx Thread                 2b3ae474 2b3a8500 2ae2a84c 2ae4b11c 2afcd390 2afbb220 00583c14 00585848
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    136 SAM Thread                       2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2afcd0a0 2afcdd74 2afbb8f0 2afbbd64 00586c80 005f10d4 005f3ce4 005f5458 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    139 QPSK PPV Daemon                  2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2afcd0a0 2afcdd74 2afbb8f0 2afbbd64 005ed90c 005eac58 005ea2f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:02 - 10.244.31.90   : Backtrace:    140 QAM PPV Daemon                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 005e9c74 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    175 VOD Client                       2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2dc9a8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    134 DB Hkeep Thread                  2b3afd30 2ae289c8 00459610 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:     12 sdATA Event                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac3636c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:     77 SRM Thread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aff5d08 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:     94 vl_VLNMEventHandler              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b337bb0 2b338878 2b3041bc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:     95 vl_MfrNotificationEventsTask     2b939d24 2b3415ac 2b334710 2b307758 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    109 vl_CMMLightHandler               2b939d24 2b3415ac 2b33236c 2b2fa0c4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    110 vl_ConnMgrListener               2b939d24 2b3415ac 2b335144 2b2fd1b0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    118 Amm Event Handler Thread         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b11a8c8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    125 App Cfg Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 00578ad8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    137 CONFIG THREAD                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 005e2f54 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:      3 Memory Mgr                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ae440c0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:     16 ETI Thread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac64d5c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    111 vlCea931Listener                 2b939d24 2b3415ac 2b33626c 2b315eb4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   : Backtrace:    141 GxpMain Thread                   2b3af540 00533b14 00535d38 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:03 - 10.244.31.90   :  *** Error accessing the logical heap at 0x31bddc50*** 
+02/04@00:45:03 - 10.244.31.90   :  *** All heaps following it are inaccessible ***
+02/04@00:45:03 - 10.244.31.90   : 
+02/04@00:45:03 - 10.244.31.90   : Heap                              Base              Size        Free     Largest  Thread Name   ThreadID  AppID
+02/04@00:45:03 - 10.244.31.90   : --------------------------------  ----------  ----------  ----------  ----------  ------------  --------  --------
+02/04@00:45:03 - 10.244.31.90   :                           System  0x2ba3a008    93413368    81866184    81827588  
+02/04@00:45:03 - 10.244.31.90   :                            Video  0x31b9a000    14680064     8288512     8288508  
+02/04@00:45:03 - 10.244.31.90   :                        Protected  0x31350000     1712136       16016       16012  
+02/04@00:45:03 - 10.244.31.90   :                          unnamed  0x2c3e4ab8     1010000      143792      143788  MAC-S         202       102     
+02/04@00:45:04 - 10.244.31.90   : unnamed                           0x2bb68db0  491520      82832       40356       tvgi          121       100     
+02/04@00:45:04 - 10.244.31.90   : 
+02/04@00:45:04 - 10.244.31.90   : *** Allocation failed 1 times for Logical Heap: unnamed (0x2bb6f120)history of last 5
+02/04@00:45:04 - 10.244.31.90   : Thread              Request    Largest   CS Items  Reason               Timestamp
+02/04@00:45:04 - 10.244.31.90   : ---------------- ---------- ---------- ----------  -------------------- -----------------
+02/04@00:45:04 - 10.244.31.90   : SAM Thread            29880       6368       1910  Pointer alloc fail   Sun Jan  7 22:52:30 1996
+02/04@00:45:04 - 10.244.31.90   : 
+02/04@00:45:04 - 10.244.31.90   : Kernel Memory Statistics
+02/04@00:45:04 - 10.244.31.90   : ------------------------
+02/04@00:45:04 - 10.244.31.90   : MemTotal:       140408 kB
+02/04@00:45:04 - 10.244.31.90   : MemFree:         29568 kB
+02/04@00:45:04 - 10.244.31.90   : Buffers:         40632 kB
+02/04@00:45:04 - 10.244.31.90   : Cached:          33088 kB
+02/04@00:45:04 - 10.244.31.90   : SwapCached:          0 kB
+02/04@00:45:04 - 10.244.31.90   : Active:          51536 kB
+02/04@00:45:04 - 10.244.31.90   : Inactive:        42356 kB
+02/04@00:45:04 - 10.244.31.90   : HighTotal:           0 kB
+02/04@00:45:04 - 10.244.31.90   : HighFree:            0 kB
+02/04@00:45:04 - 10.244.31.90   : LowTotal:       140408 kB
+02/04@00:45:04 - 10.244.31.90   : LowFree:         29568 kB
+02/04@00:45:04 - 10.244.31.90   : SwapTotal:           0 kB
+02/04@00:45:04 - 10.244.31.90   : SwapFree:            0 kB
+02/04@00:45:04 - 10.244.31.90   : Dirty:               0 kB
+02/04@00:45:04 - 10.244.31.90   : Writeback:           0 kB
+02/04@00:45:04 - 10.244.31.90   : Mapped:          31888 kB
+02/04@00:45:04 - 10.244.31.90   : Slab:             8056 kB
+02/04@00:45:04 - 10.244.31.90   : CommitLimit:    119344 kB
+02/04@00:45:04 - 10.244.31.90   : Committed_AS:   108840 kB
+02/04@00:45:04 - 10.244.31.90   : PageTables:        328 kB
+02/04@00:45:04 - 10.244.31.90   : VmallocTotal:  1048560 kB
+02/04@00:45:04 - 10.244.31.90   : VmallocUsed:     69432 kB
+02/04@00:45:04 - 10.244.31.90   : VmallocChunk:   978928 kB
+02/04@00:45:04 - 10.244.31.90   : 
+02/04@00:45:04 - 10.244.31.90   : Failing Thread 786
+02/04@00:45:04 - 10.244.31.90   : 
+02/04@00:45:04 - 10.244.31.90   : 
+02/04@00:45:04 - 10.244.31.90   : PTV Thread Report
+02/04@00:45:04 - 10.244.31.90   : 
+02/04@00:45:04 - 10.244.31.90   : id      tid   owner app name                            policy pri waiting on                      t timeout  events   cpu(ms) 
+02/04@00:45:04 - 10.244.31.90   : ------- ----- ----- --- ------------------------------- ------ --- ------------------------------- - -------- -------- --------
+02/04@00:45:04 - 10.244.31.90   :       1   777     0     PkTimerThread                   RR       1 <sleeping>                          <1(ms)        0        0 
+02/04@00:45:04 - 10.244.31.90   :       8   786     4     evntThrd                        RR       1 <running>                            never        0        0 
+02/04@00:45:04 - 10.244.31.90   :      24   803     4     HDCP RT Thread                  RR       1 HDCP RT Thread Queue            Q    never        0        0 
+02/04@00:45:04 - 10.244.31.90   :      28   816     4     user display[0]                 RR       1 displayQ[0]                     Q    never     3736        0 
+02/04@00:45:04 - 10.244.31.90   :      30   826     4     user display[1]                 RR       1 displayQ[1]                     Q    never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      41   837     4     Capt Buf Update Thread          RR       1 Capt Update Buffer Sem          S    never        0        0 
+02/04@00:45:05 - 10.244.31.90   :  **Semaphore "Capt Update Buffer Sem" count: 0, max: 2
+02/04@00:45:05 - 10.244.31.90   : 4238995 18208   123 100 record1_task                    RR       1 <running>                            never        0       20 
+02/04@00:45:05 - 10.244.31.90   : 4238996 18209   123 100 record1_tricklink               RR       1 WaitReadyLink_Trick             S 1193(hrs)        0       10 
+02/04@00:45:05 - 10.244.31.90   :  **Semaphore "WaitReadyLink_Trick" count: 0, max: 96
+02/04@00:45:05 - 10.244.31.90   : 4238997 18210   123 100 record1_filelink                RR       1 WaitFreeLink_Cluster            S 1193(hrs)        0        0 
+02/04@00:45:05 - 10.244.31.90   :  **Semaphore "WaitFreeLink_Cluster" count: 0, max: 8
+02/04@00:45:05 - 10.244.31.90   :      17   795     4     Scale Unit 1                    OTHER    2 <running>                            never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      18   796     4     Scale Unit 2                    OTHER    2 <running>                            never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      19   797     4     Scale Unit 3                    OTHER    2 <running>                            never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      70   873     4     FPKey Thread                    OTHER    3 <running>                            never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      71   874     4     Irif Thread                     OTHER    3 <running>                            never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      32   828     4     SC Driver                       OTHER    4 SC Cmds                         Q    never      387        0 
+02/04@00:45:05 - 10.244.31.90   :      38   834     4     STBLIT IntEvntTst               OTHER    4 <running>                            never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      39   835     4     STBLIT ErrChkTsk                OTHER    4 ST Sem   13 BlitErrorChkSubmit  S    never        0        0 
+02/04@00:45:05 - 10.244.31.90   :  **Semaphore "ST Sem   13 BlitErrorChkSubmit" count: 0, max: 10000
+02/04@00:45:05 - 10.244.31.90   :      73   879     4     PCM Play Worker                 OTHER    4 PCM Play Q                      Q    never        1        0 
+02/04@00:45:05 - 10.244.31.90   :      11   789     4     Vcxo Thread                     OTHER    5 VCXO Queue                      Q    never 40255190        0 
+02/04@00:45:05 - 10.244.31.90   :      27   806     4     hal_mpegdv0                     OTHER    5 mpegdvQ1                        Q    never     7464        0 
+02/04@00:45:05 - 10.244.31.90   :      29   817     4     hal_mpegdv1                     OTHER    5 mpegdvQ2                        Q    never        0        0 
+02/04@00:45:05 - 10.244.31.90   :      40   836     4     GFX Compo Renderer              OTHER    5 <sleeping>                          <1(ms)        0        0 
+02/04@00:45:05 - 10.244.31.90   :      82   958    81     PKEY Secure Micro               OTHER    5 PKEY SMCMD Q                    Q    never      342        0 
+02/04@00:45:06 - 10.244.31.90   :      84   961     4     PcmciaThread                    OTHER    5 PCMCIA Q                        Q    never  1636286        0 
+02/04@00:45:06 - 10.244.31.90   :      89   969    84     PcmciaReadThread                OTHER    5 <running>                            never        0        0 
+02/04@00:45:06 - 10.244.31.90   :      13   791     4     VBI CommandThrd                 OTHER    6 VBI_CommandQ                    Q    never        0        0 
+02/04@00:45:06 - 10.244.31.90   :      75   881     4     ScMgr                           OTHER    6 ScmanInt Q                      Q    never      410        0 
+02/04@00:45:06 - 10.244.31.90   :      34   830     4     MPEGT                           OTHER    7 Mpegt Mutex                     M    never     3660        0 
+02/04@00:45:06 - 10.244.31.90   :  **Mutex "Mpegt Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:45:06 - 10.244.31.90   :      76   886    75     ScMgrExt                        OTHER    7 ScmanExt Q                      Q    never        0        0 
+02/04@00:45:06 - 10.244.31.90   :      93   973     4     tm_1394Thread                   OTHER    7 AVR Mgr Mutex                   M    never    19561        0 
+02/04@00:45:06 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:45:06 - 10.244.31.90   :      25   804     4     Mpegda T                        OTHER    8 Mpegda Q                        Q    never        0        0 
+02/04@00:45:06 - 10.244.31.90   :      31   827     4     Mpegdc Alarm Thread             OTHER    8 Mpegdc Alarm Queue              Q    never        0        0 
+02/04@00:45:06 - 10.244.31.90   :      60   859    59     SdmDevice0001                   OTHER    8 SdmDeviceQ00000001              Q    never        0        0 
+02/04@00:45:06 - 10.244.31.90   :      59   855     4     SdmAsync                        OTHER    9 SdmAsyncQ                       Q    never        1        0 
+02/04@00:45:06 - 10.244.31.90   :      68   871     4     AppManager                      OTHER    9 App Sys Q.                      Q    never   137333        0 
+02/04@00:45:06 - 10.244.31.90   :      86   966     4     Production                      OTHER    9 Production                      Q    never    23874        0 
+02/04@00:45:06 - 10.244.31.90   :      90   970     4     DvrSdmAsync                     OTHER    9 DvrSdmAsyncQ                    Q    never        9        0 
+02/04@00:45:06 - 10.244.31.90   :      88   968     4     FsmAsync                        OTHER    9 FsmAsyncQ                       Q    never       55        0 
+02/04@00:45:06 - 10.244.31.90   :      44   840     4     APDUP Event Thread              OTHER   10 apdup_Queue                     Q    never      156        0 
+02/04@00:45:06 - 10.244.31.90   :      46   842    44     APDUP IPC Thread                OTHER   10 <running>                            never        0        0 
+02/04@00:45:06 - 10.244.31.90   :      48   844     4     NetpBrfThread                   OTHER   10 Stream Device List Mutex        M    never     1347        0 
+02/04@00:45:06 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:45:06 - 10.244.31.90   :      50   846     4     NetpThread                      OTHER   10 <running>                            never        0        0 
+02/04@00:45:07 - 10.244.31.90   :      52   848     4     TblMgr Main                     OTHER   10 TBLMGR_CmdQ                     Q    never  2015125        0 
+02/04@00:45:07 - 10.244.31.90   :      53   849     4     TomeThread                      OTHER   10 TomeQueue                       Q    never        4        0 
+02/04@00:45:07 - 10.244.31.90   :      54   850     4     TomMutantReaderThread           OTHER   10 <running>                            never   722300        0 
+02/04@00:45:07 - 10.244.31.90   :      55   851     4     TomMutantThread                 OTHER   10 TomMutantQueue                  Q    never   679862        0 
+02/04@00:45:07 - 10.244.31.90   :      56   852     4     TomcThread                      OTHER   10 TomcQueue                       Q    never        4        0 
+02/04@00:45:07 - 10.244.31.90   :      61   861     4     UNConfig                        OTHER   10 UnConfig Q.                     Q   <1(ms)    23882        0 
+02/04@00:45:07 - 10.244.31.90   : 4238994 18207    58     TblMA4a5e8S126cP6               OTHER   10 AVR Mgr Mutex                   M    never    85870        0 
+02/04@00:45:07 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:45:07 - 10.244.31.90   : 4334021 16550    58     TblMA4baecS110cPb               OTHER   10 Stream Device List Mutex        M    never        1        0 
+02/04@00:45:07 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:45:07 - 10.244.31.90   :      15   793     4     vmpegps private thread          OTHER   11 VMPEGPS Q                       Q    never        0        0 
+02/04@00:45:07 - 10.244.31.90   :      20   799     4     SNMPSVC                         OTHER   11 <running>                            never        1        0 
+02/04@00:45:07 - 10.244.31.90   :      35   831     4     HDMI Thread                     OTHER   11 HDMI Thread Queue               Q    never      847        0 
+02/04@00:45:07 - 10.244.31.90   :      49   845     4     OOBFilterThread                 OTHER   11 OOBFilterThreadQueue            Q    never    77235        0 
+02/04@00:45:07 - 10.244.31.90   :      62   862     4     UNSession                       OTHER   11 UnSess Q.                       Q   <1(ms)    24737        0 
+02/04@00:45:07 - 10.244.31.90   :      63   863     4     UNPassthru                      OTHER   11 UnPthr Q.                       Q   <1(ms)     4413        0 
+02/04@00:45:07 - 10.244.31.90   :      65   867     4     Carousel OOB R                  OTHER   11 <sleeping>                         378(ms)        0        0 
+02/04@00:45:07 - 10.244.31.90   :      66   868     4     CarouselMulti                   OTHER   11 CarouselMain                    Q    never      446        0 
+02/04@00:45:07 - 10.244.31.90   :      26   805     4     Videod Thread                   OTHER   12 Videod Queue                    Q    never   361954        0 
+02/04@00:45:07 - 10.244.31.90   :      23   802     4     HDCP Thread                     OTHER   13 HDCP Thread Queue               Q    never        2        0 
+02/04@00:45:07 - 10.244.31.90   :      33   829     4     IB Tunning                      OTHER   13 IBTuner Queue                   Q    never  1436258        0 
+02/04@00:45:08 - 10.244.31.90   :      83   960    81     PKEY CAK                        OTHER   15 PKEY CA Q                       Q    never       27        0 
+02/04@00:45:08 - 10.244.31.90   :     113  1040     4     CC Render                       OTHER   15 ccrEvtQ                         Q    never     3835        0 
+02/04@00:45:08 - 10.244.31.90   :       9   787     4     DriverTimer                     OTHER   16 driverTimerQueue                Q    never       93        0 
+02/04@00:45:08 - 10.244.31.90   :      37   833     4     System Bootloader Iface         OTHER   16 System Bootloader Iface         Q  15(sec)       49        0 
+02/04@00:45:08 - 10.244.31.90   :      42   838     4     AVRTmon                         OTHER   16 AVRT MonQ                       Q    never     9453        0 
+02/04@00:45:08 - 10.244.31.90   :      67   869     4     GetBFSDirectory                 OTHER   16 GetDir                          Q    never    34040        0 
+02/04@00:45:08 - 10.244.31.90   :     115  1042     4     CC Parser                       OTHER   16 ccmCntlQ                        Q    never     3997        0 
+02/04@00:45:08 - 10.244.31.90   :      78   954     4     WinMgr Main                     OTHER   17 Window Manager                  Q    never    23213        0 
+02/04@00:45:08 - 10.244.31.90   :     112  1039     4     VAM Thread                      OTHER   17 AVR Mgr Mutex                   M    never     4131        0 
+02/04@00:45:08 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:45:08 - 10.244.31.90   :     114  1041   112     VAM Analog                      OTHER   17 VAMAnalogQ                      Q    never        0        0 
+02/04@00:45:08 - 10.244.31.90   :      79   955    78     WinMgr Input Thread             OTHER   20 unnamed                         Q    never    29904        0 
+02/04@00:45:08 - 10.244.31.90   :      91   971     4     DvrAlarmThread                  OTHER   20 AVR Mgr Mutex                   M    never    17563        0 
+02/04@00:45:08 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:45:08 - 10.244.31.90   :     119  1046     4     hotplug_thread                  OTHER   20 <running>                            never        0        0 
+02/04@00:45:08 - 10.244.31.90   :     120  1047     4     SSM                             OTHER   20 SSM                             Q    never       17        0 
+02/04@00:45:08 - 10.244.31.90   :      14   792     4     Bldr Driver Thread              OTHER   21 <sleeping>                         378(ms)        0        0 
+02/04@00:45:08 - 10.244.31.90   :      21   800     4     Driver Diag Thread              OTHER   23 DriverDiagQueue                 Q   4(sec)      572        0 
+02/04@00:45:08 - 10.244.31.90   :      47   843     4     snmpx thread                    OTHER   23 <running>                            never     1923        0 
+02/04@00:45:08 - 10.244.31.90   :      69   872     4     HIDM: b-thread                  OTHER   23 HIDM: b-thread                  Q    never    29904        0 
+02/04@00:45:08 - 10.244.31.90   :      72   878     4     FPDM b. thread                  OTHER   23 FPDM b. thread                  Q    never        0        0 
+02/04@00:45:09 - 10.244.31.90   :      22   801     4     snmpd driver                    OTHER   24 SNMPD-Q                         Q    never       26        0 
+02/04@00:45:09 - 10.244.31.90   :      43   839     4     OpenCable Manager               OTHER   24 OCM main Q                      Q    never        0        0 
+02/04@00:45:09 - 10.244.31.90   :      57   853     4     Tv Manager                      OTHER   24 TV Man. Q.                      Q    never    14829        0 
+02/04@00:45:09 - 10.244.31.90   :      58   854     4     Tvp Manager                     OTHER   24 TVP_Mutex                       M    never   633908        0 
+02/04@00:45:09 - 10.244.31.90   :  **Mutex "TVP_Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:45:09 - 10.244.31.90   :      64   864     4     SgMgr                           OTHER   24 SgMgr_CmdQueue                  Q    never     1365        0 
+02/04@00:45:09 - 10.244.31.90   :      80   956     4     PodHandler                      OTHER   24 NativePodH threadQueue          Q    never   798956        0 
+02/04@00:45:09 - 10.244.31.90   :      81   957     4     CAM                             OTHER   24 AVR Mgr Mutex                   M    never    10486        0 
+02/04@00:45:09 - 10.244.31.90   :  **Mutex "AVR Mgr Mutex" owned by: 0x7b - "SecondMainTask"
+02/04@00:45:09 - 10.244.31.90   :      96  1003    43     OCM Homing Handle Apdu Events   OTHER   24 Ocm Homing Queue                Q    never       17        0 
+02/04@00:45:09 - 10.244.31.90   :      97  1004    43     OCM HostCtrl Thread             OTHER   24 OCM Host Control Queue          Q    never      101        0 
+02/04@00:45:09 - 10.244.31.90   :      98  1005    43     ocmResMgrHandleSpduEvents       OTHER   24 OcmOsmRecvQ                     Q    never   809923        0 
+02/04@00:45:09 - 10.244.31.90   :      99  1006    43     OCM ResMgr MonitorCardState Thr OTHER   24 OcmResMgrQ                      Q    never        2        0 
+02/04@00:45:09 - 10.244.31.90   :     100  1007    43     OCM AppProv Handle Apdu Events  OTHER   24 Ocm AppInfo Queue               Q    never        0        0 
+02/04@00:45:09 - 10.244.31.90   :     102  1009    43     OCM SesProvider Handle Apdu Eve OTHER   24 Ocm Sas Queue                   Q    never        0        0 
+02/04@00:45:09 - 10.244.31.90   :     103  1010    43     OCM System Time Handle Apdu Eve OTHER   24 Ocm System Time Resource Provid Q    never        1        0 
+02/04@00:45:09 - 10.244.31.90   :     104  1011    43     OCM Systen Time Send Time       OTHER   24 Ocm Send System Time Queue      Q    never     2809        0 
+02/04@00:45:09 - 10.244.31.90   :     105  1012    43     OCM GenDiag HandleApduEvents Th OTHER   24 Ocm Generic Diagnostic Resource Q    never        8        0 
+02/04@00:45:09 - 10.244.31.90   :     106  1013    43     OCM GFC Thread                  OTHER   24 OCM GFC Queue                   Q    never        6        0 
+02/04@00:45:09 - 10.244.31.90   :     107  1014    43     OCM MMI Prov Handle Apdu Events OTHER   24 Ocm MMI Resource Provider Queue Q    never        0        0 
+02/04@00:45:09 - 10.244.31.90   :     108  1015    43     OCM HEComm Prov Handle Apdu Eve OTHER   24 Ocm HEComm Resource Provider Qu Q    never        0        0 
+02/04@00:45:10 - 10.244.31.90   :  133125  5152   178 101 VOD Component                   OTHER   24 VOD Q                           Q    never      999        0 
+02/04@00:45:10 - 10.244.31.90   :       6   782     4     SALOG_C2kThrd                   OTHER   25 <running>                            never        5        0 
+02/04@00:45:10 - 10.244.31.90   :       7   783     4     SALOG_FdrThrd                   OTHER   25 <running>                            never        0        0 
+02/04@00:45:10 - 10.244.31.90   :      36   832     4     VDM CopyP Event Handler         OTHER   25 VDM CopyP Event Handler         Q    never    14126        0 
+02/04@00:45:10 - 10.244.31.90   :     116  1043     4     Diag UDP                        OTHER   25 <running>                            never        0        0 
+02/04@00:45:10 - 10.244.31.90   :     117  1044     4     Diag TCP                        OTHER   25 <running>                            never        0        0 
+02/04@00:45:10 - 10.244.31.90   :     121  1048     4 100 iGuide Main                     OTHER   25 tvgi                            Q    never   459567        0 
+02/04@00:45:10 - 10.244.31.90   :     123  1055   121 100 SecondMainTask                  OTHER   25 <running>                            never  1196608        0 
+02/04@00:45:10 - 10.244.31.90   :     138  1089   121 100 Tvp Wrapper Thread              OTHER   25 gTvpwThreadQueue                Q    never     7690        0 
+02/04@00:45:10 - 10.244.31.90   :      10   788     4     ccMetrics                       OTHER   26 ccMetricsQueue                  Q    never    52250        0 
+02/04@00:45:10 - 10.244.31.90   :      45   841     4     OOBM NetDiag Thread             OTHER   26 netdiag_Queue                   Q    never        0        0 
+02/04@00:45:10 - 10.244.31.90   :      74   880     4     ap_Main thread                  OTHER   26 Ap MainQ                        Q    never        0        0 
+02/04@00:45:10 - 10.244.31.90   :     122  1052   121 100 FlashUpdate                     OTHER   26 FlashUpdate                     Q    never        0        0 
+02/04@00:45:10 - 10.244.31.90   :     174  1125   125 101 SCI VODMOD                      OTHER   26 SCI VODMOD                      Q    never     7490        0 
+02/04@00:45:10 - 10.244.31.90   :     176  1127   175 101 GENERIC                         OTHER   26 <sleeping>                         143(ms)        0        0 
+02/04@00:45:10 - 10.244.31.90   :     177  1128   175 101 STREAMMONITORTASK               OTHER   26 0x2b247270                      Q   <1(ms)       54        0 
+02/04@00:45:10 - 10.244.31.90   :     178  1129   175 101 CMODTASK                        OTHER   26 0x2b2474e0                      Q   <1(ms)     2119        0 
+02/04@00:45:10 - 10.244.31.90   :     179  1130   175 101 VOD Mod Main                    OTHER   26 0x2b247410                      Q   <1(ms)     2651        0 
+02/04@00:45:10 - 10.244.31.90   :     180  1131   175 101 VOD Mod Back                    OTHER   26 0x2b247478                      Q   <1(ms)    14952        0 
+02/04@00:45:10 - 10.244.31.90   :     202  1153   123 102 MAC-S                           OTHER   26 MAC-S                           Q  622(ms)    42710        0 
+02/04@00:45:11 - 10.244.31.90   :     203  1154   202 102 GuideEvtThd                     OTHER   26 GuideEventQueue                 Q    never    32061        0 
+02/04@00:45:11 - 10.244.31.90   :     204  1155   202 102 primaryThread                   OTHER   26 7d0cafe                         Q   8(sec)  2176853        0 
+02/04@00:45:11 - 10.244.31.90   :     205  1156   204 102 guide_task_loop                 OTHER   26 7d06103                         Q   3(sec)    36466        0 
+02/04@00:45:11 - 10.244.31.90   :     206  1157   204 102 DataReadTaskMainLoop            OTHER   26 7d0f00d                         Q   4(sec)   396837        0 
+02/04@00:45:11 - 10.244.31.90   :     207  1158   204 102 socket_thread                   OTHER   26 <running>                            never        2        0 
+02/04@00:45:11 - 10.244.31.90   :     208  1159   204 102 PvtDataRdTask                   OTHER   26 ResponseQ                       Q    never   596762        0 
+02/04@00:45:11 - 10.244.31.90   :     209  1160   204 102 KeyReadTaskMainLoop             OTHER   26 MotoKeyQ                        Q    never    14952        0 
+02/04@00:45:11 - 10.244.31.90   :     210  1161   204 102 dumpmeminfotask                 OTHER   26 <sleeping>                         42(sec)        0        0 
+02/04@00:45:11 - 10.244.31.90   :       5   781     4     LdWorkerThread                  OTHER   27 LdUtilWorkerThreadSem           S    never        0        0 
+02/04@00:45:11 - 10.244.31.90   :  **Semaphore "LdUtilWorkerThreadSem" count: 0, max: -1
+02/04@00:45:11 - 10.244.31.90   :     133  1084   121 100 DB Main Thread                  OTHER   28 DBMainQ                         Q    never   861351        0 
+02/04@00:45:11 - 10.244.31.90   :     135  1086   121 100 DB EPG Rx Thread                OTHER   28 Stream Device List Mutex        M    never    15280        0 
+02/04@00:45:11 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:45:11 - 10.244.31.90   :     136  1087   121 100 SAM Thread                      OTHER   28 Stream Device List Mutex        M    never   269663        0 
+02/04@00:45:11 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:45:11 - 10.244.31.90   :     139  1090   121 100 QPSK PPV Daemon                 OTHER   28 Stream Device List Mutex        M    never     4787        0 
+02/04@00:45:11 - 10.244.31.90   :  **Mutex "Stream Device List Mutex" owned by: 0x40ae92 - "TblMA4a5e8S126cP6"
+02/04@00:45:11 - 10.244.31.90   :     140  1091   121 100 QAM PPV Daemon                  OTHER   28 QAM PPV Daemon                  Q    never      414        0 
+02/04@00:45:11 - 10.244.31.90   :     175  1126   174 101 VOD Client                      OTHER   28 VODC                            Q   <1(ms)     1722        0 
+02/04@00:45:11 - 10.244.31.90   :     134  1085   121 100 DB Hkeep Thread                 OTHER   29 <sleeping>                        2362(ms)        0        0 
+02/04@00:45:11 - 10.244.31.90   :      12   790     4     sdATA Event                     OTHER   30 sdATA Event                     Q    never        0        0 
+02/04@00:45:11 - 10.244.31.90   :      77   950     4     SRM Thread                      OTHER   30 gSrmQueue                       Q    never     1364        0 
+02/04@00:45:12 - 10.244.31.90   :      94   982     4     vl_VLNMEventHandler             OTHER   30 fbSemQ11011394                  Q    never        3        0 
+02/04@00:45:12 - 10.244.31.90   :      95   983     4     vl_MfrNotificationEventsTask    OTHER   30 <running>                            never        0        0 
+02/04@00:45:12 - 10.244.31.90   :     109  1034     4     vl_CMMLightHandler              OTHER   30 <running>                            never        2        0 
+02/04@00:45:12 - 10.244.31.90   :     110  1037     4     vl_ConnMgrListener              OTHER   30 <running>                            never        0        0 
+02/04@00:45:12 - 10.244.31.90   :     118  1045     4     Amm Event Handler Thread        OTHER   30 amm_EventQ                      Q    never        2        0 
+02/04@00:45:12 - 10.244.31.90   :     125  1058   121 100 App Cfg Thread                  OTHER   30 App CfgQ                        Q    never    18194        0 
+02/04@00:45:12 - 10.244.31.90   :     137  1088   121 100 CONFIG THREAD                   OTHER   30 ConfigQ                         Q    never       36        0 
+02/04@00:45:12 - 10.244.31.90   :       3   779     2     Memory Mgr                      OTHER   31 Memory Mgr Queue                Q    never     3583        0 
+02/04@00:45:12 - 10.244.31.90   :      16   794     4     ETI Thread                      OTHER   31 ETI Queue                       Q    never        8        0 
+02/04@00:45:12 - 10.244.31.90   :     111  1038     4     vlCea931Listener                OTHER   31 <running>                            never        0        0 
+02/04@00:45:12 - 10.244.31.90   :     141  1092   121 100 GxpMain Thread                  OTHER   31 <running>                            never  2740966        0 
+02/04@00:45:12 - 10.244.31.90   : 148 Threads
+02/04@00:45:12 - 10.244.31.90   : 4333878 Retired Threads
+02/04@00:45:12 - 10.244.31.90   : System Init:         26913ms
+02/04@00:45:12 - 10.244.31.90   : 
+02/04@00:45:12 - 10.244.31.90   : Backtrace:      1 PkTimerThread                    2b3aaa5c 2ae26e24 2ae2ff18 2ae282b0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:12 - 10.244.31.90   : Backtrace:      8 evntThrd                         2b904830 2b904504 2ae34134 2ae2ea84 2ae275e4 2ae27d9c 2ac8ffc0 2ac68090 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:12 - 10.244.31.90   : Backtrace:     24 HDCP RT Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aca032c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:12 - 10.244.31.90   : Backtrace:     28 user display[0]                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac90dd4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:12 - 10.244.31.90   : Backtrace:     30 user display[1]                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac90dd4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:12 - 10.244.31.90   : Backtrace:     41 Capt Buf Update Thread           2b3aa658 2ae26e9c 2ae2ff18 2ae2c1cc 2abc1630 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:12 - 10.244.31.90   : Backtrace: 4238995 record1_task                     2b939d24 2abab990 2ac249d4 2ac25180 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:12 - 10.244.31.90   : Backtrace: 4238996 record1_tricklink                2b3aaa5c 2ae26e24 2ae2ff18 2ae2c1cc 2abfea80 2ac255e4 2ac25984 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace: 4238997 record1_filelink                 2b3aaa5c 2ae26e24 2ae2ff18 2ae2c1cc 2abfe924 2ac21968 2ac21e20 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     17 Scale Unit 1                     2b3aec88 2ac82094 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     18 Scale Unit 2                     2b3aec88 2ac82094 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     19 Scale Unit 3                     2b3aec88 2ac82094 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     70 FPKey Thread                     2b939d24 2ac424b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     71 Irif Thread                      2b939d24 2ac429b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     32 SC Driver                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac3f0e4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     38 STBLIT IntEvntTst                2b3aec88 2abca684 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     39 STBLIT ErrChkTsk                 2b3aa658 2ae26e9c 2ae2ff18 2ae2c1cc 2abd18c0 2abc47bc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     73 PCM Play Worker                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2abdef6c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     11 Vcxo Thread                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac90138 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     27 hal_mpegdv0                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac87aa8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     29 hal_mpegdv1                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac87aa8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     40 GFX Compo Renderer               2b3afd30 2ae289c8 2aca5798 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     82 PKEY Secure Micro                2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ab1deb8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     84 PcmciaThread                     2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac452a8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     89 PcmciaReadThread                 2b3aec88 2abab334 2ac457d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     13 VBI CommandThrd                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac8c47c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     75 ScMgr                            2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afd7528 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     34 MPEGT                            2b3ae474 2b3a8500 2ae2a84c 2af4ceb4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     76 ScMgrExt                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afd70bc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:13 - 10.244.31.90   : Backtrace:     93 tm_1394Thread                    2b3ae474 2b3a8400 2ae2a84c 2aee8378 2b120624 2b11ec08 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     25 Mpegda T                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2abdb3cc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     31 Mpegdc Alarm Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac845dc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     60 SdmDevice0001                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b065438 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     59 SdmAsync                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b062cc0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     68 AppManager                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aed44c4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     86 Production                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afee99c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     90 DvrSdmAsync                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b020448 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     88 FsmAsync                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b030e8c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     44 APDUP Event Thread               2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b06f85c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     46 APDUP IPC Thread                 2b93ab98 2b07296c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     48 NetpBrfThread                    2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2b11457c 2b115e8c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     50 NetpThread                       2b93ab98 2b10bf20 2b10c86c 2b11180c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     52 TblMgr Main                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af24a28 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     53 TomeThread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af3cddc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     54 TomMutantReaderThread            2b93ab98 2af3c668 2af39a10 2af3d24c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     55 TomMutantThread                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af3adc8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     56 TomcThread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af3f3d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     61 UNConfig                         2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2b0f6d6c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace: 4238994 TblMA4a5e8S126cP6                2b3ae474 2b3a8400 2ae2a84c 2aee7d38 2ae4931c 2af33ca0 2af33e2c 2af20ecc 2af21c74 2af21fc0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace: 4334021 TblMA4baecS110cPb                2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2af33ca0 2af33e2c 2af20ecc 2af21c74 2af21fc0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     15 vmpegps private thread           2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af40f10 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:14 - 10.244.31.90   : Backtrace:     20 SNMPSVC                          2b945ac4
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     35 HDMI Thread                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac98868 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     49 OOBFilterThread                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b10ff24 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     62 UNSession                        2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2b1024d4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     63 UNPassthru                       2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2b0f1acc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     65 Carousel OOB R                   2b3afd30 2ae289c8 2afc3490 2afc32a0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     66 CarouselMulti                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afc61b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     26 Videod Thread                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac93678 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     23 HDCP Thread                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac9fea4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     33 IB Tunning                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac554d8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     83 PKEY CAK                         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ab218a8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:    113 CC Render                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0443d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:      9 DriverTimer                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac689b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     37 System Bootloader Iface          2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2aed53e0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     42 AVRTmon                          2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aef2924 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     67 GetBFSDirectory                  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afcbc14 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:    115 CC Parser                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b03dbd8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     78 WinMgr Main                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afa3114 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:    112 VAM Thread                       2b3ae474 2b3a8400 2ae2a84c 2aee7d38 2b055040 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:    114 VAM Analog                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b053ddc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     79 WinMgr Input Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af9f514 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:15 - 10.244.31.90   : Backtrace:     91 DvrAlarmThread                   2b3ae474 2b3a8400 2ae2a84c 2aee8378 2b01d090 2b01ef08 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:    119 hotplug_thread                   2b3af228 2b116f04 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:    120 SSM                              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b12e39c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     14 Bldr Driver Thread               2b3afd30 2ae289c8 2abbffdc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     21 Driver Diag Thread               2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2ac6c67c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     47 snmpx thread                     2b93ab98 2b0c59e4 2b0c4bf4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     69 HIDM: b-thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af552c0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     72 FPDM b. thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afb7afc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     22 snmpd driver                     2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac6d9cc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     43 OpenCable Manager                2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0946d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     57 Tv Manager                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af5b954 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     58 Tvp Manager                      2b3ae474 2b3a8500 2ae2a84c 2af78d34 2af798ec 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     64 SgMgr                            2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2afd3f18 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     80 PodHandler                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b09cd00 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     81 CAM                              2b3ae474 2b3a8400 2ae2a84c 2aee8378 2afe2ef4 2afe6438 2afeaec4 2afdcf64 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     96 OCM Homing Handle Apdu Events    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07a488 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     97 OCM HostCtrl Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07afb4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     98 ocmResMgrHandleSpduEvents        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0778e4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:     99 OCM ResMgr MonitorCardState Thr  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07861c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:    100 OCM AppProv Handle Apdu Events   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07950c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:    102 OCM SesProvider Handle Apdu Eve  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b078e04 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:16 - 10.244.31.90   : Backtrace:    103 OCM System Time Handle Apdu Eve  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b079b2c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    104 OCM Systen Time Send Time        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b079968 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    105 OCM GenDiag HandleApduEvents Th  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0962a4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    106 OCM GFC Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b0996f8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    107 OCM MMI Prov Handle Apdu Events  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07b6c8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    108 OCM HEComm Prov Handle Apdu Eve  2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07baac 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace: 133125 VOD Component                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b03c814 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:      6 SALOG_C2kThrd                    2b3aec88 2ac745c0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:      7 SALOG_FdrThrd                    2b3aec88 2ac74a2c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:     36 VDM CopyP Event Handler          2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aedfe64 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    116 Diag UDP                         2b3af540 2b1302b4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    117 Diag TCP                         2b3af228 2b130440 2b1305b4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    121 iGuide Main                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 00596668 00598a34 2aed1f28 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    123 SecondMainTask                   2b939d24 2abdd9c4 2af478d0 2af480c0 2aef1e84 2aeeb604 2aee8c1c 2af7e8f0 2af6f75c 005c742c 0057b5ac 00597bbc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    138 Tvp Wrapper Thread               2b3aa658 2ae26e9c 2ae2ff18 2ae25460 005c4f60 005c5484 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:     10 ccMetrics                        2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac694b0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:     45 OOBM NetDiag Thread              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b07480c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:     74 ap_Main thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2af0f5b8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    122 FlashUpdate                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 0059a69c 0059ad90 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    174 SCI VODMOD                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c2dbf20 2aed1f28 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    176 GENERIC                          2b3afd30 2ae289c8 2c2d3c14 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:17 - 10.244.31.90   : Backtrace:    177 STREAMMONITORTASK                2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2c3748 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    178 CMODTASK                         2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2b3dcc 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    179 VOD Mod Main                     2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2af770 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    180 VOD Mod Back                     2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2cf494 2c2ab650 2c2d12f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    202 MAC-S                            2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3898c4 2aed1f28 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    203 GuideEvtThd                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c2fd2d8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    204 primaryThread                    2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3a8860 2c3019d0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    205 guide_task_loop                  2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3a8860 2c393f34 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    206 DataReadTaskMainLoop             2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c3a8860 2c30d6a0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    207 socket_thread                    2b93ab98 2c30529c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    208 PvtDataRdTask                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c30c9f4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    209 KeyReadTaskMainLoop              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2c301de0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    210 dumpmeminfotask                  2b3afd30 2ae289c8 2c3a9480 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:      5 LdWorkerThread                   2b3aa658 2ae26e9c 2ae2ff18 2ae2c1cc 2ae52084 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    133 DB Main Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 00582a94 0045b1ac 00582950 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    135 DB EPG Rx Thread                 2b3ae474 2b3a8500 2ae2a84c 2ae4b11c 2afcd390 2afbb220 00583c14 00585848
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    136 SAM Thread                       2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2afcd0a0 2afcdd74 2afbb8f0 2afbbd64 00586c80 005f10d4 005f3ce4 005f5458 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    139 QPSK PPV Daemon                  2b3ae474 2b3a8500 2ae2a84c 2ae48abc 2afcd0a0 2afcdd74 2afbb8f0 2afbbd64 005ed90c 005eac58 005ea2f0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    140 QAM PPV Daemon                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 005e9c74 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    175 VOD Client                       2b3aaa5c 2ae26e24 2ae2ff18 2ae25460 2c2dc9a8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:18 - 10.244.31.90   : Backtrace:    134 DB Hkeep Thread                  2b3afd30 2ae289c8 00459610 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:     12 sdATA Event                      2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac3636c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:     77 SRM Thread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2aff5d08 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:     94 vl_VLNMEventHandler              2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b337bb0 2b338878 2b3041bc 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:     95 vl_MfrNotificationEventsTask     2b939d24 2b3415ac 2b334710 2b307758 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:    109 vl_CMMLightHandler               2b939d24 2b3415ac 2b33236c 2b2fa0c4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:    110 vl_ConnMgrListener               2b939d24 2b3415ac 2b335144 2b2fd1b0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:    118 Amm Event Handler Thread         2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2b11a8c8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:    125 App Cfg Thread                   2b3aa658 2ae26e9c 2ae2ff18 2ae25460 00578ad8 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:    137 CONFIG THREAD                    2b3aa658 2ae26e9c 2ae2ff18 2ae25460 005e2f54 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:      3 Memory Mgr                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ae440c0 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:     16 ETI Thread                       2b3aa658 2ae26e9c 2ae2ff18 2ae25460 2ac64d5c 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:    111 vlCea931Listener                 2b939d24 2b3415ac 2b33626c 2b315eb4 2ae27ec4 2b3a585c 2b943e98
+02/04@00:45:19 - 10.244.31.90   : Backtrace:    141 GxpMain Thread                   2b3af540 00533b14 00535d38 2ae27ec4 2b3a585c 2b943e98

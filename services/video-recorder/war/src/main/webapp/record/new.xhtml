@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<ui:composition template="/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="New Recording"></h:outputText>
+	</ui:define>
+	<ui:define name="body">
+		<h:form id="form">
+			<p:panel id="panel" header="New Recording"
+				style="margin-bottom:10px;">
+				<h:panelGrid columns="3">
+
+					<h:outputLabel for="alias" value="Alias" />
+					<p:inputText id="alias" value="#{recording.name}" required="false"
+						label="Alias">
+					</p:inputText>
+					<p:message for="alias" />
+
+					<h:outputLabel for="stbMacAddress" value="Mac Address" />
+					<p:inputText id="stbMacAddress" value="#{recording.stbMacAddress}"
+						required="true" label="Mac Address"
+						validatorMessage="Mac Address is not valid">
+						<f:validateRegex
+							pattern="^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$" />
+					</p:inputText>
+					<p:message for="stbMacAddress" />
+
+					<h:outputLabel for="videoServerIp" value="Video Server Ip" />
+					<p:inputText id="videoServerIp" value="#{recording.videoServerIp}"
+						required="true" label="Video Server Ip"
+						validatorMessage="Video Server Ip is not valid. If you have entered an FQDN, it is not supported through UI">
+						<f:validateRegex
+							pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$" />
+					</p:inputText>
+					<p:message for="videoServerIp" />
+
+					<h:outputLabel for="videoServerPort"
+						value="Video Server Port/Camera  [Default : 1]" />
+					<p:inputText id="videoServerPort"
+						value="#{recording.videoServerPort}" required="true"
+						label="Video Server Port">
+					</p:inputText>
+					<p:message for="videoServerPort" />
+
+					<h:outputLabel for="duration"
+						value="Duration in minutes (This is a place holder and not supported in this version)[Default : 0 - Unlimited ]" />
+					<p:inputText id="duration" value="#{recording.requestedDuration}"
+						required="false" label="Duration" readonly="true" />
+				</h:panelGrid>
+			</p:panel>
+
+			<p:commandButton value="Submit"
+				actionListener="#{recordingController.start(recording)}"
+				ajax="false" />
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+</html>

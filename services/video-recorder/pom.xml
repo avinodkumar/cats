@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>video-recorder-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>CATS Video Recorder Service Parent</name>
+    <description>
+		CATS Video Recorder Service Parent.
+	</description>
+    <properties>
+        <jboss.version>7.1.1.Final</jboss.version>
+        <jboss.hostname>localhost</jboss.hostname>
+        <jboss.port>9999</jboss.port>
+    </properties>
+    <parent>
+        <groupId>com.comcast.cats</groupId>
+        <artifactId>services-parent</artifactId>
+	<version>0.1-OCATS-SNAPSHOT</version>
+    </parent>
+    <modules>
+        <module>common</module>
+        <module>client</module>
+        <module>war</module>
+    </modules>
+</project>

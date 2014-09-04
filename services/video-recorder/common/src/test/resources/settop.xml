@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    Copyright 2014 Comcast Cable Communications Management, LLC
+
+    This file is part of CATS.
+
+    CATS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CATS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CATS.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<settop unitAddress="" serialNumber=""
+	remoteType="DTA" rackId="2657112d-9111-419f-b310-a437a6e0c18e" model="DC50Xu"
+	manufacturer="PACE (Micro)" hostMacAddress="12:BE:20:AF:7F:D0"
+	environmentId="c8718a04-441f-4c2a-8b31-7937cd70f7e3" componentType="Settop.Pace.DTA.DC50Xu(Micro)"
+	name="Settop.12:BE:20:AF:7F:D0" id="d6622ae0-763f-4d7c-b4a7-af180f38eaa1"
+	xmlns:ns2="http://cats.comcast.com">
+	<extraProperties>
+		<item value="Settop" name="Tag" />
+		<item value="4" name="Plant" />
+		<item value="Settop" name="Owner" />
+		<item value="S06" name="Controller" />
+	</extraProperties>
+	<hardwareConnections>
+		<hardwareConnection port="4">
+			<hardwareDevice port="0" maxPort="6" host="192.168.160.202"
+				componentType="GC100" name="GC-100:192.168.160.202" id="e17481d6-ab3d-4870-9d81-c26d94a1c3c7">
+				<location zone="4" row="7" rack="1" lab="usa"
+					id="15251352-ff7c-488a-9ddf-347d79c467c0" />
+				<hardwareType>
+					IR
+				</hardwareType>
+			</hardwareDevice>
+		</hardwareConnection>
+		<hardwareConnection port="1">
+			<hardwareDevice port="0" maxPort="1" host="192.168.160.202"
+				componentType="Axis" name="Axis:192.168.160.202" id="894fd294-30a2-4ced-a09f-93b08ab7d070">
+				<location zone="4" row="7" rack="1" lab="usa"
+					id="15251352-ff7c-488a-9ddf-347d79c467c0" />
+				<hardwareType>VIDEOSERVER</hardwareType>
+			</hardwareDevice>
+		</hardwareConnection>
+		<hardwareConnection port="3">
+			<hardwareDevice port="0" maxPort="16" host="192.168.160.202:23"
+				componentType="WTI1600" name="WTI-1600:192.168.160.202:23" id="da6fafc0-c7b7-4478-83cf-b10530b79a25">
+				<location zone="4" row="7" rack="1" lab="usa"
+					id="15251352-ff7c-488a-9ddf-347d79c467c0" />
+				<hardwareType>POWER</hardwareType>
+			</hardwareDevice>
+		</hardwareConnection>
+		<hardwareConnection port="3">
+			<hardwareDevice port="0" maxPort="8" host="--"
+				componentType="RF_Splitter" name="RF:04-07-R01-A3"
+				id="75df2020-6621-48ac-8a7b-988254067596">
+				<location zone="4" usespace="1" row="7" rack="1" lab="usa"
+					id="00a33e54-eaf2-4dbe-93e6-dc94ccd3fe9e" />
+			</hardwareDevice>
+		</hardwareConnection>
+	</hardwareConnections>
+	<powerPath>wti1600://192.168.160.201:23/?outlet=3</powerPath>
+	<remotePath>gc100://192.168.160.201/?port=4</remotePath>
+	<videoPath>axis://192.168.160.201/?camera=1</videoPath>
+</settop>
