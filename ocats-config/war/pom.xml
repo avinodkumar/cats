@@ -107,7 +107,7 @@
 		<dependency>
 			<groupId>com.comcast.cats</groupId>
 			<artifactId>ir-common</artifactId>
-			<version>3.6-OCATS-SNAPSHOT</version>
+			<version>${project.version}</version>
 			<!-- <version>${cats.release.version}</version>-->
 		</dependency>
 		<dependency>
