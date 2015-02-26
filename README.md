@@ -1,5 +1,5 @@
 # CATS
-[Cable Automated Test Solution (CATS)](https://github.com/Comcast/cats/) is a pre-integrated software bundle that provides a common framework for validating customer-premises equipment (CPE) for functional testing and stability tests. The OCATS automation framework can be used by the broadcast community for improving the amount, type and quality of auto-mated testing. CATS focuses on manual and automated Set top usage through IR and Power Control used for video inspection.
+[Cable Automated Test Solution (CATS)](https://github.com/Comcast/cats/) is a pre-integrated software bundle that provides a common framework for validating customer-premises equipment (CPE) for functional testing and stability tests. The CATS automation framework can be used by the broadcast community for improving the amount, type and quality of auto-mated testing. CATS focuses on manual and automated Set top usage through IR and Power Control used for video inspection.
 
 ## Benefits
   * Reducing the Length of Test & Development Cycles
@@ -42,12 +42,12 @@ Only one device in each category is needed.
 |  Video encoder | Axis    | P7216           | 16 | $1700 | http://www.axis.com/products/cam_p7216/ | newest model |
 
 ## Network Switch
-Any standard Ethernet network switch or router will work. The only assumption OCATS makes about the network:
-* The OCATS server can communicate with all the devices
-* The users can access the IP video encoder and the OCATS service.
+Any standard Ethernet network switch or router will work. The only assumption CATS makes about the network:
+* The CATS server can communicate with all the devices
+* The users can access the IP video encoder and the CATS service.
 
 To reduce the amount of cabling it is preferential to use a PoE-capable (IEEE 802.3af) switch as some of the IR emitter controllers and some of the IP video encoders can be powered via PoE - reducing the number of power bricks in the whole setup.
 
 ## PC/Server
-OCATS is currently only supported on CentOS 6 (and RHEL 6). The PC/Server hardware needs to be therefore supported by one of these operating systems.
+CATS is currently only supported on CentOS 6 (and RHEL 6). The PC/Server hardware needs to be therefore supported by one of these operating systems.
 
