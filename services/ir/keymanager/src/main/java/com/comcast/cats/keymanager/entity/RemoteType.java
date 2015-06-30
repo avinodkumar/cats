@@ -25,6 +25,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -110,8 +111,10 @@ public class RemoteType implements java.io.Serializable {
 	 * @return
 	 */
 	@Id
+	@GeneratedValue 
 	@Column(name = "remote_type_id", unique = true, nullable = false)
 	public Integer getRemoteTypeId() {
+		
 		return this.remoteTypeId;
 	}
 

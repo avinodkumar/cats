@@ -21,6 +21,7 @@ package com.comcast.cats.keymanager.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -103,6 +104,7 @@ public class KeyCodes implements java.io.Serializable {
 	 * @return
 	 */
 	@Id
+	@GeneratedValue 
 	@Column(name = "key_codes_id", unique = true, nullable = false)
 	public Integer getKeyCodesId() {
 		return this.keyCodesId;

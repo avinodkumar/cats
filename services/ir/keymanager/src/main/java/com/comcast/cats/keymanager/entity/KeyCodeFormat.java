@@ -25,6 +25,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -118,6 +119,7 @@ public class KeyCodeFormat implements java.io.Serializable {
 	}
 
 	@Id
+	@GeneratedValue 
 	@Column(name = "key_code_format_id", unique = true, nullable = false)
 	public Integer getKeyCodeFormatId() {
 		return this.keyCodeFormatId;
