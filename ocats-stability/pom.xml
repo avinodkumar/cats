@@ -83,6 +83,9 @@
 	<profiles>
 		<profile>
 			<id>stability</id>
+			<activation>
+			            <activeByDefault>true</activeByDefault>
+        		</activation>
 			<build>
 				<finalName>ocats-stability-client</finalName>
 				<plugins>

@@ -65,7 +65,6 @@
 		<module>ocats-vision</module>
 		<module>ocats-testing</module>
 		<module>ocats-stability</module>
-		<module>ocats-release</module>
 	</modules>
 
 	<build>
