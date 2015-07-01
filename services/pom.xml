@@ -9,7 +9,7 @@
 	</description>
    <parent>
 		<groupId>com.comcast.cats</groupId>
-		<artifactId>superpom-ocats</artifactId>
+		<artifactId>ocats-project</artifactId>
 		<version>0.1-OCATS-SNAPSHOT</version>
 	</parent>
     <modules>
