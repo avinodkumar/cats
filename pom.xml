@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.comcast.cats</groupId>
 	<artifactId>ocats-project</artifactId>
-	<version>1.0-OCATS-SNAPSHOT</version>
+	<version>0.1-OCATS-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>CATS Open Source Project</name>
@@ -59,16 +59,7 @@
 
 	<modules>
 		<module>apis</module>
-		<module>core</module>
-		<module>services</module>
-		<module>ocats-domain</module>
-		<module>ocats-framework</module>
-		<module>ocats-config</module>
-		<module>ocats-settop</module>
-		<module>ocats-ear</module>
-		<module>ocats-vision</module>
-		<module>ocats-testing</module>
-		<module>ocats-stability</module>
+		
 	</modules>
 
 	<build>
