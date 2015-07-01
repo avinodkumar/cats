@@ -48,7 +48,9 @@
 	<distributionManagement>
 	</distributionManagement>
 	<scm>
-		
+		<developerConnection>scm:git:https://github.com/Comcast/cats.git</developerConnection>
+		<url>https://github.com/Comcast/cats.git</url>
+		<connection>scm:git:https://github.com/Comcast/cats.git</connection>
 	</scm>
 	<developers>
 		<developer>

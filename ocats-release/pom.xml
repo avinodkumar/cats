@@ -34,9 +34,9 @@
 	</parent>
 
 	<scm>
-		<developerConnection>scm:git:https://cats-dev3.cable.comcast.com:8443/git/OCATS.git</developerConnection>
-		<url>https://cats-dev3.cable.comcast.com:8443/git/OCATS.git</url>
-   		<connection>scm:git:https://cats-dev3.cable.comcast.com:8443/git/OCATS.git</connection>
+		<developerConnection>scm:git:https://github.com/Comcast/cats.git</developerConnection>
+		<url>https://github.com/Comcast/cats.git</url>
+   		<connection>scm:git:https://github.com/Comcast/cats.git</connection>
   	</scm>
 	
 	<properties>
