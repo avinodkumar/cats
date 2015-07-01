@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>com.comcast.cats</groupId>
 		<artifactId>ir-parent</artifactId>
-		<version>0.1-OCATS-SNAPSHOT</version>
+		<version>1.0-OCATS</version>
 	</parent>
     <dependencies>
         <dependency>
