@@ -24,7 +24,7 @@
 	<groupId>com.comcast.cats</groupId>
 	<artifactId>superpom-ocats</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0-OCATS</version>
+	<version>1.1-OCATS-SNAPSHOT</version>
 	<name>OCATS Super POM</name>
 	<url />
 	<description>
@@ -50,7 +50,7 @@
 		<developerConnection>scm:git:https://github.com/Comcast/cats.git</developerConnection>
 		<url>https://github.com/Comcast/cats.git</url>
 		<connection>scm:git:https://github.com/Comcast/cats.git</connection>
-	  <tag>superpom-ocats-1.0-OCATS</tag>
+	  <tag>HEAD</tag>
   </scm>
 	<developers>
 		<developer>
