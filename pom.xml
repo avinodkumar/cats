@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.comcast.cats</groupId>
 	<artifactId>ocats-project</artifactId>
-	<version>1.0-OCATS</version>
+	<version>1.1-OCATS-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>CATS Open Source Project</name>
@@ -41,7 +41,7 @@
 		<jboss.hostname>localhost</jboss.hostname>
 		<jboss.port>9999</jboss.port>
 	</properties>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

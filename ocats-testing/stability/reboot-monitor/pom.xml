@@ -27,7 +27,7 @@
 	<parent>
 		<groupId>com.comcast.cats</groupId>
 		<artifactId>stability-builder-parent</artifactId>
-		<version>1.0-OCATS</version>
+		<version>1.1-OCATS-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
