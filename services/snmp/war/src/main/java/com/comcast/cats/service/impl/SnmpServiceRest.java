@@ -79,40 +79,14 @@ public class SnmpServiceRest implements Snmp
         final Hashtable< String, String > jndiProperties = new Hashtable< String, String >();
         jndiProperties.put( Context.URL_PKG_PREFIXES, JBOSS_URL_PKG_PREFIXES );
         final Context context = new InitialContext( jndiProperties );
-        /*
-         * Reference :
-         * https://docs.jboss.org/author/display/AS71/EJB+invocations
-         * +from+a+remote+client+using+JNDI . The app name is the application
-         * name of the deployed EJBs. This is typically the ear name without the
-         * .ear suffix. However, the application name could be overridden in the
-         * application.xml of the EJB deployment on the server. Since we haven't
-         * deployed the application as a .ear, the app name for us will be an
-         * empty string
-         */
-        final String appName = "";
+        
         /*
          * This is the module name of the deployed EJBs on the server. This is
          * typically the jar/war name of the EJB deployment, without the
          * .jar/.war suffix, but can be overridden via the ejb-jar.xml
          */
         final String moduleName = "snmp-service";
-        /*
-         * AS7 allows each deployment to have an (optional) distinct name. We
-         * haven't specified a distinct name for our EJB deployment, so this is
-         * an empty string
-         */
-        final String distinctName = "";
-        /*
-         * The EJB name which by default is the simple class name of the bean
-         * implementation class
-         */
-        final String beanName = SnmpServiceImpl.class.getSimpleName();
-
-        // the remote view fully qualified class name
-        final String viewClassName = SnmpService.class.getName();
-
-        String lookupString = "ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!"
-                + viewClassName;
+        String lookupString = "java:app/"+moduleName+"/"+SnmpServiceImpl.class.getSimpleName()+"!"+SnmpService.class.getName();
 
         return ( SnmpService ) context.lookup( lookupString );
     }
