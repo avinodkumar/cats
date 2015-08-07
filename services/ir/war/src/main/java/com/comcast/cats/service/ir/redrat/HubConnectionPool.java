@@ -154,9 +154,10 @@ class PoolObject extends PoolableObjectBase< RedRatHubConnection >
     	if(t != null){
 	        try
 	        {
-	            if(!t.isConnected()){
-	                t.connect( false );
-	            }
+	            // reset connection before giving it to anyone.
+	            t.disconnect( );
+	            t.connect( false );
+
 	        }
 	        catch ( SocketException e )
 	        {

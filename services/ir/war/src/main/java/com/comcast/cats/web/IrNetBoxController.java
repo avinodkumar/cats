@@ -133,12 +133,17 @@ public class IrNetBoxController
         
         RedRatDevice rrDevice = rrManager.getIrDevice(diagnoseIrNetBoxIp);
         RedRatHub hub = RedRatManagerImpl.getRedRatHub(rrDevice);
-        if ( testHubConnection(hub) )
-        {
-            getAllActiveHubConnections(hub);
-            findConnectedRedRats(hub);
-            listDataSets(hub);
-            testConnectionToRedRat(hub);
+        if(hub != null){
+	        if ( testHubConnection(hub) )
+	        {
+	            getAllActiveHubConnections(hub);
+	            findConnectedRedRats(hub);
+	            listDataSets(hub);
+	            testConnectionToRedRat(hub);
+	        }
+        }else{
+        	String response = "Hub is null for irnetbox "+diagnoseIrNetBoxIp;
+        	diagnoseResult.add(response);
         }
 
     }
@@ -157,10 +162,10 @@ public class IrNetBoxController
                 REDRAT_PROMPT_STRING_1 );
         try
         {
-            status = telnetConnection.connect( false );
+            status = telnetConnection.connect( true );
             if ( status )
             {
-                response = "Connection to HUB established.";
+                response = "Connection to HUB established. "+hub.getRedratHubHost();
             }
             else
             {
@@ -180,21 +185,21 @@ public class IrNetBoxController
 
     private void getAllActiveHubConnections(RedRatHub hub)
     {
-        diagnoseResult.add( "" );
-        diagnoseResult.add( "Currently active connections..." );
-        diagnoseResult.add( "" );
-        Collection< TelnetConnection > activeConnections = hub.getActiveConnections();
-        if ( activeConnections != null )
-        {
-            int index = 1;
-            for ( TelnetConnection telnetConnection : activeConnections )
-            {
-                diagnoseResult.add( index+" Host " + telnetConnection.getHost() + " : Last active Time "
-                        + telnetConnection.getLastActiveTime() );
-                diagnoseResult.add( "" );
-                index++;
-            }
-        }
+//        diagnoseResult.add( "" );
+//        diagnoseResult.add( "Currently active connections..." );
+//        diagnoseResult.add( "" );
+//        Collection< TelnetConnection > activeConnections = hub.getActiveConnections();
+//        if ( activeConnections != null )
+//        {
+//            int index = 1;
+//            for ( TelnetConnection telnetConnection : activeConnections )
+//            {
+//                diagnoseResult.add( index+" Host " + telnetConnection.getHost() + " : Last active Time "
+//                        + telnetConnection.getLastActiveTime() );
+//                diagnoseResult.add( "" );
+//                index++;
+//            }
+//        }
     }
 
     private boolean findConnectedRedRats(RedRatHub hub)
@@ -208,7 +213,7 @@ public class IrNetBoxController
                 REDRAT_PROMPT_STRING_1 );
         try
         {
-            status = telnetConnection.connect( false );
+            status = telnetConnection.connect( true );
             if ( status )
             {
                 diagnoseResult.add( telnetConnection.sendCommand( RedRatCommands.LIST_REDRATS,
@@ -241,7 +246,7 @@ public class IrNetBoxController
                 REDRAT_PROMPT_STRING_1 );
         try
         {
-            status = telnetConnection.connect( false );
+            status = telnetConnection.connect( true );
             if ( status )
             {
                 diagnoseResult.add( telnetConnection.sendCommand( RedRatCommands.LIST_DATASETS,
@@ -274,7 +279,7 @@ public class IrNetBoxController
                     REDRAT_PROMPT_STRING_1 );
             try
             {
-                boolean status = telnetConnection.connect( false );
+                boolean status = telnetConnection.connect( true );
                 if ( status )
                 {
                     String command = IRNETBOX_IR_COMMAND.replace( IPADDRESS_ARGUMENT, diagnoseIrNetBoxIp )

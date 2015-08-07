@@ -236,7 +236,7 @@ public class IrNetBoxProPort extends RedRatDevicePort
                 try
                 {
                     telnetConnection.disconnect();
-                    telnetConnection.connect( false );
+                    telnetConnection.connect( true );
                 }
                 catch ( IOException e2 )
                 {

@@ -169,7 +169,7 @@ public class IrNetBoxPro extends RedRatDevice
                 logger.debug( "ConnectTelnet retries " + retries );
                 try
                 {
-                    retVal = telnetConnection.connect( false );
+                    retVal = telnetConnection.connect( true );
                     logger.debug( "connectTelnet status " + retVal );
                     tryRetry = retVal;
                     break;

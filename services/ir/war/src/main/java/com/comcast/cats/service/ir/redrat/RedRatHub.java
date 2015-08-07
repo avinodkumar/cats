@@ -50,7 +50,7 @@ public class RedRatHub {
 	private int redratHubPort = -1;
 
 	private TelnetConnection hubTelnetConnection;
-	private static Collection<TelnetConnection> activeConnections = new ArrayList<TelnetConnection>();
+//	private static Collection<TelnetConnection> activeConnections = new ArrayList<TelnetConnection>();
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(RedRatHub.class);
@@ -227,9 +227,6 @@ public class RedRatHub {
 		if (irNetBoxPro != null && portNumber >= 0) {
 			portConnection = hubConnectionPool.getConnection();
 			logger.debug("Redrathub  " + portConnection);
-			if (portConnection != null) {
-				activeConnections.add(portConnection);
-			}
 		}
 
 		return portConnection;
@@ -246,7 +243,4 @@ public class RedRatHub {
 		return isConnected;
 	}
 
-	public Collection<TelnetConnection> getActiveConnections() {
-		return activeConnections;
-	}
 }
