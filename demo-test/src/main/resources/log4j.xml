@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %x - %m\n" />
+		</layout>
+	</appender>
+	<!-- Uncomment, if you need to write the log in to file. Replace <project-name> with name of your project.-->
+    <!--
+	<appender name="rolling" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="<project-name>-daily-rolling.log" />
+		<param name="DatePattern" value="yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+		</layout>
+	</appender>
+    -->
+	<appender name="socket" class="org.apache.log4j.net.SocketAppender">
+		<param name="LocationInfo" value="true" />
+		<param name="Port" value="8888" />
+		<param name="ReconnectionDelay" value="20000" />
+		<param name="RemoteHost" value="localhost" />
+	</appender>
+
+	<root>
+		<level value="debug" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="rolling" />
+	</root>
+
+</log4j:configuration>
